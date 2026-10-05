@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dprg3ba60c1vw"]
+
+[ext_resource type="Script" uid="uid://bqf3chp7pr3nb" path="res://addons/3d_player_controller/scripts/progress_bar_3d.gd" id="1_pb3d"]
+[ext_resource type="Shader" uid="uid://cwqv0kfxj8t2m" path="res://addons/3d_player_controller/assets/shaders/progress_bar_3d.gdshader" id="2_pb3d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pb3d"]
+shader = ExtResource("2_pb3d")
+
+[sub_resource type="QuadMesh" id="QuadMesh_pb3d"]
+material = SubResource("ShaderMaterial_pb3d")
+size = Vector2(0.8, 0.1)
+
+[node name="ProgressBar3D" type="Node3D"]
+script = ExtResource("1_pb3d")
+
+[node name="BarMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_pb3d")

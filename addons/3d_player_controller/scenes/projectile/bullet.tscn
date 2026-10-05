@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/projectile.gd" id="1_projectile"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bullet"]
+radius = 0.02
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tracer"]
+shading_mode = 0
+albedo_color = Color(1, 0.85, 0.3, 1)
+emission_enabled = true
+emission = Color(1, 0.75, 0.2, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tracer"]
+material = SubResource("StandardMaterial3D_tracer")
+radius = 0.012
+height = 0.14
+
+[node name="Bullet" type="RigidBody3D"]
+collision_layer = 2048
+mass = 0.02
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 4
+script = ExtResource("1_projectile")
+lifetime = 3.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_bullet")
+
+[node name="Tracer" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_tracer")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

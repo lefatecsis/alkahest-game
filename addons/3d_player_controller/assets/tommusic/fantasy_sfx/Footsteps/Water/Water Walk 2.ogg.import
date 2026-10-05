@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bq8up1nrx1jwa"
+path="res://.godot/imported/Water Walk 2.ogg-97784f8b63dde9af603b5ec5c7526f27.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Footsteps/Water/Water Walk 2.ogg"
+dest_files=["res://.godot/imported/Water Walk 2.ogg-97784f8b63dde9af603b5ec5c7526f27.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

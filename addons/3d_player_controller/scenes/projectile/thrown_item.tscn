@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/thrown_item.gd" id="1_thrown"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_thrown"]
+radius = 0.12
+
+[node name="ThrownItem" type="RigidBody3D"]
+mass = 0.5
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 4
+script = ExtResource("1_thrown")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_thrown")
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="Icon" type="Sprite3D" parent="."]
+visible = false
+pixel_size = 0.0012
+billboard = 1
+shaded = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

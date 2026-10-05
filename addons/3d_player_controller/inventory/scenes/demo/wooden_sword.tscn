@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/equipment.gd" id="1_equipment"]
+[ext_resource type="Texture2D" path="res://addons/3d_player_controller/assets/game_icons/gladius.svg" id="2_icon"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wood"]
+albedo_color = Color(0.55, 0.36, 0.2, 1)
+roughness = 0.9
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pickup"]
+radius = 1.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hitbox"]
+size = Vector3(0.12, 0.7, 0.12)
+
+[node name="WoodenSword" type="Node3D"]
+script = ExtResource("1_equipment")
+bone_attachment_bone_name = "RightHand"
+can_attack = true
+display_name = "Wooden Sword"
+equipment_type = 8
+icon = ExtResource("2_icon")
+position_offset = Vector3(0, 0.1, 0.025)
+rotation_offset_degrees = Vector3(0, 90, 0)
+
+[node name="Blade" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+size = Vector3(0.05, 0.6, 0.02)
+material = SubResource("StandardMaterial3D_wood")
+
+[node name="Guard" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
+size = Vector3(0.2, 0.04, 0.04)
+material = SubResource("StandardMaterial3D_wood")
+
+[node name="Grip" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+size = Vector3(0.04, 0.2, 0.04)
+material = SubResource("StandardMaterial3D_wood")
+
+[node name="PlayerDetection" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetection"]
+shape = SubResource("SphereShape3D_pickup")
+
+[node name="Hitbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+shape = SubResource("BoxShape3D_hitbox")
+
+[node name="WeaponBody" type="AnimatableBody3D" parent="."]
+collision_layer = 512
+collision_mask = 1024
+sync_to_physics = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WeaponBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+shape = SubResource("BoxShape3D_hitbox")
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]

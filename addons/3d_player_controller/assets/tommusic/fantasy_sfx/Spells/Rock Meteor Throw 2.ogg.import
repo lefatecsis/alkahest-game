@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b30on2oajfb0r"
+path="res://.godot/imported/Rock Meteor Throw 2.ogg-9a654ac6401f08227bca476b06f9b7d5.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Spells/Rock Meteor Throw 2.ogg"
+dest_files=["res://.godot/imported/Rock Meteor Throw 2.ogg-9a654ac6401f08227bca476b06f9b7d5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

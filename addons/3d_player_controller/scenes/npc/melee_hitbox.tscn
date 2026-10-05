@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dy6tmyh7o8s0w"]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/melee_hitbox.gd" id="1_hitbox"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hitbox"]
+radius = 0.6
+
+[node name="MeleeHitbox" type="Area3D"]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_hitbox")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_hitbox")
+
+[node name="ActiveTimer" type="Timer" parent="."]
+wait_time = 0.35
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="ActiveTimer" to="." method="_on_active_timer_timeout"]

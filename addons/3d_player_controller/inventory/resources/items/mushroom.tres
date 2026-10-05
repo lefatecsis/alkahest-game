@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FoodItem" load_steps=3 format=3]
+
+[ext_resource type="Script" uid="uid://c858q5lvn4wip" path="res://addons/3d_player_controller/scripts/food_item.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://addons/3d_player_controller/inventory/assets/icons/mushroom.svg" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+id = &"mushroom"
+display_name = "Mushroom"
+description = "Probably safe to eat."
+icon = ExtResource("2_icon")
+category = 2
+max_stack = 99
+consumable = true
+mana = 10.0
+hunger = 5.0

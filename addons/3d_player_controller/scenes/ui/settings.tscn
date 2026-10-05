@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://2crtfw6co0ss"]
+
+[ext_resource type="Script" uid="uid://dkhddjjalxbjj" path="res://addons/3d_player_controller/scripts/settings.gd" id="1_sje0d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sje0d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p63df"]
+size = Vector2(193, 24)
+
+[node name="Settings" type="CanvasLayer" unique_id=1733087109 node_paths=PackedStringArray("focus_on_show")]
+script = ExtResource("1_sje0d")
+focus_on_show = NodePath("Panel/VBoxContainer/Audio")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=465508985]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_menu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1458528850]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer" unique_id=1830860479]
+custom_minimum_size = Vector2(200, 31)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Panel" unique_id=1497883081]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_sje0d")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Audio" type="Button" parent="Panel/VBoxContainer" unique_id=1359266295]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Audio"
+
+[node name="AudioTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Audio" unique_id=820870155]
+position = Vector2(100, 16)
+shape = SubResource("RectangleShape2D_p63df")
+
+[node name="Controls" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Controls"
+
+[node name="ControlsTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Controls"]
+position = Vector2(100, 16)
+shape = SubResource("RectangleShape2D_p63df")
+
+[node name="Video" type="Button" parent="Panel/VBoxContainer" unique_id=694630801]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Video"
+
+[node name="VideoTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Video" unique_id=890439010]
+position = Vector2(100, 16)
+shape = SubResource("RectangleShape2D_p63df")
+
+[node name="BACK" type="Button" parent="Panel/VBoxContainer" unique_id=967526644]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "BACK"
+
+[node name="BACKTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/BACK" unique_id=29710146]
+position = Vector2(100, 16)
+shape = SubResource("RectangleShape2D_p63df")
+
+[connection signal="pressed" from="Panel/VBoxContainer/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Audio/AudioTouchScreenButton" to="." method="_on_audio_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Controls/ControlsTouchScreenButton" to="." method="_on_controls_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Video" to="." method="_on_video_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Video/VideoTouchScreenButton" to="." method="_on_video_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/BACK" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/BACK/BACKTouchScreenButton" to="." method="_on_back_touch_screen_button_pressed"]

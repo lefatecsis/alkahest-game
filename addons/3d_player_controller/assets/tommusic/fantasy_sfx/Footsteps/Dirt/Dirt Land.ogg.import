@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://drmoqwnqrdv7g"
+path="res://.godot/imported/Dirt Land.ogg-c5d473ed5369bb5f6a7ef4dc5d31bcfc.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Footsteps/Dirt/Dirt Land.ogg"
+dest_files=["res://.godot/imported/Dirt Land.ogg-c5d473ed5369bb5f6a7ef4dc5d31bcfc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

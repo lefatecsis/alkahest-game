@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://bkmhucmanhtth"]
+
+[ext_resource type="AudioStream" uid="uid://k5sdvyjcisd5" path="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Attacks/Sword Attacks Hits and Blocks/Sword Attack 1.ogg" id="1_sfx"]
+[ext_resource type="AudioStream" uid="uid://cifwcjl1axeuo" path="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Attacks/Sword Attacks Hits and Blocks/Sword Attack 2.ogg" id="2_sfx"]
+[ext_resource type="AudioStream" uid="uid://8lqa8bvqflg2" path="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Attacks/Sword Attacks Hits and Blocks/Sword Attack 3.ogg" id="3_sfx"]
+
+[resource]
+streams_count = 3
+stream_0/stream = ExtResource("1_sfx")
+stream_1/stream = ExtResource("2_sfx")
+stream_2/stream = ExtResource("3_sfx")

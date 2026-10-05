@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ctoonfilter001"]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/toon_filter.gd" id="1_toon_gd"]
+[ext_resource type="Shader" path="res://addons/3d_player_controller/assets/shaders/toon_filter.gdshader" id="2_toon_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_toon"]
+render_priority = -128
+shader = ExtResource("2_toon_shader")
+
+[sub_resource type="QuadMesh" id="QuadMesh_toon"]
+material = SubResource("ShaderMaterial_toon")
+size = Vector2(2, 2)
+
+[node name="ToonFilter" type="MeshInstance3D"]
+visible = false
+cast_shadow = 0
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_toon")
+script = ExtResource("1_toon_gd")

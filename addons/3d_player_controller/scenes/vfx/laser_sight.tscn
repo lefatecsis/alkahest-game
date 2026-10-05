@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/laser_sight.gd" id="1_laser"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_laser"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.1, 0.1, 0.55)
+emission_enabled = true
+emission = Color(1, 0.1, 0.1, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_beam"]
+material = SubResource("StandardMaterial3D_laser")
+size = Vector3(0.006, 0.006, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_dot"]
+material = SubResource("StandardMaterial3D_laser")
+radius = 0.02
+height = 0.04
+
+[node name="LaserSight" type="Node3D"]
+top_level = true
+script = ExtResource("1_laser")
+
+[node name="Beam" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_beam")
+
+[node name="Dot" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+top_level = true
+cast_shadow = 0
+mesh = SubResource("SphereMesh_dot")

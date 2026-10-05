@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://c6lbyplritm3d"]
+
+[ext_resource type="Script" uid="uid://b0w2o0n0ctlfg" path="res://addons/3d_player_controller/scripts/lobby_player_item.gd" id="1_item"]
+[ext_resource type="Texture2D" uid="uid://bdr11murkrfrf" path="res://addons/3d_player_controller/assets/kenney_nl/Lobby Icons/lobby_host.png" id="4_host"]
+[ext_resource type="Texture2D" uid="uid://bclisbn2sbq11" path="res://addons/3d_player_controller/assets/kenney_nl/Lobby Icons/profile.png" id="6_profile"]
+[ext_resource type="Texture2D" uid="uid://pduwpw21t6rk" path="res://addons/3d_player_controller/assets/kenney_nl/Lobby Icons/achievements.png" id="7_achievements"]
+[ext_resource type="Texture2D" uid="uid://b3gy4vpuskw60" path="res://addons/3d_player_controller/assets/kenney_nl/Lobby Icons/promote.png" id="8_promote"]
+[ext_resource type="Texture2D" uid="uid://e8utnmf1i7py" path="res://addons/3d_player_controller/assets/kenney_nl/Lobby Icons/kick.png" id="9_kick"]
+[ext_resource type="Texture2D" uid="uid://blood6uy0p1cg" path="res://addons/3d_player_controller/assets/kenney_nl/Lobby Icons/more.png" id="10_options"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_item"]
+font_size = 13
+
+[node name="LobbyPlayerItem" type="PanelContainer" unique_id=1129111554]
+custom_minimum_size = Vector2(0, 36)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 36.0
+grow_horizontal = 2
+script = ExtResource("1_item")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=135468209]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1991108902]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Avatar" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=83836392]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6_profile")
+expand_mode = 1
+
+[node name="HostIcon" type="TextureRect" parent="MarginContainer/HBoxContainer/Avatar" unique_id=840990143]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_host")
+expand_mode = 1
+
+[node name="Username" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1953506421]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Player"
+label_settings = SubResource("LabelSettings_item")
+vertical_alignment = 1
+clip_text = true
+
+[node name="ActionsContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=153913808]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="ProfileButton" type="Button" parent="MarginContainer/HBoxContainer/ActionsContainer" unique_id=933119522]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "Steam Profile"
+icon = ExtResource("6_profile")
+icon_alignment = 1
+expand_icon = true
+
+[node name="AchievementsButton" type="Button" parent="MarginContainer/HBoxContainer/ActionsContainer" unique_id=312311578]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "Achievements"
+icon = ExtResource("7_achievements")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PromoteButton" type="Button" parent="MarginContainer/HBoxContainer/ActionsContainer" unique_id=572828078]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "Promote to Host"
+icon = ExtResource("8_promote")
+icon_alignment = 1
+expand_icon = true
+
+[node name="KickButton" type="Button" parent="MarginContainer/HBoxContainer/ActionsContainer" unique_id=545171720]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "Kick Player"
+icon = ExtResource("9_kick")
+icon_alignment = 1
+expand_icon = true
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1396405086]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+toggle_mode = true
+icon = ExtResource("10_options")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ActionsContainer/ProfileButton" to="." method="_on_profile_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ActionsContainer/AchievementsButton" to="." method="_on_achievements_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ActionsContainer/PromoteButton" to="." method="_on_promote_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ActionsContainer/KickButton" to="." method="_on_kick_pressed"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/OptionsButton" to="." method="_on_options_toggled"]

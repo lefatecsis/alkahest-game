@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=4 format=3]
+
+[ext_resource type="AudioStream" path="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Attacks/Bow Attacks Hits and Blocks/Bow Impact Hit 1.ogg" id="1_sfx"]
+[ext_resource type="AudioStream" path="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Attacks/Bow Attacks Hits and Blocks/Bow Impact Hit 2.ogg" id="2_sfx"]
+[ext_resource type="AudioStream" path="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Attacks/Bow Attacks Hits and Blocks/Bow Impact Hit 3.ogg" id="3_sfx"]
+
+[resource]
+streams_count = 3
+stream_0/stream = ExtResource("1_sfx")
+stream_1/stream = ExtResource("2_sfx")
+stream_2/stream = ExtResource("3_sfx")

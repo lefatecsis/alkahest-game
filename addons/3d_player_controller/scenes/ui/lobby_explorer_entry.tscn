@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://df7h3wqp5lxy1"]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/lobby_explorer_entry.gd" id="1_entry"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_name"]
+font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_count"]
+font_size = 14
+font_color = Color(0.75, 0.75, 0.75, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_join"]
+size = Vector2(84, 36)
+
+[node name="LobbyExplorerEntry" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 48)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 48.0
+grow_horizontal = 2
+script = ExtResource("1_entry")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="NameLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Player's World"
+label_settings = SubResource("LabelSettings_name")
+vertical_alignment = 1
+clip_text = true
+
+[node name="CountLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "1/4"
+label_settings = SubResource("LabelSettings_count")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="JoinButton" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(84, 36)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 16
+text = "Join"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="MarginContainer/HBoxContainer/JoinButton"]
+position = Vector2(42, 18)
+shape = SubResource("RectangleShape2D_join")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/JoinButton" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/JoinButton/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7checkpoint01"]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/checkpoint.gd" id="1_script"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_zone"]
+size = Vector3(4, 3, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_beacon"]
+transparency = 1
+albedo_color = Color(0.4, 0.9, 1, 0.35)
+emission_enabled = true
+emission = Color(0.4, 0.9, 1, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_beacon"]
+material = SubResource("StandardMaterial3D_beacon")
+top_radius = 0.12
+bottom_radius = 0.2
+height = 3.0
+
+[node name="Checkpoint" type="Area3D" node_paths=PackedStringArray("respawn_point")]
+script = ExtResource("1_script")
+respawn_point = NodePath("RespawnPoint")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_zone")
+
+[node name="Beacon" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("CylinderMesh_beacon")
+
+[node name="RespawnPoint" type="Marker3D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

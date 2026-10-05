@@ -1,0 +1,120 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7questscreen1"]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/quest_screen.gd" id="1_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_button"]
+size = Vector2(120, 30)
+
+[node name="QuestScreen" type="CanvasLayer" node_paths=PackedStringArray("focus_on_show")]
+script = ExtResource("1_script")
+focus_on_show = NodePath("Panel/VBoxContainer/Actions/Back")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -220.0
+offset_right = 320.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_menu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Quests"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Body" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="ListScroll" type="ScrollContainer" parent="Panel/VBoxContainer/Body"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="QuestList" type="VBoxContainer" parent="Panel/VBoxContainer/Body/ListScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="Empty" type="Label" parent="Panel/VBoxContainer/Body/ListScroll/QuestList"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "No quests yet."
+
+[node name="Details" type="VBoxContainer" parent="Panel/VBoxContainer/Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="DetailTitle" type="Label" parent="Panel/VBoxContainer/Body/Details"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quest title"
+
+[node name="DetailStatus" type="Label" parent="Panel/VBoxContainer/Body/Details"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Active"
+
+[node name="DetailDescription" type="Label" parent="Panel/VBoxContainer/Body/Details"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "What the quest is about."
+autowrap_mode = 3
+
+[node name="DetailObjectives" type="Label" parent="Panel/VBoxContainer/Body/Details"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "[ ] Objective"
+
+[node name="Actions" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 12
+
+[node name="Track" type="Button" parent="Panel/VBoxContainer/Actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+text = "Track"
+
+[node name="TrackTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Actions/Track"]
+position = Vector2(60, 15)
+shape = SubResource("RectangleShape2D_button")
+
+[node name="Back" type="Button" parent="Panel/VBoxContainer/Actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+text = "Back"
+
+[node name="BackTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Actions/Back"]
+position = Vector2(60, 15)
+shape = SubResource("RectangleShape2D_button")
+
+[connection signal="pressed" from="Panel/VBoxContainer/Actions/Track" to="." method="_on_track_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Actions/Track/TrackTouchScreenButton" to="." method="_on_track_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Actions/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Actions/Back/BackTouchScreenButton" to="." method="_on_back_touch_screen_button_pressed"]

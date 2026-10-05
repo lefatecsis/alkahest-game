@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cxh5ss028pfwu"
+path="res://.godot/imported/Wood Chain Run 3.ogg-fa8e09d109384338875bb8a7390e6132.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Footsteps/Wood/Wood Chain Run 3.ogg"
+dest_files=["res://.godot/imported/Wood Chain Run 3.ogg-fa8e09d109384338875bb8a7390e6132.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

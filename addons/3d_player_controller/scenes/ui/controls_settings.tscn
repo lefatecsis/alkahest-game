@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://0f7ibqfdtbhv"]
+
+[ext_resource type="Script" uid="uid://dkg2n4724qx1r" path="res://addons/3d_player_controller/scripts/controls_settings.gd" id="1_ctrls"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ctrls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p63df"]
+size = Vector2(193, 24)
+
+[node name="ControlsSettings" type="CanvasLayer" node_paths=PackedStringArray("focus_on_show")]
+script = ExtResource("1_ctrls")
+focus_on_show = NodePath("Panel/VBoxContainer/BACK")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_menu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(200, 31)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CONTROLS SETTINGS"
+label_settings = SubResource("LabelSettings_ctrls")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="OnScreenControls" type="OptionButton" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Auto"
+popup/item_0/id = 0
+popup/item_1/text = "Shown"
+popup/item_1/id = 1
+popup/item_2/text = "Hidden"
+popup/item_2/id = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/OnScreenControls"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "On-Screen"
+vertical_alignment = 1
+
+[node name="OnScreenControlsTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/OnScreenControls"]
+position = Vector2(100, 16)
+shape = SubResource("RectangleShape2D_p63df")
+
+[node name="ControlScheme" type="OptionButton" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ControlScheme"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Scheme"
+vertical_alignment = 1
+
+[node name="ControlSchemeTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/ControlScheme"]
+position = Vector2(100, 16)
+shape = SubResource("RectangleShape2D_p63df")
+
+[node name="BACK" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "BACK"
+
+[node name="BACKTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/BACK"]
+position = Vector2(100, 16)
+shape = SubResource("RectangleShape2D_p63df")
+
+[connection signal="item_selected" from="Panel/VBoxContainer/OnScreenControls" to="." method="_on_on_screen_controls_item_selected"]
+[connection signal="pressed" from="Panel/VBoxContainer/OnScreenControls/OnScreenControlsTouchScreenButton" to="." method="_on_on_screen_controls_touch_screen_button_pressed"]
+[connection signal="item_selected" from="Panel/VBoxContainer/ControlScheme" to="." method="_on_control_scheme_item_selected"]
+[connection signal="pressed" from="Panel/VBoxContainer/ControlScheme/ControlSchemeTouchScreenButton" to="." method="_on_control_scheme_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/BACK" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/BACK/BACKTouchScreenButton" to="." method="_on_back_touch_screen_button_pressed"]

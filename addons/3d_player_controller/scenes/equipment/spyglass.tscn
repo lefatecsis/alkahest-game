@@ -1,0 +1,129 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://addons/3d_player_controller/assets/nina_shaw/spyglass/spyglass.fbx" id="1_model"]
+[ext_resource type="Material" path="res://addons/3d_player_controller/assets/nina_shaw/spyglass/spyglass_material.tres" id="2_material"]
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/spyglass.gd" id="3_script"]
+
+[node name="Spyglass" type="Node3D"]
+script = ExtResource("3_script")
+
+[node name="Model" parent="." instance=ExtResource("1_model")]
+editor_description = "Nina Shaw's Stylized Spyglass, drawn out, scaled to 42 cm long. Modelled along its own Z with the objective lens at +Z, so it looks along the Spyglass node's +Z and the eyepiece is at the origin end."
+transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 0, 0, 0.29)
+
+[node name="Cylinder001" parent="Model" index="0"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Cylinder002" parent="Model" index="1"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Cylinder003" parent="Model" index="2"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Cylinder004" parent="Model" index="3"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Cylinder005" parent="Model" index="4"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Cylinder006" parent="Model" index="5"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Torus001" parent="Model" index="6"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Cylinder007" parent="Model" index="7"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Cylinder008" parent="Model" index="8"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Torus002" parent="Model" index="9"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Cylinder009" parent="Model" index="10"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Torus003" parent="Model" index="11"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Cylinder010" parent="Model" index="12"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Torus004" parent="Model" index="13"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Cylinder011" parent="Model" index="14"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Torus005" parent="Model" index="15"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Cylinder012" parent="Model" index="16"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Torus006" parent="Model" index="17"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Torus007" parent="Model" index="18"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Cylinder013" parent="Model" index="19"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Torus008" parent="Model" index="20"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Cylinder014" parent="Model" index="21"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Cylinder015" parent="Model" index="22"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Cylinder016" parent="Model" index="23"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Cylinder017" parent="Model" index="24"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Cylinder018" parent="Model" index="25"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Object001" parent="Model" index="26"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Line001" parent="Model" index="27"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Line004" parent="Model" index="28"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Line006" parent="Model" index="29"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Sphere001" parent="Model" index="30"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Sphere002" parent="Model" index="31"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Sphere003" parent="Model" index="32"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Sphere004" parent="Model" index="33"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Sphere005" parent="Model" index="34"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Sphere006" parent="Model" index="35"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Line007" parent="Model" index="36"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Line008" parent="Model" index="37"]
+surface_material_override/0 = ExtResource("2_material")
+
+[node name="Line009" parent="Model" index="38"]
+surface_material_override/0 = ExtResource("2_material")

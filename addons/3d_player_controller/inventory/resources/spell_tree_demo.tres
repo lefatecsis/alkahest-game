@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SpellTree" format=3 uid="uid://df4fcln7sn1fb"]
+
+[ext_resource type="Script" uid="uid://klxo6bc3ftnp" path="res://addons/3d_player_controller/scripts/ability.gd" id="ability"]
+[ext_resource type="Resource" uid="uid://cfpp5cv2gcskg" path="res://addons/3d_player_controller/resources/abilities/heal.tres" id="heal"]
+[ext_resource type="Script" uid="uid://ddadfo5yx3g8a" path="res://addons/3d_player_controller/inventory/scripts/spell_node.gd" id="node"]
+[ext_resource type="Resource" uid="uid://ywtv6gwnislu" path="res://addons/3d_player_controller/resources/abilities/stealth.tres" id="stealth"]
+[ext_resource type="Script" uid="uid://bmambxdir3q0q" path="res://addons/3d_player_controller/inventory/scripts/spell_tree.gd" id="tree"]
+
+[sub_resource type="Resource" id="n_stealth"]
+script = ExtResource("node")
+ability = ExtResource("stealth")
+
+[sub_resource type="Resource" id="Resource_nc5vo"]
+script = ExtResource("node")
+ability = ExtResource("heal")
+cost = 2
+requires = Array[ExtResource("ability")]([ExtResource("stealth")])
+column = 2
+
+[resource]
+script = ExtResource("tree")
+display_name = "Demo Spells"
+nodes = Array[ExtResource("node")]([SubResource("n_stealth"), SubResource("Resource_nc5vo")])

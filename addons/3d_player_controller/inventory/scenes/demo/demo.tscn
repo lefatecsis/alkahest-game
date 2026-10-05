@@ -1,0 +1,114 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://ggshwl4dtxwf" path="res://addons/3d_player_controller/inventory/scenes/demo/demo.gd" id="1_demo"]
+[ext_resource type="PackedScene" uid="uid://ct7n8imyllhbo" path="res://addons/3d_player_controller/scenes/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://addons/3d_player_controller/inventory/scenes/item_pickup.tscn" id="3_pickup"]
+[ext_resource type="Resource" path="res://addons/3d_player_controller/inventory/resources/items/apple.tres" id="4_apple"]
+[ext_resource type="Resource" path="res://addons/3d_player_controller/inventory/resources/items/mushroom.tres" id="5_mushroom"]
+[ext_resource type="Resource" path="res://addons/3d_player_controller/inventory/resources/items/iron_ore.tres" id="6_ore"]
+[ext_resource type="Resource" path="res://addons/3d_player_controller/inventory/resources/items/wood_log.tres" id="7_wood"]
+[ext_resource type="Resource" path="res://addons/3d_player_controller/inventory/resources/items/old_key.tres" id="8_key"]
+[ext_resource type="Resource" path="res://addons/3d_player_controller/inventory/resources/items/wooden_sword.tres" id="9_sword"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sky"]
+sky_top_color = Color(0.25, 0.45, 0.8, 1)
+sky_horizon_color = Color(0.75, 0.8, 0.9, 1)
+ground_bottom_color = Color(0.2, 0.2, 0.22, 1)
+ground_horizon_color = Color(0.75, 0.8, 0.9, 1)
+
+[sub_resource type="Sky" id="Sky_sky"]
+sky_material = SubResource("ProceduralSkyMaterial_sky")
+
+[sub_resource type="Environment" id="Environment_yard"]
+background_mode = 2
+sky = SubResource("Sky_sky")
+ambient_light_source = 3
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grass"]
+albedo_color = Color(0.3, 0.45, 0.25, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_stone"]
+albedo_color = Color(0.45, 0.45, 0.47, 1)
+roughness = 0.9
+
+[node name="InventoryDemo" type="Node3D"]
+script = ExtResource("1_demo")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yard")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.353553, 0.353553, 0, 0.707107, 0.707107, -0.5, -0.612372, 0.612372, 0, 10, 0)
+shadow_enabled = true
+
+[node name="Ground" type="CSGBox3D" parent="." groups=["GRASS"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(60, 1, 60)
+material = SubResource("StandardMaterial3D_grass")
+
+[node name="Pedestal" type="CSGBox3D" parent="." groups=["STONE"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -8)
+use_collision = true
+size = Vector3(6, 0.2, 2)
+material = SubResource("StandardMaterial3D_stone")
+
+[node name="Apples" parent="." instance=ExtResource("3_pickup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -4)
+item = ExtResource("4_apple")
+count = 3
+
+[node name="Mushroom" parent="." instance=ExtResource("3_pickup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -6)
+item = ExtResource("5_mushroom")
+
+[node name="IronOre" parent="." instance=ExtResource("3_pickup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -4)
+item = ExtResource("6_ore")
+count = 5
+
+[node name="WoodLogs" parent="." instance=ExtResource("3_pickup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -6)
+item = ExtResource("7_wood")
+count = 2
+
+[node name="OldKey" parent="." instance=ExtResource("3_pickup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.2, -8)
+item = ExtResource("8_key")
+
+[node name="WoodenSword" parent="." instance=ExtResource("3_pickup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.2, -8)
+item = ExtResource("9_sword")
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8622299, 0.50655997, 0, -0.50655997, 0.8622299, 0, 5, 2)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Hint" type="Label" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -340.0
+offset_top = 70.0
+offset_right = 340.0
+offset_bottom = 120.0
+grow_horizontal = 2
+text = "Walk up to a pickup and press Action to take it, then Pause and choose Inventory. Q and T (or the bumpers) switch tabs, Confirm lifts a stack and drops it on another slot, Use and Drop act on it, Back returns to Pause. The inventory is saved to user://inventory.json."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HintTimer" type="Timer" parent="HUD"]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="item_dropped" from="Player/Hud/Inventory" to="." method="_on_item_dropped"]
+[connection signal="item_used" from="Player/Hud/Inventory" to="." method="_on_item_used"]
+[connection signal="timeout" from="HUD/HintTimer" to="." method="_on_hint_timer_timeout"]
+
+[editable path="Player"]

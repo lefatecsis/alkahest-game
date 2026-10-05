@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c7boss00000001"]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/boss.gd" id="1_boss"]
+[ext_resource type="SceneReplicationConfig" path="res://addons/3d_player_controller/resources/replication/boss_replication.tres" id="2_sync"]
+
+[node name="Boss" type="Node"]
+script = ExtResource("1_boss")
+
+[node name="BossSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = ExtResource("2_sync")

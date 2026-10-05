@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b7nievqli2b5"]
+
+[ext_resource type="Script" uid="uid://c6kwqeh4esomo" path="res://addons/3d_player_controller/scripts/status_bars_3d.gd" id="1_bars"]
+[ext_resource type="PackedScene" uid="uid://dprg3ba60c1vw" path="res://addons/3d_player_controller/scenes/ui/progress_bar_3d.tscn" id="2_bar"]
+
+[node name="StatusBars3D" type="Node3D"]
+script = ExtResource("1_bars")
+
+[node name="HealthBar" parent="." instance=ExtResource("2_bar")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.06, 0)
+max_value = 100.0
+fill_color = Color(0.35, 0.85, 0.3, 1)
+
+[node name="EnergyBar" parent="." instance=ExtResource("2_bar")]
+transform = Transform3D(0.7, 0, 0, 0, 0.45, 0, 0, 0, 0.7, 0, -0.02, 0)
+max_value = 100.0
+fill_color = Color(0.25, 0.55, 1, 1)

@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://bra3khigbuanl"]
+
+[ext_resource type="Script" uid="uid://bbtrlr2iw4qic" path="res://addons/3d_player_controller/scripts/paraglider.gd" id="1_h0jve"]
+[ext_resource type="PackedScene" uid="uid://28w5vav5xicg" path="res://addons/3d_player_controller/assets/quaternius/paraglider/Paraglider.glb" id="1_pqews"]
+[ext_resource type="Shader" uid="uid://wdc3qqpcvc5a" path="res://addons/3d_player_controller/assets/shaders/cloth_ruffle.gdshader" id="2_cloth_shader"]
+[ext_resource type="AudioStream" uid="uid://b6p3jfykr2tns" path="res://addons/3d_player_controller/assets/freesound/72853__benboncan__parachute.wav" id="3_b4i8u"]
+[ext_resource type="AudioStream" uid="uid://cu12hhqie3sjn" path="res://addons/3d_player_controller/assets/freesound/570701__robinhood76__10136-flag-flicking-on-strong-wind-isolated.wav" id="4_i248c"]
+[ext_resource type="Shader" path="res://addons/3d_player_controller/assets/le_lu/wind/shaders/s_windpanner_1_p_ds.tres" id="5_windpanner"]
+[ext_resource type="Texture2D" path="res://addons/3d_player_controller/assets/le_lu/wind/textures/T_windstreaks551.png" id="6_windstreaks"]
+[ext_resource type="Texture2D" path="res://addons/3d_player_controller/assets/le_lu/wind/textures/T_VFX_Noise_075.png" id="7_vfxnoise"]
+[ext_resource type="ArrayMesh" path="res://addons/3d_player_controller/assets/le_lu/wind/objects/sm_windline_A2.obj" id="8_windline_mesh"]
+[ext_resource type="Shader" path="res://addons/3d_player_controller/assets/le_lu/wind/shaders/s_Disolver_advanced_D_p.tres" id="9_disolver"]
+[ext_resource type="Texture2D" path="res://addons/3d_player_controller/assets/le_lu/wind/textures/T_VFX_WindNoise1.png" id="10_windnoise"]
+[ext_resource type="Texture2D" path="res://addons/3d_player_controller/assets/le_lu/wind/textures/T_VFX_simple_1.png" id="11_simple1"]
+[ext_resource type="ArrayMesh" path="res://addons/3d_player_controller/assets/le_lu/wind/objects/sm_ring7.obj" id="12_ring_mesh"]
+[ext_resource type="Script" uid="uid://hnxnn4hxth0s" path="res://addons/3d_player_controller/scripts/contrail_3d.gd" id="13_contrail"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_blue_fabric"]
+render_priority = 0
+shader = ExtResource("2_cloth_shader")
+shader_parameter/albedo = Color(0.0155825, 0.0270463, 0.107003, 1)
+shader_parameter/roughness = 0.65
+shader_parameter/specular = 0.25
+shader_parameter/enable_vertex_motion = true
+shader_parameter/vertex_wave_speed = 6.0
+shader_parameter/vertex_wave_strength = 0.004
+shader_parameter/vertex_wave_frequency = 2.5
+shader_parameter/ripple_speed = 14.0
+shader_parameter/ripple_strength = 0.45
+shader_parameter/ripple_frequency = 18.0
+shader_parameter/flutter_speed = 28.0
+shader_parameter/flutter_frequency = 36.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_beige_fabric"]
+render_priority = 0
+shader = ExtResource("2_cloth_shader")
+shader_parameter/albedo = Color(0.374342, 0.231151, 0.135873, 1)
+shader_parameter/roughness = 0.65
+shader_parameter/specular = 0.25
+shader_parameter/enable_vertex_motion = true
+shader_parameter/vertex_wave_speed = 6.0
+shader_parameter/vertex_wave_strength = 0.004
+shader_parameter/vertex_wave_frequency = 2.5
+shader_parameter/ripple_speed = 14.0
+shader_parameter/ripple_strength = 0.45
+shader_parameter/ripple_frequency = 18.0
+shader_parameter/flutter_speed = 28.0
+shader_parameter/flutter_frequency = 36.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trail"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_qslhd"]
+
+[sub_resource type="Gradient" id="Gradient_trail"]
+colors = PackedColorArray(1, 1, 1, 0.2, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_trail"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_1t8u4"]
+
+[sub_resource type="Gradient" id="Gradient_airflow_color"]
+colors = PackedColorArray(0.65, 0.65, 0.65, 0, 1, 1, 1, 0.8)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_airflow_color"]
+gradient = SubResource("Gradient_airflow_color")
+
+[sub_resource type="Gradient" id="Gradient_airflow_mask"]
+offsets = PackedFloat32Array(0, 0.03, 0.97, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_airflow_mask"]
+gradient = SubResource("Gradient_airflow_mask")
+width = 512
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_airflow"]
+render_priority = 2
+shader = ExtResource("5_windpanner")
+shader_parameter/scroll_offset = 0.0
+shader_parameter/speed = Vector2(-1, 0)
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/BaseTexture = ExtResource("6_windstreaks")
+shader_parameter/wind_speed = Vector2(0, 0)
+shader_parameter/wind_scale = Vector2(1, 1)
+shader_parameter/wind_2_speed = Vector2(-0.4, -1)
+shader_parameter/wind_2_scale = Vector2(3, 1)
+shader_parameter/Wind_2_texture_subs = ExtResource("7_vfxnoise")
+shader_parameter/Multiply_Mask = SubResource("GradientTexture2D_airflow_mask")
+shader_parameter/Color1DGradient = SubResource("GradientTexture1D_airflow_color")
+
+[sub_resource type="Curve" id="Curve_airflow_alpha"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 2.22, 0, 0, Vector2(0.4, -0.25), 1.05, 1.05, 0, 0, Vector2(0.75, 0.4), 1.6, 1.6, 0, 0, Vector2(1, 0.95), 1.9, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_airflow_alpha"]
+texture_mode = 1
+curve = SubResource("Curve_airflow_alpha")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_airflow"]
+lifetime_randomness = 0.3
+emission_shape = 3
+emission_box_extents = Vector3(1.1, 0.2, 0.35)
+angle_min = -10.0
+angle_max = 10.0
+spread = 5.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.3
+scale_max = 0.55
+alpha_curve = SubResource("CurveTexture_airflow_alpha")
+hue_variation_min = -0.02
+hue_variation_max = 0.02
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_burst"]
+render_priority = 1
+shader = ExtResource("9_disolver")
+shader_parameter/Intensity = 5.0
+shader_parameter/Use_Fresnel = true
+shader_parameter/Scale = Vector2(1, 1)
+shader_parameter/Velocity = Vector2(0.5, 0.5)
+shader_parameter/Texture = ExtResource("10_windnoise")
+shader_parameter/Multiply_Texture = ExtResource("11_simple1")
+shader_parameter/Fresnel_Invert = true
+shader_parameter/fresnel = 2.5
+
+[sub_resource type="Curve" id="Curve_burst_alpha"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25, 1), 0.0, 0.0, 0, 0, Vector2(0.7, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_burst_alpha"]
+texture_mode = 1
+curve = SubResource("Curve_burst_alpha")
+
+[sub_resource type="Curve" id="Curve_burst_scale"]
+_data = [Vector2(0, 0.2), 0.0, 2.5, 0, 0, Vector2(1, 1.4), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_burst_scale"]
+curve = SubResource("Curve_burst_scale")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_burst"]
+particle_flag_rotate_y = true
+angle_min = -180.0
+angle_max = 180.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.8
+scale_max = 1.6
+scale_curve = SubResource("CurveTexture_burst_scale")
+alpha_curve = SubResource("CurveTexture_burst_alpha")
+
+[node name="Paraglider" type="Node3D" unique_id=986503034]
+script = ExtResource("1_h0jve")
+
+[node name="Paraglider2" parent="." unique_id=169648825 instance=ExtResource("1_pqews")]
+transform = Transform3D(0.9961947, -0.08715578, 0, 0.043577865, 0.49809757, -0.86602587, 0.07547908, 0.8627304, 0.5000002, 0.245, 0.165, -0.33)
+
+[node name="Paraglider" parent="Paraglider2" index="0" unique_id=1984467609]
+surface_material_override/0 = SubResource("ShaderMaterial_blue_fabric")
+surface_material_override/1 = SubResource("ShaderMaterial_beige_fabric")
+
+[node name="LeftWing" type="MeshInstance3D" parent="." unique_id=589915828]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.15033162, -0.019061707)
+material_override = SubResource("StandardMaterial3D_trail")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_qslhd")
+script = ExtResource("13_contrail")
+min_section_length = 0.06
+color_gradient = SubResource("Gradient_trail")
+width_curve = SubResource("Curve_trail")
+
+[node name="RightWing" type="MeshInstance3D" parent="." unique_id=88704883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5375535, 0.07844145, -0.1384865)
+material_override = SubResource("StandardMaterial3D_trail")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_1t8u4")
+script = ExtResource("13_contrail")
+min_section_length = 0.06
+color_gradient = SubResource("Gradient_trail")
+width_curve = SubResource("Curve_trail")
+
+[node name="AirflowStreaks" type="GPUParticles3D" parent="." unique_id=118944520]
+transform = Transform3D(0.07547905, 0.86273, 0.5, 0.04357791, 0.49809808, -0.8660261, -0.996195, 0.087155774, -5.016073e-08, 0.245, 0.35, -0.33)
+material_override = SubResource("ShaderMaterial_airflow")
+cast_shadow = 0
+emitting = false
+amount = 6
+fixed_fps = 60
+visibility_aabb = AABB(-2, -1, -2, 4, 2, 4)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_airflow")
+draw_pass_1 = ExtResource("8_windline_mesh")
+
+[node name="OpeningWindBurst" type="GPUParticles3D" parent="." unique_id=744598120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.245, 0.3, -0.33)
+material_override = SubResource("ShaderMaterial_burst")
+cast_shadow = 0
+emitting = false
+amount = 3
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.95
+fixed_fps = 60
+visibility_aabb = AABB(-2, -2, -2, 4, 4, 4)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_burst")
+draw_pass_1 = ExtResource("12_ring_mesh")
+
+[node name="Opening" type="AudioStreamPlayer3D" parent="." unique_id=404195623]
+stream = ExtResource("3_b4i8u")
+max_db = -6.0
+
+[node name="ClothRuffling" type="AudioStreamPlayer3D" parent="." unique_id=700950393]
+stream = ExtResource("4_i248c")
+max_db = -6.0
+
+[editable path="Paraglider2"]

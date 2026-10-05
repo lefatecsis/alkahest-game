@@ -1,0 +1,116 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0mxfe0dnkn0n"]
+
+[ext_resource type="Script" uid="uid://dojsmkv66lylk" path="res://addons/3d_player_controller/scripts/chat.gd" id="1_chat"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frame"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_history"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.25)
+
+[node name="Chat" type="Window" groups=["ChatWindow"]]
+title = "Chat"
+position = Vector2i(16, 564)
+size = Vector2i(420, 220)
+transparent = true
+unfocusable = true
+borderless = true
+min_size = Vector2i(200, 100)
+transparent_bg = true
+script = ExtResource("1_chat")
+
+[node name="Content" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Frame" type="PanelContainer" parent="Content"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_frame")
+
+[node name="VBox" type="VBoxContainer" parent="Content/Frame"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Content/Frame/VBox"]
+layout_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 13
+text = "Chat"
+
+[node name="History" type="RichTextLabel" parent="Content/Frame/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_history")
+bbcode_enabled = true
+scroll_following = true
+selection_enabled = false
+
+[node name="InputRow" type="HBoxContainer" parent="Content/Frame/VBox"]
+visible = false
+layout_mode = 2
+
+[node name="Input" type="LineEdit" parent="Content/Frame/VBox/InputRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Say something, or /help"
+max_length = 500
+context_menu_enabled = false
+
+[node name="Send" type="Button" parent="Content/Frame/VBox/InputRow"]
+layout_mode = 2
+focus_mode = 0
+text = "Send"
+
+[node name="Grip" type="ColorRect" parent="Content"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 12
+color = Color(1, 1, 1, 0.25)
+
+[node name="IdleTimer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+
+[node name="SaveTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="size_changed" from="." to="." method="_on_rect_changed"]
+[connection signal="gui_input" from="Content/Frame/VBox/Title" to="." method="_on_title_gui_input"]
+[connection signal="gui_input" from="Content/Frame/VBox/InputRow/Input" to="." method="_on_input_gui_input"]
+[connection signal="text_submitted" from="Content/Frame/VBox/InputRow/Input" to="." method="_on_input_text_submitted"]
+[connection signal="pressed" from="Content/Frame/VBox/InputRow/Send" to="." method="_on_send_pressed"]
+[connection signal="gui_input" from="Content/Grip" to="." method="_on_grip_gui_input"]
+[connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
+[connection signal="timeout" from="SaveTimer" to="." method="_on_save_timer_timeout"]

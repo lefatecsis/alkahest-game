@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://m3qt3uohgf2w"]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/ability_library.gd" id="1_library"]
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/ability_entry.gd" id="2_entry"]
+[ext_resource type="Resource" uid="uid://cfpp5cv2gcskg" path="res://addons/3d_player_controller/resources/abilities/heal.tres" id="3_heal"]
+[ext_resource type="Resource" uid="uid://ywtv6gwnislu" path="res://addons/3d_player_controller/resources/abilities/stealth.tres" id="4_stealth"]
+
+[node name="AbilityLibrary" type="Node3D"]
+editor_description = "Every ability the game has, loaded once and kept warm, so any Player, puppet or NPC casts any of them without a first-use hitch. Each child is one ability; instance this in the world, make its children editable, and add entries for the game's own spells."
+script = ExtResource("1_library")
+
+[node name="Heal" type="Node3D" parent="."]
+editor_description = "The addon's heal: a timed cast that restores health."
+script = ExtResource("2_entry")
+ability = ExtResource("3_heal")
+
+[node name="Stealth" type="Node3D" parent="."]
+editor_description = "The addon's stealth toggle."
+script = ExtResource("2_entry")
+ability = ExtResource("4_stealth")

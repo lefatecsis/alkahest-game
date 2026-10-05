@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://cm3w8qf7ypsak"]
+
+[ext_resource type="Script" uid="uid://d2w0rnfomovgf" path="res://addons/3d_player_controller/scripts/lobby_explorer.gd" id="1_explorer"]
+[ext_resource type="PackedScene" uid="uid://cs1ytkq7kgqdu" path="res://addons/3d_player_controller/scenes/ui/loading.tscn" id="2_loading"]
+[ext_resource type="PackedScene" uid="uid://df7h3wqp5lxy1" path="res://addons/3d_player_controller/scenes/ui/lobby_explorer_entry.tscn" id="3_entry"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font_size = 26
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_host"]
+size = Vector2(160, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_refresh"]
+size = Vector2(120, 48)
+
+[sub_resource type="LabelSettings" id="LabelSettings_status"]
+font_size = 14
+font_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_back"]
+size = Vector2(580, 52)
+
+[node name="LobbyExplorer" type="CanvasLayer"]
+script = ExtResource("1_explorer")
+lobby_explorer_entry_scene = ExtResource("3_entry")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -240.0
+offset_right = 310.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Multiplayer Lobbies"
+label_settings = SubResource("LabelSettings_title")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="TopBar" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Button_Host" type="Button" parent="Panel/VBoxContainer/TopBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 48)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 18
+text = "Host Game"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/TopBar/Button_Host"]
+position = Vector2(80, 24)
+shape = SubResource("RectangleShape2D_host")
+
+[node name="Button_Refresh" type="Button" parent="Panel/VBoxContainer/TopBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 48)
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 18
+text = "Refresh"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/TopBar/Button_Refresh"]
+position = Vector2(60, 24)
+shape = SubResource("RectangleShape2D_refresh")
+
+[node name="DistanceLabel" type="Label" parent="Panel/VBoxContainer/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Distance:"
+vertical_alignment = 1
+
+[node name="DistanceOption" type="OptionButton" parent="Panel/VBoxContainer/TopBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 48)
+layout_mode = 2
+selected = 1
+item_count = 4
+popup/item_0/text = "Close"
+popup/item_0/id = 0
+popup/item_1/text = "Default"
+popup/item_1/id = 1
+popup/item_2/text = "Far"
+popup/item_2/id = 2
+popup/item_3/text = "Worldwide"
+popup/item_3/id = 3
+
+[node name="StatusLabel" type="Label" parent="Panel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Searching for lobbies..."
+label_settings = SubResource("LabelSettings_status")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="LobbyList" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+
+[node name="Button_Back" type="Button" parent="Panel/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(580, 52)
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 22
+text = "BACK"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Button_Back"]
+position = Vector2(294, 26)
+shape = SubResource("RectangleShape2D_back")
+
+[node name="Label_Version" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -39.0
+offset_right = 70.0
+offset_bottom = -16.0
+grow_vertical = 0
+text = "v3.0.14"
+
+[node name="Label_Copyright" type="Label" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -182.0
+offset_top = -39.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "© Timothy Cope 2026"
+
+[node name="Loading" parent="." instance=ExtResource("2_loading")]
+visible = false
+
+[connection signal="pressed" from="Panel/VBoxContainer/TopBar/Button_Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/TopBar/Button_Host/TouchScreenButton" to="." method="_on_touch_host_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/TopBar/Button_Refresh" to="." method="refresh_lobbies"]
+[connection signal="pressed" from="Panel/VBoxContainer/TopBar/Button_Refresh/TouchScreenButton" to="." method="_on_touch_refresh_pressed"]
+[connection signal="item_selected" from="Panel/VBoxContainer/TopBar/DistanceOption" to="." method="_on_distance_filter_changed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button_Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button_Back/TouchScreenButton" to="." method="_on_touch_back_pressed"]

@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://c7k68q6a3mvdg"]
+
+[ext_resource type="Script" uid="uid://besywaw33wc4u" path="res://addons/3d_player_controller/scripts/lobby_manager.gd" id="1_lobbymgr"]
+[ext_resource type="PackedScene" uid="uid://c6lbyplritm3d" path="res://addons/3d_player_controller/scenes/ui/lobby_player_item.tscn" id="2_playeritem"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lobbymgr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_info"]
+font_size = 13
+font_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btn_half"]
+size = Vector2(100, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_back"]
+size = Vector2(210, 26)
+
+[node name="LobbyManager" type="CanvasLayer"]
+script = ExtResource("1_lobbymgr")
+lobby_player_item_scene = ExtResource("2_playeritem")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -145.0
+offset_right = 115.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = -10.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "LOBBY"
+label_settings = SubResource("LabelSettings_lobbymgr")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="InfoLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Host: Player (1/4)"
+label_settings = SubResource("LabelSettings_info")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 115)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="PlayerList" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Invite" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Invite"
+
+[node name="InviteTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/HBoxContainer/Invite"]
+position = Vector2(50, 14)
+shape = SubResource("RectangleShape2D_btn_half")
+
+[node name="Leave" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Leave"
+
+[node name="LeaveTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/HBoxContainer/Leave"]
+position = Vector2(50, 14)
+shape = SubResource("RectangleShape2D_btn_half")
+
+[node name="BACK" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+text = "BACK"
+
+[node name="BACKTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/BACK"]
+position = Vector2(105, 13)
+shape = SubResource("RectangleShape2D_back")
+
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Invite" to="." method="_on_invite_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Invite/InviteTouchScreenButton" to="." method="_on_invite_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Leave" to="." method="_on_leave_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Leave/LeaveTouchScreenButton" to="." method="_on_leave_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/BACK" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/BACK/BACKTouchScreenButton" to="." method="_on_back_touch_screen_button_pressed"]

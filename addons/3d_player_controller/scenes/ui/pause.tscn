@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://dgslo5b1yxrd0"]
+
+[ext_resource type="Script" uid="uid://xsm265x8qs6f" path="res://addons/3d_player_controller/scripts/pause.gd" id="1_7mqg8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7mqg8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_senyo"]
+size = Vector2(72, 30)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+
+[node name="Pause" type="CanvasLayer" unique_id=498429169 node_paths=PackedStringArray("focus_on_show")]
+script = ExtResource("1_7mqg8")
+focus_on_show = NodePath("Panel/VBoxContainer/Resume")
+pauses_world = true
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1926347412]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_menu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=686828886]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer" unique_id=1366554488]
+custom_minimum_size = Vector2(200, 31)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Panel" unique_id=31065253]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pause"
+label_settings = SubResource("LabelSettings_7mqg8")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Lobby" type="Button" parent="Panel/VBoxContainer" unique_id=540782323]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "Lobby
+"
+
+[node name="LobbyTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Lobby" unique_id=163883894]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_senyo")
+
+[node name="Resume" type="Button" parent="Panel/VBoxContainer" unique_id=614997510]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Resume"
+
+[node name="ResumeTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Resume" unique_id=547191703]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_senyo")
+
+[node name="Inventory" type="Button" parent="Panel/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Inventory"
+
+[node name="InventoryTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Inventory"]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_senyo")
+
+[node name="Spells" type="Button" parent="Panel/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Spells"
+
+[node name="SpellsTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Spells"]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_senyo")
+
+[node name="Quests" type="Button" parent="Panel/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quests"
+
+[node name="QuestsTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Quests"]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_senyo")
+
+[node name="Extra" type="Button" parent="Panel/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Journal"
+
+[node name="ExtraTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Extra"]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_senyo")
+
+[node name="Save" type="Button" parent="Panel/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Save Game"
+
+[node name="SaveTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Save"]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_senyo")
+
+[node name="Load" type="Button" parent="Panel/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Load Game"
+
+[node name="LoadTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Load"]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_senyo")
+
+[node name="Restart" type="Button" parent="Panel/VBoxContainer" unique_id=465491467]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Restart"
+
+[node name="RestartTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Restart" unique_id=1591636867]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_senyo")
+
+[node name="Settings" type="Button" parent="Panel/VBoxContainer" unique_id=1996358811]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Settings"
+
+[node name="SettingsTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Settings" unique_id=1531214218]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_senyo")
+
+[node name="Unstuck" type="Button" parent="Panel/VBoxContainer" unique_id=1972774432]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Unstuck"
+
+[node name="UnstuckTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Unstuck" unique_id=769719927]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_senyo")
+
+[node name="Quit" type="Button" parent="Panel/VBoxContainer" unique_id=789258090]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quit"
+
+[node name="QuitTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Quit" unique_id=1888097830]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_senyo")
+
+[connection signal="pressed" from="Panel/VBoxContainer/Lobby" to="." method="_on_lobby_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Lobby/LobbyTouchScreenButton" to="." method="_on_lobby_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Resume/ResumeTouchScreenButton" to="." method="_on_resume_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Inventory" to="." method="_on_inventory_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Inventory/InventoryTouchScreenButton" to="." method="_on_inventory_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Spells" to="." method="_on_spells_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Spells/SpellsTouchScreenButton" to="." method="_on_spells_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Quests" to="." method="_on_quests_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Quests/QuestsTouchScreenButton" to="." method="_on_quests_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Extra" to="." method="_on_extra_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Extra/ExtraTouchScreenButton" to="." method="_on_extra_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Save/SaveTouchScreenButton" to="." method="_on_save_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Load/LoadTouchScreenButton" to="." method="_on_load_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Restart/RestartTouchScreenButton" to="." method="_on_restart_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Settings/SettingsTouchScreenButton" to="." method="_on_settings_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Unstuck" to="." method="_on_unstuck_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Unstuck/UnstuckTouchScreenButton" to="." method="_on_unstuck_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Quit/QuitTouchScreenButton" to="." method="_on_quit_touch_screen_button_pressed"]

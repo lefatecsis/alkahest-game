@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://5n75g14s56d"]
+
+[ext_resource type="PackedScene" uid="uid://carag3s40qlej" path="res://addons/controls/controls.tscn" id="1_base"]
+[ext_resource type="Script" uid="uid://bqcxly0s61y60" path="res://addons/3d_player_controller/scripts/player_controls.gd" id="2_script"]
+
+[node name="PlayerControls" unique_id=519563603 instance=ExtResource("1_base")]
+script = ExtResource("2_script")
+action_button_0 = &"sprint"
+action_button_1 = &"action"
+action_button_2 = &"attack"
+action_button_3 = &"jump"
+action_button_9 = &"ability"
+action_button_10 = &"throw"
+action_axis_4_plus = &"focus"
+action_axis_5_plus = &"shoot"
+action_button_7 = &"crouch"
+action_button_8 = &"scope"
+action_move_up = &"move_up"
+action_move_down = &"move_down"
+action_move_left = &"move_left"
+action_move_right = &"move_right"
+action_look_up = &"look_up"
+action_look_down = &"look_down"
+action_look_left = &"look_left"
+action_look_right = &"look_right"
+action_button_11 = &"seeker"
+action_button_12 = &"whistle"
+action_button_13 = &"last_weapon"
+action_button_14 = &"next_weapon"
+action_button_4 = &"perspective"
+action_button_6 = &"start"
+action_button_15 = &"share"
+prompt_action = &"action"
+
+[node name="Label" parent="BottomLeft/JoypadButton11" parent_id_path=PackedInt32Array(216605611) index="0" unique_id=724217657]
+text = "Seeker"
+
+[node name="Label" parent="BottomLeft/JoypadButton12" parent_id_path=PackedInt32Array(1173119804) index="0" unique_id=1859234343]
+text = "Whistle"
+
+[node name="Label" parent="BottomLeft/JoypadButton13" parent_id_path=PackedInt32Array(1212613253) index="0" unique_id=222978466]
+text = "Last
+Weapon"
+
+[node name="Label" parent="BottomLeft/JoypadButton14" parent_id_path=PackedInt32Array(506483572) index="0" unique_id=1667560914]
+text = "Next
+Weapon"
+
+[node name="Label" parent="BottomLeft/JoypadButton7" parent_id_path=PackedInt32Array(417297691) index="0" unique_id=433012390]
+text = "Crouch"
+
+[node name="Label" parent="BottomLeft/LeftJoystick" parent_id_path=PackedInt32Array(261237229) index="0" unique_id=1413698108]
+text = "Move"
+
+[node name="Label" parent="BottomLeft/KeyW" parent_id_path=PackedInt32Array(227719598) index="0" unique_id=1116212167]
+text = "Move"
+
+[node name="Label" parent="BottomLeft/KeyA" parent_id_path=PackedInt32Array(1852721401) index="0" unique_id=1788475514]
+text = "Move"
+
+[node name="Label" parent="BottomLeft/KeyS" parent_id_path=PackedInt32Array(697488247) index="0" unique_id=1378395330]
+text = "Move"
+
+[node name="Label" parent="BottomLeft/KeyD" parent_id_path=PackedInt32Array(992157285) index="0" unique_id=864247759]
+text = "Move"
+
+[node name="Label" parent="BottomLeft/KeyI" parent_id_path=PackedInt32Array(392059391) index="0" unique_id=1517276430]
+text = "Seeker"
+
+[node name="Label" parent="BottomLeft/KeyJ" parent_id_path=PackedInt32Array(2142722128) index="0" unique_id=1359570107]
+text = "Last
+Weapon"
+
+[node name="Label" parent="BottomLeft/KeyK" parent_id_path=PackedInt32Array(711519297) index="0" unique_id=1993763106]
+text = "Whistle"
+
+[node name="Label" parent="BottomLeft/KeyL" parent_id_path=PackedInt32Array(215858380) index="0" unique_id=1224760024]
+text = "Next
+Weapon"
+
+[node name="Label" parent="BottomRight/JoypadButton0" parent_id_path=PackedInt32Array(552765389) index="0" unique_id=926264414]
+text = "Sprint"
+
+[node name="Label" parent="BottomRight/JoypadButton1" parent_id_path=PackedInt32Array(872941844) index="0" unique_id=2121727848]
+text = "Action"
+
+[node name="Label" parent="BottomRight/JoypadButton2" parent_id_path=PackedInt32Array(1212512332) index="0" unique_id=924171933]
+text = "Attack"
+
+[node name="Label" parent="BottomRight/JoypadButton3" parent_id_path=PackedInt32Array(798617834) index="0" unique_id=1496174418]
+text = "Jump"
+
+[node name="Label" parent="BottomRight/JoypadButton8" parent_id_path=PackedInt32Array(1690559978) index="0" unique_id=1914557801]
+text = "Scope"
+
+[node name="Label" parent="BottomRight/RightJoystick" parent_id_path=PackedInt32Array(310679774) index="0" unique_id=469915080]
+text = "Camera"
+
+[node name="Label" parent="BottomRight/KeyUp" parent_id_path=PackedInt32Array(194875519) index="0" unique_id=1644234347]
+text = "Camera"
+
+[node name="Label" parent="BottomRight/KeyLeft" parent_id_path=PackedInt32Array(1057431227) index="0" unique_id=156485861]
+text = "Camera"
+
+[node name="Label" parent="BottomRight/KeyDown" parent_id_path=PackedInt32Array(10944827) index="0" unique_id=842180098]
+text = "Camera"
+
+[node name="Label" parent="BottomRight/KeyRight" parent_id_path=PackedInt32Array(1891117815) index="0" unique_id=1670398670]
+text = "Camera"
+
+[node name="Label" parent="TopLeft/JoypadButton9" parent_id_path=PackedInt32Array(70522918) index="0" unique_id=1394231043]
+text = "Ability"
+
+[node name="Label" parent="TopLeft/JoypadAxis4Plus" parent_id_path=PackedInt32Array(1424345727) index="0" unique_id=88848650]
+text = "Focus"
+
+[node name="Label" parent="TopCenter/JoypadButton4" parent_id_path=PackedInt32Array(1885477471) index="0" unique_id=576494979]
+text = "Perspective"
+
+[node name="Label" parent="TopCenter/JoypadButton6" parent_id_path=PackedInt32Array(231754768) index="0" unique_id=1741042731]
+text = "Pause Menu"
+
+[node name="Label" parent="TopRight/JoypadButton10" parent_id_path=PackedInt32Array(1763078092) index="0" unique_id=481911405]
+text = "Throw"
+
+[node name="Label" parent="TopRight/JoypadAxis5Plus" parent_id_path=PackedInt32Array(1548286525) index="0" unique_id=806977869]
+text = "Shoot"

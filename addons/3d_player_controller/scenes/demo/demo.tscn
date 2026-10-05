@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://b8qyk1m2p3d5x"]
+
+[ext_resource type="PackedScene" uid="uid://b5beu1u526phm" path="res://addons/3d_player_controller/scenes/demo/demo_arena.tscn" id="1_arena"]
+[ext_resource type="Script" uid="uid://drpnelwdn38te" path="res://addons/3d_player_controller/scenes/demo/demo.gd" id="2_demogd"]
+[ext_resource type="PackedScene" uid="uid://ct7n8imyllhbo" path="res://addons/3d_player_controller/scenes/player.tscn" id="3_playerscene"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.08, 0.1, 0.12, 0.85)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 6
+
+[node name="PlayerControllerDemo" instance=ExtResource("1_arena")]
+script = ExtResource("2_demogd")
+
+[node name="Player" parent="." unique_id=1402932886 instance=ExtResource("3_playerscene")]
+enable_paraglider = true
+enable_spyglass = true
+enable_stamina = true
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1179813114]
+
+[node name="TeleportPanel" type="PanelContainer" parent="HUD" unique_id=596063506]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -75.0
+offset_right = 244.0
+offset_bottom = 75.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBox" type="VBoxContainer" parent="HUD/TeleportPanel" unique_id=1244335660]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TeleportTitle" type="Label" parent="HUD/TeleportPanel/VBox" unique_id=1458642091]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Teleport Locations"
+
+[node name="Grid" type="GridContainer" parent="HUD/TeleportPanel/VBox" unique_id=1964129835]
+layout_mode = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 2
+
+[node name="TeleportCourtyard" type="Button" parent="HUD/TeleportPanel/VBox/Grid" unique_id=1339895579]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "Courtyard"
+
+[node name="TeleportTower" type="Button" parent="HUD/TeleportPanel/VBox/Grid" unique_id=1651572110]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "Glider Tower"
+
+[node name="TeleportPool" type="Button" parent="HUD/TeleportPanel/VBox/Grid" unique_id=520911479]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "Water Pool"
+
+[node name="TeleportWall" type="Button" parent="HUD/TeleportPanel/VBox/Grid" unique_id=1339579353]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "Climbing Wall"
+
+[node name="DebugHint" type="Label" parent="HUD/TeleportPanel/VBox" unique_id=1951632907]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.7, 0.75, 1)
+theme_override_font_sizes/font_size = 11
+text = "Press [F3] for full Debug HUD"
+
+[connection signal="state_changed" from="Player" to="." method="_on_player_state_changed"]
+[connection signal="pressed" from="HUD/TeleportPanel/VBox/Grid/TeleportCourtyard" to="." method="_on_teleport_pressed" binds= [NodePath("Markers/Courtyard")]]
+[connection signal="pressed" from="HUD/TeleportPanel/VBox/Grid/TeleportTower" to="." method="_on_teleport_pressed" binds= [NodePath("Markers/Tower")]]
+[connection signal="pressed" from="HUD/TeleportPanel/VBox/Grid/TeleportPool" to="." method="_on_teleport_pressed" binds= [NodePath("Markers/Pool")]]
+[connection signal="pressed" from="HUD/TeleportPanel/VBox/Grid/TeleportWall" to="." method="_on_teleport_pressed" binds= [NodePath("Markers/ClimbingWall")]]

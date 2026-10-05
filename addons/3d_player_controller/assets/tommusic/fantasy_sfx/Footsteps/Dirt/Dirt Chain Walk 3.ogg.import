@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://3ck68kj5aosj"
+path="res://.godot/imported/Dirt Chain Walk 3.ogg-ae07bb6c0f5d9b5b6445f829b199eae3.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Footsteps/Dirt/Dirt Chain Walk 3.ogg"
+dest_files=["res://.godot/imported/Dirt Chain Walk 3.ogg-ae07bb6c0f5d9b5b6445f829b199eae3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

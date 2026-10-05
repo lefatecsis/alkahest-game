@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/inventory/scripts/item.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://addons/3d_player_controller/assets/game_icons/gladius.svg" id="2_icon"]
+[ext_resource type="PackedScene" path="res://addons/3d_player_controller/inventory/scenes/demo/wooden_sword.tscn" id="3_scene"]
+[resource]
+script = ExtResource("1_script")
+id = &"wooden_sword"
+display_name = "Wooden Sword"
+description = "A practice blade. Picking it up puts it in your hand."
+icon = ExtResource("2_icon")
+category = 0
+max_stack = 1
+consumable = false
+equipment_scene = ExtResource("3_scene")

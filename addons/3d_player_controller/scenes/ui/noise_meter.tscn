@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/noise_meter.gd" id="1_noise_meter"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_badge"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="NoiseMeter" type="PanelContainer"]
+custom_minimum_size = Vector2(36, 36)
+offset_right = 36.0
+offset_bottom = 36.0
+tooltip_text = "How much noise you are making. A flat line is silence; the louder you are the further it swings, and the further it carries."
+theme_override_styles/panel = SubResource("StyleBoxFlat_badge")
+
+[node name="Line" type="Control" parent="."]
+layout_mode = 2
+script = ExtResource("1_noise_meter")

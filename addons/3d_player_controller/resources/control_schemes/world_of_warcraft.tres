@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ControlScheme" format=3 uid="uid://co0bc7wx3xnmt"]
+
+[ext_resource type="Script" uid="uid://dmmvggcux64cv" path="res://addons/3d_player_controller/scripts/control_scheme.gd" id="1_control_scheme"]
+
+[resource]
+script = ExtResource("1_control_scheme")
+scheme_name = "WoW"
+action_button_0 = &"jump"
+action_button_1 = &"action"
+action_button_2 = &"attack"
+action_button_3 = &"ability"
+extra_slots = Dictionary[String, StringName]({
+"axis_4_plus": &"focus",
+"button_9": &"sprint"
+})
+slot_labels = Dictionary[String, String]({
+"axis_4_plus": "Target",
+"button_0": "Jump",
+"button_1": "Use",
+"button_2": "Attack",
+"button_3": "Cast",
+"button_9": "Run"
+})
+locks_on = false
+frees_cursor = true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bo2dfnmgwsa46"
+path="res://.godot/imported/Rock Wall 2.ogg-fb619abc574214ce6208dde459be3cf4.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Spells/Rock Wall 2.ogg"
+dest_files=["res://.godot/imported/Rock Wall 2.ogg-fb619abc574214ce6208dde459be3cf4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

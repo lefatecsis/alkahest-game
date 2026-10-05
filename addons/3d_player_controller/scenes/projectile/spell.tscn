@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c7spellbolt001"]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/spell_projectile.gd" id="1_bolt"]
+
+[node name="SpellProjectile" type="Node3D"]
+top_level = true
+script = ExtResource("1_bolt")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+bus = &"SFX"

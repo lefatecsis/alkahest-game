@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ControlScheme" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/control_scheme.gd" id="1_control_scheme"]
+
+[resource]
+script = ExtResource("1_control_scheme")
+scheme_name = "Resident Evil"
+action_button_0 = &"action"
+action_button_1 = &""
+action_button_2 = &"sprint"
+action_button_3 = &"seeker"
+extra_slots = {
+"axis_4_plus": &"focus",
+"axis_5_plus": &"shoot",
+"button_9": &"ability"
+}
+slot_labels = {
+"axis_4_plus": "Aim",
+"axis_5_plus": "Shoot",
+"button_0": "Action",
+"button_2": "Run",
+"button_3": "Inventory"
+}
+locks_on = false

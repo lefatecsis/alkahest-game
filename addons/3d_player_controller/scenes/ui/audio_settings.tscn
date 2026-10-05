@@ -1,0 +1,502 @@
+[gd_scene format=3 uid="uid://caww8bymbfsli"]
+
+[ext_resource type="Script" uid="uid://2ci8veitkhtr" path="res://addons/3d_player_controller/scripts/audio_settings.gd" id="1_kygss"]
+[ext_resource type="Texture2D" uid="uid://50q2mf64emfu" path="res://addons/3d_player_controller/assets/kenney_nl/2D assets/Game Icons/Vector/vector_whiteIcons.svg" id="1_prya7"]
+[ext_resource type="Script" uid="uid://fm5bguyy27kv" path="res://addons/3d_player_controller/scripts/voice_level_slider.gd" id="mic_slider"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kygss"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kygss"]
+atlas = ExtResource("1_prya7")
+region = Rect2(305, 52, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xw05"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xw05"]
+atlas = ExtResource("1_prya7")
+region = Rect2(355, 52, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nh3kh"]
+size = Vector2(193, 24)
+
+[node name="AudioSettings" type="CanvasLayer" unique_id=1733087109 node_paths=PackedStringArray("focus_on_show")]
+script = ExtResource("1_kygss")
+focus_on_show = NodePath("Panel/VBoxContainer/BACK")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=465508985]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_menu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1458528850]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer" unique_id=772409370]
+custom_minimum_size = Vector2(200, 31)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Panel" unique_id=220995047]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -11.5
+offset_right = 37.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Audio SETTINGS"
+label_settings = SubResource("LabelSettings_kygss")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Dialog" type="Label" parent="Panel/VBoxContainer" unique_id=1396395905]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+text = "Dialog Volume"
+horizontal_alignment = 1
+
+[node name="VolumeMinus" type="TextureButton" parent="Panel/VBoxContainer/Dialog" unique_id=268306383]
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_right = 32.0
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_kygss")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Dialog/VolumeMinus" unique_id=1839748454]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_5xw05")
+
+[node name="VolumeSlider" type="HSlider" parent="Panel/VBoxContainer/Dialog" unique_id=525388891]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -22.0
+offset_right = 50.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 50.0
+
+[node name="VolumePlus" type="TextureButton" parent="Panel/VBoxContainer/Dialog" unique_id=839924520]
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_5xw05")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Dialog/VolumePlus" unique_id=1304194907]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_5xw05")
+
+[node name="Menu" type="Label" parent="Panel/VBoxContainer" unique_id=1941622867]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+text = "Menu Volume"
+horizontal_alignment = 1
+
+[node name="VolumeMinus" type="TextureButton" parent="Panel/VBoxContainer/Menu" unique_id=1190451296]
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_right = 32.0
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_kygss")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Menu/VolumeMinus" unique_id=678833085]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_5xw05")
+
+[node name="VolumeSlider" type="HSlider" parent="Panel/VBoxContainer/Menu" unique_id=1629858265]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -22.0
+offset_right = 50.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 50.0
+
+[node name="VolumePlus" type="TextureButton" parent="Panel/VBoxContainer/Menu" unique_id=1384559231]
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_5xw05")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Menu/VolumePlus" unique_id=771982219]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_5xw05")
+
+[node name="Music" type="Label" parent="Panel/VBoxContainer" unique_id=1414596627]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="VolumeMinus" type="TextureButton" parent="Panel/VBoxContainer/Music" unique_id=716724057]
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_right = 32.0
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_kygss")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Music/VolumeMinus" unique_id=603068800]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_5xw05")
+
+[node name="VolumeSlider" type="HSlider" parent="Panel/VBoxContainer/Music" unique_id=1274947193]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -22.0
+offset_right = 50.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 50.0
+
+[node name="VolumePlus" type="TextureButton" parent="Panel/VBoxContainer/Music" unique_id=1720319206]
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_5xw05")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Music/VolumePlus" unique_id=1897866409]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_5xw05")
+
+[node name="SFX" type="Label" parent="Panel/VBoxContainer" unique_id=448433743]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+text = "Sound Effect Volume"
+horizontal_alignment = 1
+
+[node name="VolumeMinus" type="TextureButton" parent="Panel/VBoxContainer/SFX" unique_id=222633158]
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_right = 32.0
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_kygss")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/SFX/VolumeMinus" unique_id=1201084994]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_5xw05")
+
+[node name="VolumeSlider" type="HSlider" parent="Panel/VBoxContainer/SFX" unique_id=956140601]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -22.0
+offset_right = 50.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 50.0
+
+[node name="VolumePlus" type="TextureButton" parent="Panel/VBoxContainer/SFX" unique_id=1717152363]
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_5xw05")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/SFX/VolumePlus" unique_id=1767464047]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_5xw05")
+
+[node name="VoiceSettings" type="VBoxContainer" parent="Panel/VBoxContainer" unique_id=795294055]
+layout_mode = 2
+
+[node name="VoiceActivation" type="CheckButton" parent="Panel/VBoxContainer/VoiceSettings" unique_id=1056074037]
+layout_mode = 2
+tooltip_text = "Transmit whenever you speak, instead of holding the push-to-talk key. The only way to use voice chat on a controller, since every button is already bound."
+text = "Voice activation"
+
+[node name="Microphone" type="Label" parent="Panel/VBoxContainer/VoiceSettings" unique_id=1629634033]
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+text = "Microphone"
+horizontal_alignment = 1
+
+[node name="Sensitivity" type="Range" parent="Panel/VBoxContainer/VoiceSettings/Microphone" unique_id=177375706]
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 2
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+oversampling_with_scale = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+custom_minimum_size = Vector2(0, 39)
+custom_maximum_size = Vector2(-1, -1)
+propagate_maximum_size = false
+clip_contents = false
+layout_mode = 1
+anchors_preset = 12
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = -36.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+rotation = 0.0
+scale = Vector2(1, 1)
+pivot_offset = Vector2(0, 0)
+pivot_offset_ratio = Vector2(0, 0)
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 1.0
+offset_transform_enabled = false
+offset_transform_position = Vector2(0, 0)
+offset_transform_position_ratio = Vector2(0, 0)
+offset_transform_scale = Vector2(1, 1)
+offset_transform_rotation = 0.0
+offset_transform_pivot = Vector2(0, 0)
+offset_transform_pivot_ratio = Vector2(0.5, 0.5)
+offset_transform_visual_only = true
+localize_numeral_system = true
+layout_direction = 0
+translation_context = &""
+tooltip_text = "Hold the talk key and speak. Drag the handle so an ordinary voice fills the bar to the mark."
+tooltip_auto_translate_mode = 0
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 2
+focus_behavior_recursive = 0
+mouse_filter = 0
+mouse_behavior_recursive = 0
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+accessibility_name = ""
+accessibility_description = ""
+accessibility_live = 0
+accessibility_controls_nodes = Array[NodePath]([])
+accessibility_described_by_nodes = Array[NodePath]([])
+accessibility_labeled_by_nodes = Array[NodePath]([])
+accessibility_flow_to_nodes = Array[NodePath]([])
+theme = null
+theme_type_variation = &""
+min_value = 10.0
+max_value = 150.0
+step = 1.0
+page = 0.0
+value = 100.0
+exp_edit = false
+rounded = false
+allow_greater = false
+allow_lesser = false
+script = ExtResource("mic_slider")
+normal_value = 94.0
+
+[node name="Voice" type="Label" parent="Panel/VBoxContainer/VoiceSettings" unique_id=1427057411]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+text = "Voice Chat Volume"
+horizontal_alignment = 1
+
+[node name="VolumeMinus" type="TextureButton" parent="Panel/VBoxContainer/VoiceSettings/Voice" unique_id=345948713]
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_right = 32.0
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_kygss")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/VoiceSettings/Voice/VolumeMinus" unique_id=1062903318]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_5xw05")
+
+[node name="VolumeSlider" type="HSlider" parent="Panel/VBoxContainer/VoiceSettings/Voice" unique_id=1285529010]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -22.0
+offset_right = 50.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 50.0
+
+[node name="VolumePlus" type="TextureButton" parent="Panel/VBoxContainer/VoiceSettings/Voice" unique_id=981801429]
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_5xw05")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/VoiceSettings/Voice/VolumePlus" unique_id=951837559]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_5xw05")
+
+[node name="MuteVoice" type="CheckButton" parent="Panel/VBoxContainer/VoiceSettings" unique_id=495691893]
+layout_mode = 2
+text = "Mute voice chat"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/VoiceSettings/MuteVoice" unique_id=1642465768]
+position = Vector2(100, 16)
+shape = SubResource("RectangleShape2D_nh3kh")
+
+[node name="BACK" type="Button" parent="Panel/VBoxContainer" unique_id=1502753778]
+layout_mode = 2
+size_flags_vertical = 10
+text = "BACK"
+
+[node name="BACKTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/BACK" unique_id=580782865]
+position = Vector2(100, 16)
+shape = SubResource("RectangleShape2D_nh3kh")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Dialog/VolumeMinus" to="." method="_on_volume_minus_pressed" binds= [NodePath("Panel/VBoxContainer/Dialog/VolumeSlider")]]
+[connection signal="pressed" from="Panel/VBoxContainer/Dialog/VolumeMinus/TouchScreenButton" to="." method="_on_dialog_volume_minus_touch_screen_button_pressed"]
+[connection signal="drag_ended" from="Panel/VBoxContainer/Dialog/VolumeSlider" to="." method="_on_volume_slider_drag_ended"]
+[connection signal="value_changed" from="Panel/VBoxContainer/Dialog/VolumeSlider" to="." method="_on_volume_slider_value_changed" binds= [&"Dialog"]]
+[connection signal="pressed" from="Panel/VBoxContainer/Dialog/VolumePlus" to="." method="_on_volume_plus_pressed" binds= [NodePath("Panel/VBoxContainer/Dialog/VolumeSlider")]]
+[connection signal="pressed" from="Panel/VBoxContainer/Dialog/VolumePlus/TouchScreenButton" to="." method="_on_dialog_volume_plus_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Menu/VolumeMinus" to="." method="_on_volume_minus_pressed" binds= [NodePath("Panel/VBoxContainer/Menu/VolumeSlider")]]
+[connection signal="pressed" from="Panel/VBoxContainer/Menu/VolumeMinus/TouchScreenButton" to="." method="_on_menu_volume_minus_touch_screen_button_pressed"]
+[connection signal="drag_ended" from="Panel/VBoxContainer/Menu/VolumeSlider" to="." method="_on_volume_slider_drag_ended"]
+[connection signal="value_changed" from="Panel/VBoxContainer/Menu/VolumeSlider" to="." method="_on_volume_slider_value_changed" binds= [&"Menu"]]
+[connection signal="pressed" from="Panel/VBoxContainer/Menu/VolumePlus" to="." method="_on_volume_plus_pressed" binds= [NodePath("Panel/VBoxContainer/Menu/VolumeSlider")]]
+[connection signal="pressed" from="Panel/VBoxContainer/Menu/VolumePlus/TouchScreenButton" to="." method="_on_menu_volume_plus_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Music/VolumeMinus" to="." method="_on_volume_minus_pressed" binds= [NodePath("Panel/VBoxContainer/Music/VolumeSlider")]]
+[connection signal="pressed" from="Panel/VBoxContainer/Music/VolumeMinus/TouchScreenButton" to="." method="_on_music_volume_minus_touch_screen_button_pressed"]
+[connection signal="drag_ended" from="Panel/VBoxContainer/Music/VolumeSlider" to="." method="_on_volume_slider_drag_ended"]
+[connection signal="value_changed" from="Panel/VBoxContainer/Music/VolumeSlider" to="." method="_on_volume_slider_value_changed" binds= [&"Music"]]
+[connection signal="pressed" from="Panel/VBoxContainer/Music/VolumePlus" to="." method="_on_volume_plus_pressed" binds= [NodePath("Panel/VBoxContainer/Music/VolumeSlider")]]
+[connection signal="pressed" from="Panel/VBoxContainer/Music/VolumePlus/TouchScreenButton" to="." method="_on_music_volume_plus_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/SFX/VolumeMinus" to="." method="_on_volume_minus_pressed" binds= [NodePath("Panel/VBoxContainer/SFX/VolumeSlider")]]
+[connection signal="pressed" from="Panel/VBoxContainer/SFX/VolumeMinus/TouchScreenButton" to="." method="_on_sfx_volume_minus_touch_screen_button_pressed"]
+[connection signal="drag_ended" from="Panel/VBoxContainer/SFX/VolumeSlider" to="." method="_on_volume_slider_drag_ended"]
+[connection signal="value_changed" from="Panel/VBoxContainer/SFX/VolumeSlider" to="." method="_on_volume_slider_value_changed" binds= [&"SFX"]]
+[connection signal="pressed" from="Panel/VBoxContainer/SFX/VolumePlus" to="." method="_on_volume_plus_pressed" binds= [NodePath("Panel/VBoxContainer/SFX/VolumeSlider")]]
+[connection signal="pressed" from="Panel/VBoxContainer/SFX/VolumePlus/TouchScreenButton" to="." method="_on_sfx_volume_plus_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/VoiceSettings/Voice/VolumeMinus" to="." method="_on_volume_minus_pressed" binds= [NodePath("Panel/VBoxContainer/VoiceSettings/Voice/VolumeSlider")]]
+[connection signal="pressed" from="Panel/VBoxContainer/VoiceSettings/Voice/VolumeMinus/TouchScreenButton" to="." method="_on_voice_volume_minus_touch_screen_button_pressed"]
+[connection signal="drag_ended" from="Panel/VBoxContainer/VoiceSettings/Voice/VolumeSlider" to="." method="_on_volume_slider_drag_ended"]
+[connection signal="value_changed" from="Panel/VBoxContainer/VoiceSettings/Voice/VolumeSlider" to="." method="_on_volume_slider_value_changed" binds= [&"Voice"]]
+[connection signal="pressed" from="Panel/VBoxContainer/VoiceSettings/Voice/VolumePlus" to="." method="_on_volume_plus_pressed" binds= [NodePath("Panel/VBoxContainer/VoiceSettings/Voice/VolumeSlider")]]
+[connection signal="pressed" from="Panel/VBoxContainer/VoiceSettings/Voice/VolumePlus/TouchScreenButton" to="." method="_on_voice_volume_plus_touch_screen_button_pressed"]
+[connection signal="toggled" from="Panel/VBoxContainer/VoiceSettings/VoiceActivation" to="." method="_on_voice_activation_toggled"]
+[connection signal="value_changed" from="Panel/VBoxContainer/VoiceSettings/Microphone/Sensitivity" to="." method="_on_mic_sensitivity_changed"]
+[connection signal="toggled" from="Panel/VBoxContainer/VoiceSettings/MuteVoice" to="." method="_on_mute_voice_toggled"]
+[connection signal="pressed" from="Panel/VBoxContainer/VoiceSettings/MuteVoice/TouchScreenButton" to="." method="_on_mute_voice_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/BACK" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/BACK/BACKTouchScreenButton" to="." method="_on_back_touch_screen_button_pressed"]

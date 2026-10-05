@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://dokp6v1sufknx"]
+
+[ext_resource type="Texture2D" uid="uid://bn5f4wvar6tor" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_button_a_outline.svg" id="1_ahjmq"]
+[ext_resource type="Script" uid="uid://dy0j2chnohfgh" path="res://addons/controls/action_prompt.gd" id="1_jm0tu"]
+[ext_resource type="Texture2D" uid="uid://5ralud042mx3" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_e_outline.svg" id="1_pwdvy"]
+[ext_resource type="Texture2D" uid="uid://enjtpg74fpxr" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_b_outline.svg" id="2_pwdvy"]
+[ext_resource type="Texture2D" uid="uid://cdew4cemfiitk" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_button_cross_outline.svg" id="3_jm0tu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahjmq"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_pwdvy")
+
+[sub_resource type="QuadMesh" id="QuadMesh_jm0tu"]
+material = SubResource("StandardMaterial3D_ahjmq")
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_senyo"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_ahjmq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_senyo"]
+material = SubResource("StandardMaterial3D_senyo")
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fk680"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("2_pwdvy")
+
+[sub_resource type="QuadMesh" id="QuadMesh_nwovy"]
+material = SubResource("StandardMaterial3D_fk680")
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_apair"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("3_jm0tu")
+
+[sub_resource type="QuadMesh" id="QuadMesh_187ag"]
+material = SubResource("StandardMaterial3D_apair")
+size = Vector2(0.2, 0.2)
+
+[node name="ActionPrompt" type="Node3D" unique_id=1664152999]
+script = ExtResource("1_jm0tu")
+
+[node name="KeyboardMouse" type="Node3D" parent="." unique_id=493299127]
+
+[node name="Label3D" type="Label3D" parent="KeyboardMouse" unique_id=45750300]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+text = "Press"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="KeyboardMouse" unique_id=1293126463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_jm0tu")
+
+[node name="Label3D2" type="Label3D" parent="KeyboardMouse" unique_id=1464238490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+text = "to interact"
+
+[node name="Microsoft" type="Node3D" parent="." unique_id=353128926]
+visible = false
+
+[node name="Label3D" type="Label3D" parent="Microsoft" unique_id=526885666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+text = "Press"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Microsoft" unique_id=1642201871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_senyo")
+
+[node name="Label3D2" type="Label3D" parent="Microsoft" unique_id=63000026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+text = "to interact"
+
+[node name="Nintendo" type="Node3D" parent="." unique_id=971837950]
+visible = false
+
+[node name="Label3D" type="Label3D" parent="Nintendo" unique_id=213424988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+text = "Press"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Nintendo" unique_id=1587991156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_nwovy")
+
+[node name="Label3D2" type="Label3D" parent="Nintendo" unique_id=1265928872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+text = "to interact"
+
+[node name="Sony" type="Node3D" parent="." unique_id=1209264919]
+visible = false
+
+[node name="Label3D" type="Label3D" parent="Sony" unique_id=2062385778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+text = "Press"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sony" unique_id=1119927699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_187ag")
+
+[node name="Label3D2" type="Label3D" parent="Sony" unique_id=382439694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+text = "to interact"

@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://addons/3d_player_controller/assets/shaders/botw_toon.gdshader" id="1_botw"]
+
+[resource]
+shader = ExtResource("1_botw")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/shadow_threshold = 0.12
+shader_parameter/shadow_softness = 0.04
+shader_parameter/shadow_color = Color(0.36, 0.42, 0.58, 1)
+shader_parameter/light_tint = Color(1, 1, 1, 1)
+shader_parameter/warble_amount = 0.08
+shader_parameter/warble_scale = 3.0
+shader_parameter/warble_speed = 0.3
+shader_parameter/specular_amount = 0.3
+shader_parameter/specular_size = 32.0
+shader_parameter/specular_softness = 0.5
+shader_parameter/rim_color = Color(1, 0.95, 0.85, 1)
+shader_parameter/rim_size = 0.62
+shader_parameter/rim_softness = 0.1
+shader_parameter/rim_lit = 0.3
+shader_parameter/rim_backlight = 1.0

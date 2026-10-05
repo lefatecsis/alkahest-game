@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d3807jlpj5vsl"]
+
+[ext_resource type="Script" uid="uid://chqp2ljg754vp" path="res://addons/3d_player_controller/inventory/scripts/inventory.gd" id="1_nsbb7"]
+[ext_resource type="PackedScene" uid="uid://c7radialmenu01" path="res://addons/3d_player_controller/inventory/scenes/radial_menu.tscn" id="2_wheel"]
+[ext_resource type="Script" path="res://addons/3d_player_controller/inventory/scripts/spellbook.gd" id="3_spellbook"]
+
+[node name="Inventory" type="CanvasLayer" unique_id=509190037]
+script = ExtResource("1_nsbb7")
+
+[node name="HoldTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="RadialMenu" parent="." unique_id=1536685129 instance=ExtResource("2_wheel")]
+visible = false
+
+[node name="Spellbook" type="Node" parent="."]
+script = ExtResource("3_spellbook")
+
+[connection signal="timeout" from="HoldTimer" to="RadialMenu" method="_on_hold_timer_timeout"]

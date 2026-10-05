@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cji2rftmdo0fe"]
+
+[ext_resource type="Script" uid="uid://crdrdnd77c4et" path="res://addons/3d_player_controller/scripts/boss_bar.gd" id="1_boss_bar"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_boss"]
+font_size = 18
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boss_bg"]
+bg_color = Color(0.05, 0.04, 0.04, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.85, 0.75, 0.55, 0.8)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boss_fill"]
+bg_color = Color(0.8, 0.12, 0.1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="BossBar" type="CanvasLayer" unique_id=1191650729]
+script = ExtResource("1_boss_bar")
+
+[node name="Content" type="Control" parent="." unique_id=720246320]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_right = 96.0
+offset_bottom = 64.0
+grow_horizontal = 2
+pivot_offset = Vector2(96, 0)
+mouse_filter = 2
+
+[node name="Bar" type="VBoxContainer" parent="Content" unique_id=1034622567]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -124.0
+offset_top = 76.0
+offset_right = 316.0
+offset_bottom = 120.0
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="BossName" type="Label" parent="Content/Bar" unique_id=1535339017]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Boss"
+label_settings = SubResource("LabelSettings_boss")
+horizontal_alignment = 1
+
+[node name="BossHealth" type="ProgressBar" parent="Content/Bar" unique_id=41155539]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(440, 14)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_boss_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_boss_fill")
+max_value = 1.0
+step = 0.001
+value = 1.0
+show_percentage = false

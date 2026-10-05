@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7gatherable01"]
+
+[ext_resource type="Script" uid="uid://cq4fojlx0bmvl" path="res://addons/3d_player_controller/scripts/gatherable.gd" id="1_script"]
+[ext_resource type="SceneReplicationConfig" path="res://addons/3d_player_controller/resources/replication/gatherable_replication.tres" id="2_sync"]
+
+[node name="Gatherable" type="StaticBody3D" node_paths=PackedStringArray("regrow_timer")]
+script = ExtResource("1_script")
+regrow_timer = NodePath("RegrowTimer")
+
+[node name="RegrowTimer" type="Timer" parent="."]
+editor_description = "Started on the server for regrow_seconds once the thing is spent; its timeout brings it back (Gatherable.regrow)."
+one_shot = true
+
+[node name="StateSynchronizer" type="MultiplayerSynchronizer" parent="."]
+editor_description = "Carries hits and is_spent from the server to every peer, so a felled tree is felled for everyone."
+replication_config = ExtResource("2_sync")
+
+[connection signal="timeout" from="RegrowTimer" to="." method="regrow"]

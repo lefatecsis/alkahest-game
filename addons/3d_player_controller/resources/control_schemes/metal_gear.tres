@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ControlScheme" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/control_scheme.gd" id="1_control_scheme"]
+
+[resource]
+script = ExtResource("1_control_scheme")
+scheme_name = "Metal Gear"
+action_button_0 = &"crouch"
+action_button_1 = &"action"
+action_button_2 = &"attack"
+action_button_3 = &"perspective"
+extra_slots = {
+"button_10": &"next_weapon",
+"button_9": &"last_weapon"
+}
+slot_labels = {
+"button_0": "Duck",
+"button_1": "Action",
+"button_10": "Weapon",
+"button_2": "Fire",
+"button_3": "View",
+"button_9": "Item"
+}
+locks_on = false

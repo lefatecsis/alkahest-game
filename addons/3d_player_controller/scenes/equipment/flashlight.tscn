@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bflashl1ght4q"]
+
+[ext_resource type="Script" uid="uid://dsr7tkvut0tfn" path="res://addons/3d_player_controller/scripts/flashlight.gd" id="1_script"]
+[ext_resource type="SceneReplicationConfig" path="res://addons/3d_player_controller/resources/replication/flashlight_replication.tres" id="2_sync"]
+
+[node name="Flashlight" type="SpotLight3D"]
+script = ExtResource("1_script")
+
+[node name="StateSynchronizer" type="MultiplayerSynchronizer" parent="."]
+editor_description = "Carries is_on from the torch's owner to every peer, a player joining later included."
+replication_config = ExtResource("2_sync")

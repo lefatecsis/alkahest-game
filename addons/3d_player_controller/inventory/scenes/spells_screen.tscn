@@ -1,0 +1,249 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/inventory/scripts/spells_screen.gd" id="1_screen"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font_size = 20
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tab"]
+size = Vector2(120, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_action"]
+size = Vector2(72, 30)
+
+[node name="SpellsScreen" type="CanvasLayer"]
+script = ExtResource("1_screen")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = 0.08
+anchor_top = 0.06
+anchor_right = 0.92
+anchor_bottom = 0.94
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = -12.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Spells"
+label_settings = SubResource("LabelSettings_title")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Tabs" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TreeTab" type="Button" parent="Panel/VBoxContainer/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+toggle_mode = true
+text = "Tree"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Tabs/TreeTab"]
+position = Vector2(60, 15)
+shape = SubResource("RectangleShape2D_tab")
+
+[node name="LoadoutTab" type="Button" parent="Panel/VBoxContainer/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+toggle_mode = true
+text = "Loadout"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Tabs/LoadoutTab"]
+position = Vector2(60, 15)
+shape = SubResource("RectangleShape2D_tab")
+
+[node name="TreePage" type="HBoxContainer" parent="Panel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="TreeArea" type="VBoxContainer" parent="Panel/VBoxContainer/TreePage"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PointsLabel" type="Label" parent="Panel/VBoxContainer/TreePage/TreeArea"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Skill points: 0"
+
+[node name="TreeHolder" type="ScrollContainer" parent="Panel/VBoxContainer/TreePage/TreeArea"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+
+[node name="TreeCanvas" type="Control" parent="Panel/VBoxContainer/TreePage/TreeArea/TreeHolder"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="TreeLines" type="Control" parent="Panel/VBoxContainer/TreePage/TreeArea/TreeHolder/TreeCanvas"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Details" type="VBoxContainer" parent="Panel/VBoxContainer/TreePage"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="DetailIcon" type="TextureRect" parent="Panel/VBoxContainer/TreePage/Details"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DetailName" type="Label" parent="Panel/VBoxContainer/TreePage/Details"]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = SubResource("LabelSettings_title")
+horizontal_alignment = 1
+
+[node name="DetailStatus" type="Label" parent="Panel/VBoxContainer/TreePage/Details"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="DetailInfo" type="Label" parent="Panel/VBoxContainer/TreePage/Details"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="DetailRequires" type="Label" parent="Panel/VBoxContainer/TreePage/Details"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+autowrap_mode = 3
+
+[node name="LoadoutPage" type="HBoxContainer" parent="Panel/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="UnlockedArea" type="VBoxContainer" parent="Panel/VBoxContainer/LoadoutPage"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="UnlockedLabel" type="Label" parent="Panel/VBoxContainer/LoadoutPage/UnlockedArea"]
+layout_mode = 2
+text = "Unlocked: Confirm lifts a spell"
+
+[node name="UnlockedScroll" type="ScrollContainer" parent="Panel/VBoxContainer/LoadoutPage/UnlockedArea"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+
+[node name="UnlockedGrid" type="GridContainer" parent="Panel/VBoxContainer/LoadoutPage/UnlockedArea/UnlockedScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 4
+
+[node name="WheelArea" type="VBoxContainer" parent="Panel/VBoxContainer/LoadoutPage"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+
+[node name="WheelLabel" type="Label" parent="Panel/VBoxContainer/LoadoutPage/WheelArea"]
+layout_mode = 2
+text = "Wheel: Confirm places, Confirm again clears"
+autowrap_mode = 3
+
+[node name="WheelGrid" type="GridContainer" parent="Panel/VBoxContainer/LoadoutPage/WheelArea"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 2
+
+[node name="Actions" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Unlock" type="Button" parent="Panel/VBoxContainer/Actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(72, 30)
+layout_mode = 2
+disabled = true
+text = "Unlock"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Actions/Unlock"]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_action")
+
+[node name="Clear" type="Button" parent="Panel/VBoxContainer/Actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(72, 30)
+layout_mode = 2
+text = "Clear"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Actions/Clear"]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_action")
+
+[node name="Back" type="Button" parent="Panel/VBoxContainer/Actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(72, 30)
+layout_mode = 2
+text = "Back"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Actions/Back"]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_action")
+
+[node name="HeldIcon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_right = 48.0
+offset_bottom = 48.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="mouse_entered" from="Panel/VBoxContainer/Actions/Unlock" to="Panel/VBoxContainer/Actions/Unlock" method="grab_focus"]
+[connection signal="pressed" from="Panel/VBoxContainer/Actions/Unlock" to="." method="_on_unlock_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Actions/Unlock/TouchScreenButton" to="." method="_on_unlock_touch_screen_button_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/Actions/Clear" to="Panel/VBoxContainer/Actions/Clear" method="grab_focus"]
+[connection signal="pressed" from="Panel/VBoxContainer/Actions/Clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Actions/Clear/TouchScreenButton" to="." method="_on_clear_touch_screen_button_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/Actions/Back" to="Panel/VBoxContainer/Actions/Back" method="grab_focus"]
+[connection signal="pressed" from="Panel/VBoxContainer/Actions/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Actions/Back/TouchScreenButton" to="." method="_on_back_touch_screen_button_pressed"]
+[connection signal="resized" from="Panel/VBoxContainer/TreePage/TreeArea/TreeHolder" to="." method="_update_touch_visibility"]
+[connection signal="item_rect_changed" from="Panel/VBoxContainer/TreePage/TreeArea/TreeHolder/TreeCanvas" to="." method="_update_touch_visibility"]
+[connection signal="resized" from="Panel/VBoxContainer/LoadoutPage/UnlockedArea/UnlockedScroll" to="." method="_update_touch_visibility"]
+[connection signal="item_rect_changed" from="Panel/VBoxContainer/LoadoutPage/UnlockedArea/UnlockedScroll/UnlockedGrid" to="." method="_update_touch_visibility"]
+[connection signal="sort_children" from="Panel/VBoxContainer/LoadoutPage/UnlockedArea/UnlockedScroll/UnlockedGrid" to="." method="_update_touch_visibility"]

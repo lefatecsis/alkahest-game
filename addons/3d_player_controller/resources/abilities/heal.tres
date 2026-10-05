@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="HealAbility" format=3 uid="uid://cfpp5cv2gcskg"]
+
+[ext_resource type="Script" uid="uid://bq81ijeojwmhx" path="res://addons/3d_player_controller/scripts/heal_ability.gd" id="1_heal"]
+[ext_resource type="Texture2D" uid="uid://5y5cpw0c4jsb" path="res://addons/3d_player_controller/assets/icons/heal.svg" id="2_icon"]
+[ext_resource type="AudioStream" uid="uid://6mtbyhfvirb5" path="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Spells/Waterspray 1.ogg" id="3_channel"]
+[ext_resource type="AudioStream" uid="uid://cy3vp1g1d2uk5" path="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Spells/Wave Attack 1.ogg" id="4_cast"]
+
+[resource]
+target_kinds = 3
+script = ExtResource("1_heal")
+display_name = "Heal"
+icon = ExtResource("2_icon")
+cooldown = 8.0
+cast_time = 1.5
+cast_style = 2
+channeling_sfx = ExtResource("3_channel")
+casting_sfx = ExtResource("4_cast")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/seeker_wheel.gd" id="1_seeker"]
+[ext_resource type="PackedScene" uid="uid://c7radialmenu01" path="res://addons/3d_player_controller/inventory/scenes/radial_menu.tscn" id="2_wheel"]
+
+[node name="SeekerWheel" type="CanvasLayer"]
+script = ExtResource("1_seeker")
+
+[node name="HoldTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="RadialMenu" parent="." instance=ExtResource("2_wheel")]
+visible = false
+hold_actions = Array[StringName]([&"seeker"])
+
+[connection signal="timeout" from="HoldTimer" to="." method="_on_hold_timer_timeout"]

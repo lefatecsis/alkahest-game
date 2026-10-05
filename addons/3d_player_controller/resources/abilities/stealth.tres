@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="StealthAbility" format=3 uid="uid://ywtv6gwnislu"]
+
+[ext_resource type="Script" uid="uid://dsttx4kbu28nw" path="res://addons/3d_player_controller/scripts/stealth_ability.gd" id="1_stealth"]
+[ext_resource type="Texture2D" path="res://addons/3d_player_controller/assets/game_icons/cloak-dagger.svg" id="2_icon"]
+[ext_resource type="AudioStream" uid="uid://dvgjfefdyjn8l" path="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Spells/Ice Freeze 1.ogg" id="3_cast"]
+
+[resource]
+script = ExtResource("1_stealth")
+display_name = "Stealth"
+icon = ExtResource("2_icon")
+cooldown = 3.0
+energy_cost = 10.0
+cast_style = 3
+casting_sfx = ExtResource("3_cast")

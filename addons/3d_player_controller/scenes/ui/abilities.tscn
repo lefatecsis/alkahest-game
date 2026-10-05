@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dm3qt3t7aq42w"]
+
+[ext_resource type="Script" uid="uid://dxphro03uhij" path="res://addons/3d_player_controller/scripts/abilities.gd" id="1_abil"]
+[ext_resource type="PackedScene" uid="uid://c7radialmenu01" path="res://addons/3d_player_controller/inventory/scenes/radial_menu.tscn" id="2_wheel"]
+
+[node name="Abilities" type="CanvasLayer" unique_id=1216550861]
+script = ExtResource("1_abil")
+
+[node name="HoldTimer" type="Timer" parent="." unique_id=529563723]
+wait_time = 0.2
+one_shot = true
+
+[node name="CastTimer" type="Timer" parent="." unique_id=245049343]
+one_shot = true
+
+[node name="RadialMenu" parent="." unique_id=128634465 instance=ExtResource("2_wheel")]
+visible = false
+hold_actions = Array[StringName]([&"ability"])
+
+[connection signal="timeout" from="HoldTimer" to="RadialMenu" method="_on_hold_timer_timeout"]
+[connection signal="timeout" from="CastTimer" to="." method="_on_cast_timer_timeout"]

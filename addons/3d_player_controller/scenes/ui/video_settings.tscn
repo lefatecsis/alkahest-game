@@ -1,0 +1,375 @@
+[gd_scene format=3 uid="uid://bsmatt41d3g3p"]
+
+[ext_resource type="Script" uid="uid://hcupskjnrcb6" path="res://addons/3d_player_controller/scripts/video_settings.gd" id="1_gjgyd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gjgyd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p63df"]
+size = Vector2(193, 24)
+
+[node name="VideoSettings" type="CanvasLayer" unique_id=1733087109 node_paths=PackedStringArray("focus_on_show")]
+script = ExtResource("1_gjgyd")
+focus_on_show = NodePath("Panel/VBoxContainer/BACK")
+
+[node name="Panel" type="Panel" parent="." unique_id=465508985]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -202.0
+offset_right = 100.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1458528850]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -191.0
+offset_right = 96.5
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer" unique_id=355788907]
+custom_minimum_size = Vector2(200, 31)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Panel" unique_id=862583396]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -11.5
+offset_right = 37.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Video SETTINGS"
+label_settings = SubResource("LabelSettings_gjgyd")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="VSYNC" type="CheckButton" parent="Panel/VBoxContainer" unique_id=1479699359]
+layout_mode = 2
+button_pressed = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/VSYNC" unique_id=146320549]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -11.5
+offset_right = 96.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = " VSYNC"
+vertical_alignment = 1
+
+[node name="VSYNCTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/VSYNC" unique_id=1676959583]
+position = Vector2(100, 12)
+shape = SubResource("RectangleShape2D_p63df")
+
+[node name="UIScale" type="OptionButton" parent="Panel/VBoxContainer" unique_id=1733087201]
+layout_mode = 2
+size_flags_horizontal = 8
+selected = 0
+item_count = 5
+popup/item_0/text = "Auto"
+popup/item_0/id = 0
+popup/item_1/text = "100%"
+popup/item_1/id = 1
+popup/item_2/text = "125%"
+popup/item_2/id = 2
+popup/item_3/text = "150%"
+popup/item_3/id = 3
+popup/item_4/text = "200%"
+popup/item_4/id = 4
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/UIScale" unique_id=1733087202]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.5
+offset_top = -11.5
+offset_right = 50.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = " UI Scale"
+vertical_alignment = 1
+
+[node name="UIScaleTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/UIScale" unique_id=1733087203]
+position = Vector2(-18, 15)
+shape = SubResource("RectangleShape2D_p63df")
+
+[node name="MSAA" type="OptionButton" parent="Panel/VBoxContainer" unique_id=1502894789]
+layout_mode = 2
+size_flags_horizontal = 8
+selected = 0
+item_count = 4
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "2× MSAA"
+popup/item_1/id = 1
+popup/item_2/text = "4× MSAA"
+popup/item_2/id = 2
+popup/item_3/text = "8× MSAA"
+popup/item_3/id = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MSAA" unique_id=1137209903]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.5
+offset_top = -11.5
+offset_right = 50.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = " MSAA"
+vertical_alignment = 1
+
+[node name="MSAATouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/MSAA" unique_id=1379454344]
+position = Vector2(8, 15)
+shape = SubResource("RectangleShape2D_p63df")
+
+[node name="SSAA" type="OptionButton" parent="Panel/VBoxContainer" unique_id=467308986]
+layout_mode = 2
+size_flags_horizontal = 8
+selected = 0
+item_count = 3
+popup/item_0/text = "Off"
+popup/item_0/id = 0
+popup/item_1/text = "2.25× SSAA"
+popup/item_1/id = 1
+popup/item_2/text = "4× SSAA"
+popup/item_2/id = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/SSAA" unique_id=1708883906]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -11.5
+offset_right = 124.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = " SSAA"
+vertical_alignment = 1
+
+[node name="SSAATouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/SSAA" unique_id=489121538]
+position = Vector2(24, 15)
+shape = SubResource("RectangleShape2D_p63df")
+
+[node name="FXAA" type="CheckButton" parent="Panel/VBoxContainer" unique_id=1220362603]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/FXAA" unique_id=721557628]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -11.5
+offset_right = 96.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = " FXAA"
+vertical_alignment = 1
+
+[node name="FXAATouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/FXAA" unique_id=407203546]
+position = Vector2(100, 12)
+shape = SubResource("RectangleShape2D_p63df")
+
+[node name="SSRL" type="CheckButton" parent="Panel/VBoxContainer" unique_id=1626261443]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/SSRL" unique_id=901841487]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -11.5
+offset_right = 96.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = " SSRL"
+vertical_alignment = 1
+
+[node name="SSRLTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/SSRL" unique_id=759143339]
+position = Vector2(100, 12)
+shape = SubResource("RectangleShape2D_p63df")
+
+[node name="TAA" type="CheckButton" parent="Panel/VBoxContainer" unique_id=1675466960]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/TAA" unique_id=18186118]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -11.5
+offset_right = 96.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = " TAA"
+vertical_alignment = 1
+
+[node name="TAATouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/TAA" unique_id=773475412]
+position = Vector2(100, 12)
+shape = SubResource("RectangleShape2D_p63df")
+
+[node name="FSR" type="OptionButton" parent="Panel/VBoxContainer" unique_id=1373167035]
+layout_mode = 2
+size_flags_horizontal = 8
+selected = 0
+item_count = 3
+popup/item_0/text = "Off"
+popup/item_0/id = 0
+popup/item_1/text = "1.0"
+popup/item_1/id = 1
+popup/item_2/text = "2.2"
+popup/item_2/id = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/FSR" unique_id=146533917]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -11.5
+offset_right = 65.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = " FSR"
+vertical_alignment = 1
+
+[node name="FSRTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/FSR" unique_id=957755071]
+position = Vector2(-35, 16)
+shape = SubResource("RectangleShape2D_p63df")
+
+[node name="ToonShading" type="OptionButton" parent="Panel/VBoxContainer" unique_id=1902337711]
+layout_mode = 2
+size_flags_horizontal = 8
+selected = 0
+item_count = 5
+popup/item_0/text = "None"
+popup/item_0/id = 0
+popup/item_1/text = "Toon"
+popup/item_1/id = 1
+popup/item_2/text = "Cell"
+popup/item_2/id = 2
+popup/item_3/text = "Binbun"
+popup/item_3/id = 3
+popup/item_4/text = "BotW"
+popup/item_4/id = 4
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ToonShading" unique_id=1902337712]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.5
+offset_top = -11.5
+offset_right = 44.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = " Filter"
+vertical_alignment = 1
+
+[node name="ToonShadingTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/ToonShading" unique_id=1902337713]
+position = Vector2(-4, 15)
+shape = SubResource("RectangleShape2D_p63df")
+
+[node name="RotateMinimap" type="CheckButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Turn the minimap with the Player rather than keeping north up"
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/RotateMinimap"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -11.5
+offset_right = 96.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = " Rotate Minimap"
+vertical_alignment = 1
+
+[node name="RotateMinimapTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/RotateMinimap"]
+position = Vector2(100, 12)
+shape = SubResource("RectangleShape2D_p63df")
+
+[node name="BACK" type="Button" parent="Panel/VBoxContainer" unique_id=967526644]
+layout_mode = 2
+size_flags_vertical = 10
+text = "BACK"
+
+[node name="BACKTouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/BACK" unique_id=29710146]
+position = Vector2(100, 15)
+shape = SubResource("RectangleShape2D_p63df")
+
+[connection signal="toggled" from="Panel/VBoxContainer/VSYNC" to="." method="_on_vsync_toggled"]
+[connection signal="toggled" from="Panel/VBoxContainer/RotateMinimap" to="." method="_on_rotate_minimap_toggled"]
+[connection signal="pressed" from="Panel/VBoxContainer/RotateMinimap/RotateMinimapTouchScreenButton" to="." method="_on_rotate_minimap_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/VSYNC/VSYNCTouchScreenButton" to="." method="_on_vsync_touch_screen_button_pressed"]
+[connection signal="item_selected" from="Panel/VBoxContainer/UIScale" to="." method="_on_ui_scale_item_selected"]
+[connection signal="pressed" from="Panel/VBoxContainer/UIScale/UIScaleTouchScreenButton" to="." method="_on_ui_scale_touch_screen_button_pressed"]
+[connection signal="item_selected" from="Panel/VBoxContainer/MSAA" to="." method="_on_msaa_item_selected"]
+[connection signal="pressed" from="Panel/VBoxContainer/MSAA/MSAATouchScreenButton" to="." method="_on_msaa_touch_screen_button_pressed"]
+[connection signal="item_selected" from="Panel/VBoxContainer/SSAA" to="." method="_on_ssaa_item_selected"]
+[connection signal="pressed" from="Panel/VBoxContainer/SSAA/SSAATouchScreenButton" to="." method="_on_ssaa_touch_screen_button_pressed"]
+[connection signal="toggled" from="Panel/VBoxContainer/FXAA" to="." method="_on_fxaa_toggled"]
+[connection signal="pressed" from="Panel/VBoxContainer/FXAA/FXAATouchScreenButton" to="." method="_on_fxaa_touch_screen_button_pressed"]
+[connection signal="toggled" from="Panel/VBoxContainer/SSRL" to="." method="_on_ssrl_toggled"]
+[connection signal="pressed" from="Panel/VBoxContainer/SSRL/SSRLTouchScreenButton" to="." method="_on_ssrl_touch_screen_button_pressed"]
+[connection signal="toggled" from="Panel/VBoxContainer/TAA" to="." method="_on_taa_toggled"]
+[connection signal="pressed" from="Panel/VBoxContainer/TAA/TAATouchScreenButton" to="." method="_on_taa_touch_screen_button_pressed"]
+[connection signal="item_selected" from="Panel/VBoxContainer/FSR" to="." method="_on_fsr_item_selected"]
+[connection signal="pressed" from="Panel/VBoxContainer/FSR/FSRTouchScreenButton" to="." method="_on_fsr_touch_screen_button_pressed"]
+[connection signal="item_selected" from="Panel/VBoxContainer/ToonShading" to="." method="_on_toon_shading_item_selected"]
+[connection signal="pressed" from="Panel/VBoxContainer/ToonShading/ToonShadingTouchScreenButton" to="." method="_on_toon_shading_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/BACK" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/BACK/BACKTouchScreenButton" to="." method="_on_back_touch_screen_button_pressed"]

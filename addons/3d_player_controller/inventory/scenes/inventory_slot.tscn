@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/inventory/scripts/inventory_slot_button.gd" id="1_slot"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_count"]
+font_size = 14
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_badge"]
+font_size = 10
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slot"]
+size = Vector2(64, 64)
+
+[node name="InventorySlot" type="Button"]
+custom_minimum_size = Vector2(64, 64)
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_slot")
+
+[node name="Count" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -22.0
+offset_right = -4.0
+offset_bottom = -2.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+label_settings = SubResource("LabelSettings_count")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Equipped" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 40.0
+offset_bottom = 22.0
+mouse_filter = 2
+text = "EQ"
+label_settings = SubResource("LabelSettings_count")
+
+[node name="Badge" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_top = 2.0
+offset_right = -4.0
+offset_bottom = 18.0
+grow_horizontal = 0
+mouse_filter = 2
+label_settings = SubResource("LabelSettings_badge")
+horizontal_alignment = 2
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_slot")

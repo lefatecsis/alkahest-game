@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://d10tfw6aejhfb"]
+
+[ext_resource type="Shader" path="res://addons/3d_player_controller/assets/shaders/click_to_move.gdshader" id="1_shader"]
+[ext_resource type="Texture2D" path="res://addons/3d_player_controller/assets/click_to_move/arrow_up.png" id="2_arrow"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_arrows"]
+render_priority = 0
+shader = ExtResource("1_shader")
+shader_parameter/texture_albedo = ExtResource("2_arrow")
+shader_parameter/texture_scale = 3.3330001550576203
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/animation_speed = 1.250000059375
+shader_parameter/animate = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_arrows"]
+material = SubResource("ShaderMaterial_arrows")
+
+[node name="ClickMarker" type="Node3D"]
+editor_description = "Where a click-to-move click landed: three spheres wrapped in a scrolling arrow, the marker from the Guild Wars Heroes Island project, gone after half a second."
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.48954225, 0.5496591, 0.67692155, 0.81034005, 8.536072e-05, 0.58596, 0.3220204, 0.83538896, -0.4454523, -0.29117432, 0, -0.5)
+mesh = SubResource("SphereMesh_arrows")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.56220543, 0.5226764, -0.6408855, 0.7382934, 0.03196255, 0.67372215, 0.37262306, -0.8519318, -0.3679191, -0.29117432, 0, 0.5)
+mesh = SubResource("SphereMesh_arrows")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.5806274e-08, -1, -2.5071824e-08, 0.81915206, -4.371139e-08, 0.57357645, -0.57357645, 0, 0.81915206, 0.5688257, 0, 0)
+mesh = SubResource("SphereMesh_arrows")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="queue_free"]

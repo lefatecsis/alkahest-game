@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c7hk1s8addkk1"
+path="res://.godot/imported/sm_windline_A2.obj-fb73b5fbb49deebbd24b03b5976f3abe.mesh"
+
+[deps]
+
+files=["res://.godot/imported/sm_windline_A2.obj-fb73b5fbb49deebbd24b03b5976f3abe.mesh"]
+
+source_file="res://addons/3d_player_controller/assets/le_lu/wind/objects/sm_windline_A2.obj"
+dest_files=["res://.godot/imported/sm_windline_A2.obj-fb73b5fbb49deebbd24b03b5976f3abe.mesh", "res://.godot/imported/sm_windline_A2.obj-fb73b5fbb49deebbd24b03b5976f3abe.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dipxjuhteg553"
+path="res://.godot/imported/Stone Chain Land.ogg-44caeae5c5275bd05fcfe6b08b5190fd.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Footsteps/Stone/Stone Chain Land.ogg"
+dest_files=["res://.godot/imported/Stone Chain Land.ogg-44caeae5c5275bd05fcfe6b08b5190fd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

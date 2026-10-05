@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b3x6dgtxgab5"]
+
+[ext_resource type="Script" uid="uid://p83vnbr7cyg5" path="res://addons/3d_player_controller/scenes/demo/split_screen_demo.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://b5beu1u526phm" path="res://addons/3d_player_controller/scenes/demo/demo_arena.tscn" id="2_arena"]
+[ext_resource type="PackedScene" path="res://addons/3d_player_controller/scenes/split_screen.tscn" id="3_split"]
+[ext_resource type="PackedScene" uid="uid://ct7n8imyllhbo" path="res://addons/3d_player_controller/scenes/player.tscn" id="4_player"]
+
+[node name="SplitScreenDemo" type="Node3D"]
+script = ExtResource("1_script")
+
+[node name="DemoArena" parent="." instance=ExtResource("2_arena")]
+
+[node name="SplitScreen" parent="." instance=ExtResource("3_split")]
+player_scene = ExtResource("4_player")
+player_count = 2
+spawn_on_ready = false

@@ -1,0 +1,9 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=3 format=3]
+
+[ext_resource type="AudioStream" path="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Attacks/Bow Attacks Hits and Blocks/Bow Attack 1.ogg" id="1_sfx"]
+[ext_resource type="AudioStream" path="res://addons/3d_player_controller/assets/tommusic/fantasy_sfx/Attacks/Bow Attacks Hits and Blocks/Bow Attack 2.ogg" id="2_sfx"]
+
+[resource]
+streams_count = 2
+stream_0/stream = ExtResource("1_sfx")
+stream_1/stream = ExtResource("2_sfx")

@@ -1,0 +1,502 @@
+[gd_scene format=3 uid="uid://cwb6b4lbm2i0d"]
+
+[ext_resource type="Script" uid="uid://bkanfpbod6cqc" path="res://addons/3d_player_controller/scripts/debug.gd" id="1_86eym"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_senyo"]
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_marker"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_marker"]
+material = SubResource("StandardMaterial3D_marker")
+radius = 0.1
+height = 0.2
+
+[node name="Debug" type="CanvasLayer" unique_id=2032410064]
+script = ExtResource("1_86eym")
+
+[node name="RefreshTimer" type="Timer" parent="." unique_id=1420071113]
+wait_time = 0.1
+
+[node name="NavigationMarker" type="MeshInstance3D" parent="." unique_id=1953244521]
+visible = false
+mesh = SubResource("SphereMesh_marker")
+
+[node name="Enable" type="VBoxContainer" parent="." unique_id=1868662932]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -275.0
+offset_bottom = 99.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Enable" unique_id=1529727463]
+custom_minimum_size = Vector2(160, 24)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Enable/Panel" unique_id=160205289]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 155.0
+offset_bottom = 23.0
+text = "ENABLE"
+
+[node name="EnableFlying" type="CheckButton" parent="Enable" unique_id=59718181]
+layout_mode = 2
+text = "enable_flying"
+
+[node name="EnableParaglider" type="CheckButton" parent="Enable" unique_id=1431216245]
+layout_mode = 2
+text = "enable_paraglider"
+
+[node name="EnableRagdoll" type="CheckButton" parent="Enable" unique_id=869432366]
+layout_mode = 2
+text = "enable_ragdoll"
+
+[node name="EnableStamina" type="CheckButton" parent="Enable" unique_id=783508208]
+layout_mode = 2
+text = "enable_stamina"
+
+[node name="Equipment" type="VBoxContainer" parent="." unique_id=2044336599]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 192.0
+offset_top = -395.0
+offset_right = 374.0
+offset_bottom = -21.0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Equipment" unique_id=1961482025]
+custom_minimum_size = Vector2(160, 24)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Equipment/Panel" unique_id=2136512824]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 155.0
+offset_bottom = 23.0
+text = "EQUIPMENT"
+
+[node name="equipped_axe_1h" type="CheckBox" parent="Equipment" unique_id=1975789528]
+layout_mode = 2
+text = "equipped_axe_1h"
+
+[node name="equipped_axe_2h" type="CheckBox" parent="Equipment" unique_id=1840594010]
+layout_mode = 2
+text = "equipped_axe_2h"
+
+[node name="equipped_bow" type="CheckBox" parent="Equipment" unique_id=473779158]
+layout_mode = 2
+text = "equipped_bow"
+
+[node name="equipped_dagger" type="CheckBox" parent="Equipment" unique_id=1839184329]
+layout_mode = 2
+text = "equipped_dagger"
+
+[node name="equipped_pistol" type="CheckBox" parent="Equipment" unique_id=1351135518]
+layout_mode = 2
+text = "equipped_pistol"
+
+[node name="equipped_rifle" type="CheckBox" parent="Equipment" unique_id=1020920207]
+layout_mode = 2
+text = "equipped_rifle"
+
+[node name="equipped_shield" type="CheckBox" parent="Equipment" unique_id=85795699]
+layout_mode = 2
+text = "equipped_shield"
+
+[node name="equipped_staff" type="CheckBox" parent="Equipment" unique_id=608324050]
+layout_mode = 2
+text = "equipped_staff"
+
+[node name="equipped_sword_1h" type="CheckBox" parent="Equipment" unique_id=2088982799]
+layout_mode = 2
+text = "equipped_sword_1h"
+
+[node name="equipped_sword_2h" type="CheckBox" parent="Equipment" unique_id=1167562491]
+layout_mode = 2
+text = "equipped_sword_2h"
+
+[node name="Bow" type="VBoxContainer" parent="." unique_id=1681548686]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 376.0
+offset_top = -294.0
+offset_right = 558.0
+offset_bottom = -165.0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Bow" unique_id=1423285820]
+custom_minimum_size = Vector2(160, 24)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Bow/Panel" unique_id=305305311]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 155.0
+offset_bottom = 23.0
+text = "BOW"
+
+[node name="is_aiming_bow" type="CheckBox" parent="Bow" unique_id=582271956]
+layout_mode = 2
+text = "is_aiming_bow"
+
+[node name="is_drawing_arrow" type="CheckBox" parent="Bow" unique_id=1538718491]
+layout_mode = 2
+text = "is_drawing_arrow"
+
+[node name="is_firing_arrow" type="CheckBox" parent="Bow" unique_id=998672137]
+layout_mode = 2
+text = "is_firing_arrow"
+
+[node name="Attacking" type="VBoxContainer" parent="." unique_id=674932079]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -588.0
+offset_top = -365.5
+offset_right = -360.0
+offset_bottom = -236.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Attacking" unique_id=555766855]
+custom_minimum_size = Vector2(160, 24)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Attacking/Panel" unique_id=1402050015]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 155.0
+offset_bottom = 23.0
+text = "ATTACKING"
+
+[node name="is_attacking_1" type="CheckBox" parent="Attacking" unique_id=843610975]
+layout_mode = 2
+text = "is_attacking_1"
+
+[node name="is_attacking_2" type="CheckBox" parent="Attacking" unique_id=1813470205]
+layout_mode = 2
+text = "is_attacking_2"
+
+[node name="is_attacking_3" type="CheckBox" parent="Attacking" unique_id=369418359]
+layout_mode = 2
+text = "is_attacking_3"
+
+[node name="Climbing" type="VBoxContainer" parent="." unique_id=2083453336]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -588.0
+offset_top = -331.5
+offset_right = -360.0
+offset_bottom = -132.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Climbing" unique_id=315325561]
+custom_minimum_size = Vector2(160, 24)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Climbing/Panel" unique_id=895575265]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 155.0
+offset_bottom = 23.0
+text = "CLIMBING"
+
+[node name="is_climbing_on" type="CheckBox" parent="Climbing" unique_id=1120146076]
+layout_mode = 2
+text = "is_climbing_on"
+
+[node name="is_climbing_hopping_left" type="CheckBox" parent="Climbing" unique_id=1896635549]
+layout_mode = 2
+text = "is_climbing_hopping_left"
+
+[node name="is_climbing_hopping_right" type="CheckBox" parent="Climbing" unique_id=478722522]
+layout_mode = 2
+text = "is_climbing_hopping_right"
+
+[node name="is_climbing_hopping_up" type="CheckBox" parent="Climbing" unique_id=1282690555]
+layout_mode = 2
+text = "is_climbing_hopping_up"
+
+[node name="is_hopping_from_climbing" type="CheckBox" parent="Climbing" unique_id=728775784]
+layout_mode = 2
+text = "is_hopping_from_climbing"
+
+[node name="Driving" type="VBoxContainer" parent="." unique_id=130657088]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -588.0
+offset_top = -227.5
+offset_right = -360.0
+offset_bottom = -133.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Driving" unique_id=1331054806]
+custom_minimum_size = Vector2(160, 24)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Driving/Panel" unique_id=1582509661]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 155.0
+offset_bottom = 23.0
+text = "DRIVING"
+
+[node name="is_entering_vehicle" type="CheckBox" parent="Driving" unique_id=1140580919]
+layout_mode = 2
+text = "is_mounting"
+
+[node name="is_exiting_vehicle" type="CheckBox" parent="Driving" unique_id=30727147]
+layout_mode = 2
+text = "is_dismounting"
+
+[node name="Hanging" type="VBoxContainer" parent="." unique_id=2123646781]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -588.0
+offset_top = -192.5
+offset_right = -360.0
+offset_bottom = -63.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Hanging" unique_id=1915689705]
+custom_minimum_size = Vector2(160, 24)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Hanging/Panel" unique_id=1934538609]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 155.0
+offset_bottom = 23.0
+text = "HANGING"
+
+[node name="is_climbing_on" type="CheckBox" parent="Hanging" unique_id=257071272]
+layout_mode = 2
+text = "is_climbing_on"
+
+[node name="is_hanging_braced" type="CheckBox" parent="Hanging" unique_id=1539292361]
+layout_mode = 2
+text = "is_hanging_braced"
+
+[node name="is_hanging_free" type="CheckBox" parent="Hanging" unique_id=870575448]
+layout_mode = 2
+text = "is_hanging_free"
+
+[node name="States" type="VBoxContainer" parent="." unique_id=332686384]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -354.0
+offset_top = -397.0
+offset_right = -184.0
+offset_bottom = 327.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="States" unique_id=2017605809]
+custom_minimum_size = Vector2(160, 24)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="States/Panel" unique_id=1575123927]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 155.0
+offset_bottom = 23.0
+text = "STATES"
+
+[node name="is_attacking" type="CheckBox" parent="States" unique_id=1740747748]
+layout_mode = 2
+text = "is_attacking"
+
+[node name="is_climbing" type="CheckBox" parent="States" unique_id=241498315]
+layout_mode = 2
+text = "is_climbing"
+
+[node name="is_crouching" type="CheckBox" parent="States" unique_id=1585595928]
+layout_mode = 2
+text = "is_crouching"
+
+[node name="is_emoting" type="CheckBox" parent="States" unique_id=1149137227]
+layout_mode = 2
+text = "is_emoting"
+
+[node name="is_riding" type="CheckBox" parent="States" unique_id=737133500]
+layout_mode = 2
+text = "is_riding"
+
+[node name="is_hanging" type="CheckBox" parent="States" unique_id=819864313]
+layout_mode = 2
+text = "is_hanging"
+
+[node name="is_falling" type="CheckBox" parent="States" unique_id=650160220]
+layout_mode = 2
+text = "is_falling"
+
+[node name="is_flying" type="CheckBox" parent="States" unique_id=162732379]
+layout_mode = 2
+text = "is_flying"
+
+[node name="is_focusing" type="CheckBox" parent="States" unique_id=202642783]
+layout_mode = 2
+text = "is_focusing"
+
+[node name="is_jumping" type="CheckBox" parent="States" unique_id=681417065]
+layout_mode = 2
+text = "is_jumping"
+
+[node name="is_paragliding" type="CheckBox" parent="States" unique_id=1190158924]
+layout_mode = 2
+text = "is_paragliding"
+
+[node name="is_paused" type="CheckBox" parent="States" unique_id=225040834]
+layout_mode = 2
+text = "is_paused"
+
+[node name="is_ragdolling" type="CheckBox" parent="States" unique_id=1482209046]
+layout_mode = 2
+text = "is_ragdolling"
+
+[node name="is_shooting" type="CheckBox" parent="States" unique_id=467465081]
+layout_mode = 2
+text = "is_shooting"
+
+[node name="is_sitting" type="CheckBox" parent="States" unique_id=1097586866]
+layout_mode = 2
+text = "is_sitting"
+
+[node name="is_sliding" type="CheckBox" parent="States" unique_id=1734099729]
+layout_mode = 2
+text = "is_sliding"
+
+[node name="is_sprinting" type="CheckBox" parent="States" unique_id=1694819929]
+layout_mode = 2
+text = "is_sprinting"
+
+[node name="is_standing" type="CheckBox" parent="States" unique_id=2071856880]
+layout_mode = 2
+text = "is_standing"
+
+[node name="is_swimming" type="CheckBox" parent="States" unique_id=3126982]
+layout_mode = 2
+text = "is_swimming"
+
+[node name="CurrentStateLabel" type="Label" parent="." unique_id=794943457]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -102.5
+offset_top = -47.0
+offset_right = 6.5
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Current State:"
+label_settings = SubResource("LabelSettings_senyo")
+
+[node name="CurrentState" type="Label" parent="." unique_id=27265306]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -47.0
+offset_right = 160.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "<null>"
+label_settings = SubResource("LabelSettings_senyo")
+
+[node name="CurrentPerspectiveLabel" type="Label" parent="." unique_id=1083950622]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -151.0
+offset_top = -71.0
+offset_right = 7.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Current Perspective:"
+label_settings = SubResource("LabelSettings_senyo")
+
+[node name="CurrentPerspective" type="Label" parent="." unique_id=1549973036]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -71.0
+offset_right = 160.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "<null>"
+label_settings = SubResource("LabelSettings_senyo")
+
+[node name="FPSLabel" type="Label" parent="." unique_id=2038670292]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -23.0
+offset_right = 15.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "FPS: "
+label_settings = SubResource("LabelSettings_senyo")
+
+[node name="FPS" type="Label" parent="." unique_id=1573381973]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -23.0
+offset_right = 64.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "###"
+label_settings = SubResource("LabelSettings_senyo")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="timeout" from="RefreshTimer" to="." method="_on_refresh_timer_timeout"]
+[connection signal="pressed" from="Enable/EnableFlying" to="." method="_on_enable_flying_pressed"]
+[connection signal="pressed" from="Enable/EnableParaglider" to="." method="_on_enable_paraglider_pressed"]
+[connection signal="pressed" from="Enable/EnableRagdoll" to="." method="_on_enable_ragdoll_pressed"]
+[connection signal="pressed" from="Enable/EnableStamina" to="." method="_on_enable_stamina_pressed"]

@@ -1,0 +1,1086 @@
+[gd_scene format=3 uid="uid://carag3s40qlej"]
+
+[ext_resource type="Script" uid="uid://rhna5f3an62d" path="res://addons/controls/controls.gd" id="1_f8ygc"]
+[ext_resource type="Texture2D" uid="uid://5ralud042mx3" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_e_outline.svg" id="2_nckgs"]
+[ext_resource type="Texture2D" uid="uid://cmkoi6h1swd7x" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_e.svg" id="3_lo8k5"]
+[ext_resource type="Texture2D" uid="uid://4rb1ivk0g56d" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_shift_icon_outline.svg" id="4_bi5c6"]
+[ext_resource type="Texture2D" uid="uid://cf1ovwiublnx0" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_shift_icon.svg" id="5_nnsk4"]
+[ext_resource type="Texture2D" uid="uid://bw7bucw0eulhu" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_alt_outline.svg" id="6_yavoi"]
+[ext_resource type="Texture2D" uid="uid://cxv42jgc0t3u0" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_alt.svg" id="7_no15m"]
+[ext_resource type="Texture2D" uid="uid://blxkplufvt6vo" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_space_icon_outline.svg" id="8_a0m6w"]
+[ext_resource type="Texture2D" uid="uid://coyvdy1y0wvhn" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_space_icon.svg" id="9_vqxbh"]
+[ext_resource type="Texture2D" uid="uid://d18obxwu6hcwv" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_f5_outline.svg" id="10_j00au"]
+[ext_resource type="Texture2D" uid="uid://bj0g5wc4k4bi3" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_f5.svg" id="11_7mkt6"]
+[ext_resource type="Texture2D" uid="uid://h8povam8ps2q" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_printscreen_outline.svg" id="12_rus7y"]
+[ext_resource type="Texture2D" uid="uid://b6xn6sx0inydf" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_printscreen.svg" id="13_lhtj6"]
+[ext_resource type="Texture2D" uid="uid://dmnahw7a1gyqe" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_escape_outline.svg" id="14_o71ir"]
+[ext_resource type="Texture2D" uid="uid://wd8o5fd6vwfk" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_escape.svg" id="15_w2l3g"]
+[ext_resource type="Texture2D" uid="uid://d11ec4t5u13nu" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_ctrl_outline.svg" id="16_40188"]
+[ext_resource type="Texture2D" uid="uid://chosycig7ai0h" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_ctrl.svg" id="17_877dd"]
+[ext_resource type="Texture2D" uid="uid://cemlknot0oswn" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/mouse_scroll_outline.svg" id="18_xn6by"]
+[ext_resource type="Texture2D" uid="uid://brtbvg31xrvcr" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/mouse_scroll.svg" id="19_5hjre"]
+[ext_resource type="Texture2D" uid="uid://c8717e3s1ilmj" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_q_outline.svg" id="20_kw7j5"]
+[ext_resource type="Texture2D" uid="uid://6asicwevomg6" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_q.svg" id="21_lslnu"]
+[ext_resource type="Texture2D" uid="uid://b3u1jfc0gxujh" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_t_outline.svg" id="22_bg0d6"]
+[ext_resource type="Texture2D" uid="uid://brb0h5rofs6gn" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_t.svg" id="23_hsjmp"]
+[ext_resource type="Texture2D" uid="uid://c80ulvgmdmve5" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/mouse_right_outline.svg" id="24_nwoek"]
+[ext_resource type="Texture2D" uid="uid://3l0e3lfukyxm" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/mouse_right.svg" id="25_b0keo"]
+[ext_resource type="Texture2D" uid="uid://ccvwan7v6rxd8" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/mouse_left_outline.svg" id="26_a511l"]
+[ext_resource type="Texture2D" uid="uid://dtd6ia7m8pph0" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/mouse_left.svg" id="27_bk1vy"]
+[ext_resource type="Texture2D" uid="uid://bn5f4wvar6tor" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_button_a_outline.svg" id="28_8bsuf"]
+[ext_resource type="Texture2D" uid="uid://corxgxm4mi0l8" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_button_a.svg" id="29_3mm0c"]
+[ext_resource type="Texture2D" uid="uid://dpc825bf8ua8i" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_button_b_outline.svg" id="30_4pbas"]
+[ext_resource type="Texture2D" uid="uid://bumejmnr3to5g" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_button_b.svg" id="31_ymx8d"]
+[ext_resource type="Texture2D" uid="uid://bojfftndyi7ux" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_button_x_outline.svg" id="32_8vtad"]
+[ext_resource type="Texture2D" uid="uid://uhxr6ne3h322" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_button_x.svg" id="33_hblaw"]
+[ext_resource type="Texture2D" uid="uid://f71afsg8l76k" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_button_y_outline.svg" id="34_o0hr1"]
+[ext_resource type="Texture2D" uid="uid://na0ycwh1x0k8" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_button_y.svg" id="35_b010b"]
+[ext_resource type="Texture2D" uid="uid://b7at6gh0lpnmt" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_a_outline.svg" id="36_8h48d"]
+[ext_resource type="Texture2D" uid="uid://ctrxk7dwk2t6h" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_a.svg" id="37_kjj4c"]
+[ext_resource type="Texture2D" uid="uid://enjtpg74fpxr" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_b_outline.svg" id="38_41yui"]
+[ext_resource type="Texture2D" uid="uid://cx3wlc5yckas3" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_b.svg" id="39_aio4o"]
+[ext_resource type="Texture2D" uid="uid://beh4nf43w0ewl" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_x_outline.svg" id="40_amydg"]
+[ext_resource type="Texture2D" uid="uid://dw2v73lwlv3m6" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_x.svg" id="41_gjgvo"]
+[ext_resource type="Texture2D" uid="uid://bex6lntmskfh6" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_y_outline.svg" id="42_tk4r0"]
+[ext_resource type="Texture2D" uid="uid://putoeobvbrq3" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_y.svg" id="43_t71u3"]
+[ext_resource type="Texture2D" uid="uid://cdew4cemfiitk" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_button_cross_outline.svg" id="44_vij6g"]
+[ext_resource type="Texture2D" uid="uid://bxjf63yifb35a" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_button_cross.svg" id="45_qjulo"]
+[ext_resource type="Texture2D" uid="uid://qtrlr1x0yxl6" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_button_circle_outline.svg" id="46_i0xa6"]
+[ext_resource type="Texture2D" uid="uid://dlyw5843hlpwi" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_button_circle.svg" id="47_sx22o"]
+[ext_resource type="Texture2D" uid="uid://k5tx57ld55c5" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_button_square_outline.svg" id="48_cx3uy"]
+[ext_resource type="Texture2D" uid="uid://duuk8t5f522sd" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_button_square.svg" id="49_6juye"]
+[ext_resource type="Texture2D" uid="uid://b16rh4gfnvnuo" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_button_triangle_outline.svg" id="50_8ds14"]
+[ext_resource type="Texture2D" uid="uid://sa7dbyh4pm56" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_button_triangle.svg" id="51_3sapm"]
+[ext_resource type="Texture2D" uid="uid://bwakie8y4nx58" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_dpad_none.svg" id="52_iccxp"]
+[ext_resource type="Texture2D" uid="uid://cmsulqu82gpu5" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_dpad_up_outline.svg" id="53_1mwrh"]
+[ext_resource type="Texture2D" uid="uid://w7di1j7to3hb" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_dpad_down_outline.svg" id="54_uepbl"]
+[ext_resource type="Texture2D" uid="uid://cm5rvc87h5ajy" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_dpad_left_outline.svg" id="55_8gkmr"]
+[ext_resource type="Texture2D" uid="uid://ciq2qdvx0khbj" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_dpad_right_outline.svg" id="56_t8hsd"]
+[ext_resource type="Texture2D" uid="uid://cxqt76lu3fyed" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_ls_outline.svg" id="57_tfvmf"]
+[ext_resource type="Texture2D" uid="uid://7eg1mh64qwip" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_ls.svg" id="58_tnbvb"]
+[ext_resource type="Texture2D" uid="uid://csiyxsrpxy1x8" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_button_outline.svg" id="59_mdrx2"]
+[ext_resource type="Texture2D" uid="uid://bkxjwnccton1q" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_minus_outline.svg" id="60_b010b"]
+[ext_resource type="Texture2D" uid="uid://bf6msts20ycda" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_w_outline.svg" id="60_eenuy"]
+[ext_resource type="Texture2D" uid="uid://bhlaskkn7nbxj" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_w.svg" id="61_1p6a3"]
+[ext_resource type="Texture2D" uid="uid://dxnq7e8uto3o2" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_minus.svg" id="61_8h48d"]
+[ext_resource type="Texture2D" uid="uid://dw1y612opo0vp" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_sync_outline.svg" id="62_kjj4c"]
+[ext_resource type="Texture2D" uid="uid://cpuk50ll20wea" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_a_outline.svg" id="62_sxdkc"]
+[ext_resource type="Texture2D" uid="uid://cyrh70egpfuu7" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_a.svg" id="63_10i3g"]
+[ext_resource type="Texture2D" uid="uid://b5qy00fjfduof" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_sync.svg" id="63_41yui"]
+[ext_resource type="Texture2D" uid="uid://d1mnwpwpl2k5e" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_plus_outline.svg" id="64_aio4o"]
+[ext_resource type="Texture2D" uid="uid://dtyh7b8xpfsb2" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_s_outline.svg" id="64_g0qd0"]
+[ext_resource type="Texture2D" uid="uid://cbqp5rf55hxn0" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_plus.svg" id="65_amydg"]
+[ext_resource type="Texture2D" uid="uid://d1rcbxhxjqbcg" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_s.svg" id="65_tqkpd"]
+[ext_resource type="Texture2D" uid="uid://b12s2xl6s0dph" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_stick_top_l.svg" id="66_gjgvo"]
+[ext_resource type="Texture2D" uid="uid://6jbcphd81nwf" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_d_outline.svg" id="66_sttyu"]
+[ext_resource type="Texture2D" uid="uid://dfsvarl32qaoc" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_d.svg" id="67_kc587"]
+[ext_resource type="Texture2D" uid="uid://gin43r8jm3il" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_stick_top_r.svg" id="67_tk4r0"]
+[ext_resource type="Texture2D" uid="uid://yrblpx1ksamj" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_l_outline.svg" id="68_t71u3"]
+[ext_resource type="Texture2D" uid="uid://p35mxwd8guqj" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_i_outline.svg" id="68_y0ckb"]
+[ext_resource type="Texture2D" uid="uid://cq8yrlc2gpvjh" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_i.svg" id="69_c88j6"]
+[ext_resource type="Texture2D" uid="uid://b1p5jeu3y5ay7" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_l.svg" id="69_vij6g"]
+[ext_resource type="Texture2D" uid="uid://6r1s0apqbl60" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_r_outline.svg" id="70_qjulo"]
+[ext_resource type="Texture2D" uid="uid://byl8adwl5vl8q" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_j_outline.svg" id="70_thqgb"]
+[ext_resource type="Texture2D" uid="uid://d0omkiac41aaq" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_j.svg" id="71_fqvfc"]
+[ext_resource type="Texture2D" uid="uid://b3jsytx1m8axt" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_r.svg" id="71_i0xa6"]
+[ext_resource type="Texture2D" uid="uid://ca1r4fdwresa2" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_zl_outline.svg" id="72_sx22o"]
+[ext_resource type="Texture2D" uid="uid://bkdn81sit36oh" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_k_outline.svg" id="72_tr8h5"]
+[ext_resource type="Texture2D" uid="uid://bhshn23xiswyq" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_zl.svg" id="73_cx3uy"]
+[ext_resource type="Texture2D" uid="uid://bnq54bhq4o7of" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_k.svg" id="73_l1jde"]
+[ext_resource type="Texture2D" uid="uid://dgpt1b56e83yc" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_zr_outline.svg" id="74_6juye"]
+[ext_resource type="Texture2D" uid="uid://drajod7p6gfok" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_l_outline.svg" id="74_bcmhq"]
+[ext_resource type="Texture2D" uid="uid://dtps8jrqdodsy" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Nintendo Switch/Vector/switch_button_zr.svg" id="75_8ds14"]
+[ext_resource type="Texture2D" uid="uid://b5aw7ciy0g4gr" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_l.svg" id="75_msk0v"]
+[ext_resource type="Texture2D" uid="uid://cdjddgf556kjt" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_rs_outline.svg" id="76_a0h6d"]
+[ext_resource type="Texture2D" uid="uid://o15ln4wybn4a" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_rs.svg" id="77_iikrr"]
+[ext_resource type="Texture2D" uid="uid://bp3a4v6n6l8v5" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_arrow_up_outline.svg" id="78_ijvwe"]
+[ext_resource type="Texture2D" uid="uid://qcwykgwm0x87" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_arrow_up.svg" id="79_7odnn"]
+[ext_resource type="Texture2D" uid="uid://ckw23yo7tylxp" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_arrow_left_outline.svg" id="80_w56jl"]
+[ext_resource type="Texture2D" uid="uid://cciy74dnv8y13" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_arrow_left.svg" id="81_k80tt"]
+[ext_resource type="Texture2D" uid="uid://c1fvqwoyccvu1" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_arrow_down_outline.svg" id="82_08dr4"]
+[ext_resource type="Texture2D" uid="uid://bsgmyqaqebo73" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_arrow_down.svg" id="83_ay47k"]
+[ext_resource type="Texture2D" uid="uid://b1mb8s60w2nst" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation5_button_create_outline.svg" id="84_3sapm"]
+[ext_resource type="Texture2D" uid="uid://dmgwqxju2cyfe" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_arrow_right_outline.svg" id="84_o5u1y"]
+[ext_resource type="Texture2D" uid="uid://ml7bdqo0v5ja" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation5_button_create.svg" id="85_iccxp"]
+[ext_resource type="Texture2D" uid="uid://b3cvd04a167xq" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Keyboard & Mouse/Vector/keyboard_arrow_right.svg" id="85_osf25"]
+[ext_resource type="Texture2D" uid="uid://bj2nuh4kwyr1p" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation5_button_mute_outline.svg" id="86_1mwrh"]
+[ext_resource type="Texture2D" uid="uid://dv0iqqk34c7ve" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_lb_outline.svg" id="86_6rw3k"]
+[ext_resource type="Texture2D" uid="uid://bji81b6l8eid0" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_lb.svg" id="87_h8pou"]
+[ext_resource type="Texture2D" uid="uid://7wdf8dgoxeup" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation5_button_mute.svg" id="87_uepbl"]
+[ext_resource type="Texture2D" uid="uid://dr7c6vky6427t" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation5_button_options_outline.svg" id="88_8gkmr"]
+[ext_resource type="Texture2D" uid="uid://c1n1m3jo7bisj" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_lt_outline.svg" id="88_bt0ik"]
+[ext_resource type="Texture2D" uid="uid://3uks54sktwjm" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_lt.svg" id="89_qjs60"]
+[ext_resource type="Texture2D" uid="uid://cypuj0hy6qw17" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation5_button_options.svg" id="89_t8hsd"]
+[ext_resource type="Texture2D" uid="uid://djcbdkhnshxj2" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_button_l3_outline.svg" id="90_tfvmf"]
+[ext_resource type="Texture2D" uid="uid://ci86323vtaa6m" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_button_view_outline.svg" id="90_y4q6c"]
+[ext_resource type="Texture2D" uid="uid://b3issnm7j2by5" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_button_view.svg" id="91_d88iv"]
+[ext_resource type="Texture2D" uid="uid://6aahoe6c2cwd" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_button_l3.svg" id="91_tnbvb"]
+[ext_resource type="Texture2D" uid="uid://blhs0v05v6rkk" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_button_r3_outline.svg" id="92_mdrx2"]
+[ext_resource type="Texture2D" uid="uid://cj7q5injyl13i" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_button_share_outline.svg" id="92_wqt5i"]
+[ext_resource type="Texture2D" uid="uid://boy5is2mgxje5" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_button_share.svg" id="93_d78lw"]
+[ext_resource type="Texture2D" uid="uid://dkhs3yuw522oy" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_button_r3.svg" id="93_eenuy"]
+[ext_resource type="Texture2D" uid="uid://tuosbv216y5d" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_trigger_l1_alternative_outline.svg" id="94_1p6a3"]
+[ext_resource type="Texture2D" uid="uid://df2ggww1swume" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_button_menu_outline.svg" id="94_24ci8"]
+[ext_resource type="Texture2D" uid="uid://bpspmyqfy4ke2" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_button_menu.svg" id="95_ms6j8"]
+[ext_resource type="Texture2D" uid="uid://dg1yalw6st38y" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_trigger_l1_alternative.svg" id="95_sxdkc"]
+[ext_resource type="Texture2D" uid="uid://c8qu2arfbpbkq" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_trigger_r1_alternative_outline.svg" id="96_10i3g"]
+[ext_resource type="Texture2D" uid="uid://bfvw48aix1fw2" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_rb_outline.svg" id="96_b4cxv"]
+[ext_resource type="Texture2D" uid="uid://ci5djbpqh6int" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_rb.svg" id="97_7jfjc"]
+[ext_resource type="Texture2D" uid="uid://pp6w3axl2y3o" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_trigger_r1_alternative.svg" id="97_g0qd0"]
+[ext_resource type="Texture2D" uid="uid://yhfs0k0sb43n" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_rt_outline.svg" id="98_qc2ra"]
+[ext_resource type="Texture2D" uid="uid://nvxth0rpnfqp" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_trigger_l2_alternative_outline.svg" id="98_tqkpd"]
+[ext_resource type="Texture2D" uid="uid://cpy2n0x8ru2p5" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_trigger_l2_alternative.svg" id="99_sttyu"]
+[ext_resource type="Texture2D" uid="uid://bbcey1dfwnf15" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/Xbox Series/Vector/xbox_rt.svg" id="99_yvgal"]
+[ext_resource type="Texture2D" uid="uid://dune22i0s7fm8" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_trigger_r2_alternative_outline.svg" id="100_kc587"]
+[ext_resource type="Texture2D" uid="uid://dcxj4mkcfgpva" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_trigger_r2_alternative.svg" id="101_y0ckb"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_rs4nb"]
+points = PackedVector2Array(-12, -12, -12, -32, 12, -32, 12, -12, 0, 0)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_kwisa"]
+points = PackedVector2Array(-12, 12, -12, 32, 12, 32, 12, 12, 0, 0)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_qrmb0"]
+points = PackedVector2Array(-12, 12, -32, 12, -32, -12, -12, -12, 0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xf6l6"]
+line_spacing = 0.0
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_wwnia"]
+points = PackedVector2Array(12, 12, 32, 12, 32, -12, 12, -12, 0, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rs4nb"]
+radius = 32.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xf6l6"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 10000
+corner_radius_top_right = 10000
+corner_radius_bottom_right = 10000
+corner_radius_bottom_left = 10000
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rs4nb"]
+bg_color = Color(1, 1, 1, 0.6)
+corner_radius_top_left = 10000
+corner_radius_top_right = 10000
+corner_radius_bottom_right = 10000
+corner_radius_bottom_left = 10000
+corner_detail = 20
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sp4yc"]
+size = Vector2(48, 48)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wwnia"]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qrmb0"]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xf6l6"]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q7kt0"]
+radius = 32.0
+
+[node name="Controls" type="CanvasLayer" unique_id=1181235604]
+script = ExtResource("1_f8ygc")
+keyboard_mouse_button_0_normal = ExtResource("2_nckgs")
+keyboard_mouse_button_0_pressed = ExtResource("3_lo8k5")
+keyboard_mouse_button_1_normal = ExtResource("4_bi5c6")
+keyboard_mouse_button_1_pressed = ExtResource("5_nnsk4")
+keyboard_mouse_button_2_normal = ExtResource("6_yavoi")
+keyboard_mouse_button_2_pressed = ExtResource("7_no15m")
+keyboard_mouse_button_3_normal = ExtResource("8_a0m6w")
+keyboard_mouse_button_3_pressed = ExtResource("9_vqxbh")
+keyboard_mouse_button_4_normal = ExtResource("10_j00au")
+keyboard_mouse_button_4_pressed = ExtResource("11_7mkt6")
+keyboard_mouse_button_15_normal = ExtResource("12_rus7y")
+keyboard_mouse_button_15_pressed = ExtResource("13_lhtj6")
+keyboard_mouse_button_6_normal = ExtResource("14_o71ir")
+keyboard_mouse_button_6_pressed = ExtResource("15_w2l3g")
+keyboard_mouse_button_7_normal = ExtResource("16_40188")
+keyboard_mouse_button_7_pressed = ExtResource("17_877dd")
+keyboard_mouse_button_8_normal = ExtResource("18_xn6by")
+keyboard_mouse_button_8_pressed = ExtResource("19_5hjre")
+keyboard_mouse_button_9_normal = ExtResource("20_kw7j5")
+keyboard_mouse_button_9_pressed = ExtResource("21_lslnu")
+keyboard_mouse_button_10_normal = ExtResource("22_bg0d6")
+keyboard_mouse_button_10_pressed = ExtResource("23_hsjmp")
+keyboard_mouse_axis_4_plus_normal = ExtResource("24_nwoek")
+keyboard_mouse_axis_4_plus_pressed = ExtResource("25_b0keo")
+keyboard_mouse_axis_5_plus_normal = ExtResource("26_a511l")
+keyboard_mouse_axis_5_plus_pressed = ExtResource("27_bk1vy")
+microsoft_button_0_normal = ExtResource("28_8bsuf")
+microsoft_button_0_pressed = ExtResource("29_3mm0c")
+microsoft_button_1_normal = ExtResource("30_4pbas")
+microsoft_button_1_pressed = ExtResource("31_ymx8d")
+microsoft_button_2_normal = ExtResource("32_8vtad")
+microsoft_button_2_pressed = ExtResource("33_hblaw")
+microsoft_button_3_normal = ExtResource("34_o0hr1")
+microsoft_button_3_pressed = ExtResource("35_b010b")
+microsoft_button_4_normal = ExtResource("90_y4q6c")
+microsoft_button_4_pressed = ExtResource("91_d88iv")
+microsoft_button_15_normal = ExtResource("92_wqt5i")
+microsoft_button_15_pressed = ExtResource("93_d78lw")
+microsoft_button_6_normal = ExtResource("94_24ci8")
+microsoft_button_6_pressed = ExtResource("95_ms6j8")
+microsoft_button_7_normal = ExtResource("57_tfvmf")
+microsoft_button_7_pressed = ExtResource("58_tnbvb")
+microsoft_button_8_normal = ExtResource("76_a0h6d")
+microsoft_button_8_pressed = ExtResource("77_iikrr")
+microsoft_button_9_normal = ExtResource("86_6rw3k")
+microsoft_button_9_pressed = ExtResource("87_h8pou")
+microsoft_button_10_normal = ExtResource("96_b4cxv")
+microsoft_button_10_pressed = ExtResource("97_7jfjc")
+microsoft_axis_4_plus_normal = ExtResource("88_bt0ik")
+microsoft_axis_4_plus_pressed = ExtResource("89_qjs60")
+microsoft_axis_5_plus_normal = ExtResource("98_qc2ra")
+microsoft_axis_5_plus_pressed = ExtResource("99_yvgal")
+nintendo_button_0_normal = ExtResource("38_41yui")
+nintendo_button_0_pressed = ExtResource("39_aio4o")
+nintendo_button_1_normal = ExtResource("36_8h48d")
+nintendo_button_1_pressed = ExtResource("37_kjj4c")
+nintendo_button_2_normal = ExtResource("42_tk4r0")
+nintendo_button_2_pressed = ExtResource("43_t71u3")
+nintendo_button_3_normal = ExtResource("40_amydg")
+nintendo_button_3_pressed = ExtResource("41_gjgvo")
+nintendo_button_4_normal = ExtResource("60_b010b")
+nintendo_button_4_pressed = ExtResource("61_8h48d")
+nintendo_button_15_normal = ExtResource("62_kjj4c")
+nintendo_button_15_pressed = ExtResource("63_41yui")
+nintendo_button_6_normal = ExtResource("64_aio4o")
+nintendo_button_6_pressed = ExtResource("65_amydg")
+nintendo_button_7_normal = ExtResource("66_gjgvo")
+nintendo_button_7_pressed = ExtResource("66_gjgvo")
+nintendo_button_8_normal = ExtResource("67_tk4r0")
+nintendo_button_8_pressed = ExtResource("67_tk4r0")
+nintendo_button_9_normal = ExtResource("68_t71u3")
+nintendo_button_9_pressed = ExtResource("69_vij6g")
+nintendo_button_10_normal = ExtResource("70_qjulo")
+nintendo_button_10_pressed = ExtResource("71_i0xa6")
+nintendo_axis_4_plus_normal = ExtResource("72_sx22o")
+nintendo_axis_4_plus_pressed = ExtResource("73_cx3uy")
+nintendo_axis_5_plus_normal = ExtResource("74_6juye")
+nintendo_axis_5_plus_pressed = ExtResource("75_8ds14")
+sony_button_0_normal = ExtResource("44_vij6g")
+sony_button_0_pressed = ExtResource("45_qjulo")
+sony_button_1_normal = ExtResource("46_i0xa6")
+sony_button_1_pressed = ExtResource("47_sx22o")
+sony_button_2_normal = ExtResource("48_cx3uy")
+sony_button_2_pressed = ExtResource("49_6juye")
+sony_button_3_normal = ExtResource("50_8ds14")
+sony_button_3_pressed = ExtResource("51_3sapm")
+sony_button_4_normal = ExtResource("84_3sapm")
+sony_button_4_pressed = ExtResource("85_iccxp")
+sony_button_15_normal = ExtResource("86_1mwrh")
+sony_button_15_pressed = ExtResource("87_uepbl")
+sony_button_6_normal = ExtResource("88_8gkmr")
+sony_button_6_pressed = ExtResource("89_t8hsd")
+sony_button_7_normal = ExtResource("90_tfvmf")
+sony_button_7_pressed = ExtResource("91_tnbvb")
+sony_button_8_normal = ExtResource("92_mdrx2")
+sony_button_8_pressed = ExtResource("93_eenuy")
+sony_button_9_normal = ExtResource("94_1p6a3")
+sony_button_9_pressed = ExtResource("95_sxdkc")
+sony_button_10_normal = ExtResource("96_10i3g")
+sony_button_10_pressed = ExtResource("97_g0qd0")
+sony_axis_4_plus_normal = ExtResource("98_tqkpd")
+sony_axis_4_plus_pressed = ExtResource("99_sttyu")
+sony_axis_5_plus_normal = ExtResource("100_kc587")
+sony_axis_5_plus_pressed = ExtResource("101_y0ckb")
+
+[node name="BottomLeft" type="Control" parent="." unique_id=1713088668]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -320.0
+offset_right = 320.0
+grow_vertical = 0
+pivot_offset = Vector2(0, 320)
+mouse_filter = 2
+
+[node name="DPadBase" type="TextureRect" parent="BottomLeft" unique_id=861224565]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 184.0
+offset_right = 256.0
+offset_bottom = 248.0
+scale = Vector2(2, 2)
+texture = ExtResource("52_iccxp")
+
+[node name="JoypadButton11" type="TouchScreenButton" parent="BottomLeft" unique_id=216605611]
+position = Vector2(192, 184)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("52_iccxp")
+texture_pressed = ExtResource("53_1mwrh")
+shape = SubResource("ConvexPolygonShape2D_rs4nb")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomLeft/JoypadButton11" unique_id=724217657]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = -18.0
+offset_right = 72.0
+offset_bottom = 31.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="JoypadButton12" type="TouchScreenButton" parent="BottomLeft" unique_id=1173119804]
+position = Vector2(192, 184)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("52_iccxp")
+texture_pressed = ExtResource("54_uepbl")
+shape = SubResource("ConvexPolygonShape2D_kwisa")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomLeft/JoypadButton12" unique_id=1859234343]
+custom_maximum_size = Vector2(96, -1)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = 56.5
+offset_right = 72.0
+offset_bottom = 79.5
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JoypadButton13" type="TouchScreenButton" parent="BottomLeft" unique_id=1212613253]
+position = Vector2(192, 184)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("52_iccxp")
+texture_pressed = ExtResource("55_8gkmr")
+shape = SubResource("ConvexPolygonShape2D_qrmb0")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomLeft/JoypadButton13" unique_id=222978466]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -12.0
+offset_right = 54.5
+offset_bottom = 37.0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+label_settings = SubResource("LabelSettings_xf6l6")
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="JoypadButton14" type="TouchScreenButton" parent="BottomLeft" unique_id=506483572]
+position = Vector2(192, 184)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("52_iccxp")
+texture_pressed = ExtResource("56_t8hsd")
+shape = SubResource("ConvexPolygonShape2D_wwnia")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomLeft/JoypadButton14" unique_id=1667560914]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 58.0
+offset_top = -12.0
+offset_right = 154.0
+offset_bottom = 37.0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+label_settings = SubResource("LabelSettings_xf6l6")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="JoypadButton7" type="TouchScreenButton" parent="BottomLeft" unique_id=417297691]
+position = Vector2(0, 256)
+texture_normal = ExtResource("57_tfvmf")
+texture_pressed = ExtResource("58_tnbvb")
+shape = SubResource("CircleShape2D_rs4nb")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomLeft/JoypadButton7" unique_id=433012390]
+custom_maximum_size = Vector2(56, 56)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_top = -48.0
+offset_right = 28.0
+offset_bottom = 8.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="LeftStickBase" type="TextureRect" parent="BottomLeft" unique_id=538675964]
+visible = false
+layout_mode = 0
+offset_left = 48.0
+offset_top = 32.0
+offset_right = 112.0
+offset_bottom = 96.0
+scale = Vector2(2, 2)
+texture = ExtResource("59_mdrx2")
+
+[node name="LeftJoystick" type="VirtualJoystick" parent="BottomLeft" unique_id=261237229]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = -264.0
+offset_right = 152.0
+offset_bottom = -184.0
+grow_vertical = 0
+theme_override_styles/normal_tip = SubResource("StyleBoxFlat_xf6l6")
+theme_override_styles/pressed_tip = SubResource("StyleBoxFlat_rs4nb")
+
+[node name="Label" type="Label" parent="BottomLeft/LeftJoystick" unique_id=1413698108]
+custom_maximum_size = Vector2(96, 49)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = 13.0
+offset_right = 48.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="KeyW" type="TouchScreenButton" parent="BottomLeft" unique_id=227719598]
+visible = false
+position = Vector2(80, 40)
+texture_normal = ExtResource("60_eenuy")
+texture_pressed = ExtResource("61_1p6a3")
+shape = SubResource("RectangleShape2D_sp4yc")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomLeft/KeyW" unique_id=1116212167]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -108.0
+offset_right = 48.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="KeyA" type="TouchScreenButton" parent="BottomLeft" unique_id=1852721401]
+visible = false
+position = Vector2(32, 88)
+texture_normal = ExtResource("62_sxdkc")
+texture_pressed = ExtResource("63_10i3g")
+shape = SubResource("RectangleShape2D_sp4yc")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomLeft/KeyA" unique_id=1788475514]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -24.5
+offset_right = 5.0
+offset_bottom = 24.5
+grow_vertical = 2
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="KeyS" type="TouchScreenButton" parent="BottomLeft" unique_id=697488247]
+visible = false
+position = Vector2(80, 88)
+texture_normal = ExtResource("64_g0qd0")
+texture_pressed = ExtResource("65_tqkpd")
+shape = SubResource("RectangleShape2D_sp4yc")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomLeft/KeyS" unique_id=1378395330]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -9.0
+offset_right = 48.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="KeyD" type="TouchScreenButton" parent="BottomLeft" unique_id=992157285]
+visible = false
+position = Vector2(128, 88)
+texture_normal = ExtResource("66_sttyu")
+texture_pressed = ExtResource("67_kc587")
+shape = SubResource("RectangleShape2D_sp4yc")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomLeft/KeyD" unique_id=864247759]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -24.5
+offset_right = 91.0
+offset_bottom = 24.5
+grow_horizontal = 0
+grow_vertical = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="KeyI" type="TouchScreenButton" parent="BottomLeft" unique_id=392059391]
+visible = false
+position = Vector2(224, 192)
+texture_normal = ExtResource("68_y0ckb")
+texture_pressed = ExtResource("69_c88j6")
+shape = SubResource("RectangleShape2D_sp4yc")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomLeft/KeyI" unique_id=1517276430]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.5
+offset_top = -41.5
+offset_right = 48.5
+offset_bottom = 7.5
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="KeyJ" type="TouchScreenButton" parent="BottomLeft" unique_id=2142722128]
+visible = false
+position = Vector2(176, 240)
+texture_normal = ExtResource("70_thqgb")
+texture_pressed = ExtResource("71_fqvfc")
+shape = SubResource("RectangleShape2D_sp4yc")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomLeft/KeyJ" unique_id=1359570107]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -24.0
+offset_right = 5.0
+offset_bottom = 25.0
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_xf6l6")
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="KeyK" type="TouchScreenButton" parent="BottomLeft" unique_id=711519297]
+visible = false
+position = Vector2(224, 240)
+texture_normal = ExtResource("72_tr8h5")
+texture_pressed = ExtResource("73_l1jde")
+shape = SubResource("RectangleShape2D_sp4yc")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomLeft/KeyK" unique_id=1993763106]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.5
+offset_top = 57.5
+offset_right = 48.5
+offset_bottom = 80.5
+grow_horizontal = 2
+horizontal_alignment = 1
+
+[node name="KeyL" type="TouchScreenButton" parent="BottomLeft" unique_id=215858380]
+visible = false
+position = Vector2(272, 240)
+texture_normal = ExtResource("74_bcmhq")
+texture_pressed = ExtResource("75_msk0v")
+shape = SubResource("RectangleShape2D_sp4yc")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomLeft/KeyL" unique_id=1224760024]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 59.0
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 25.0
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_xf6l6")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BottomRight" type="Control" parent="." unique_id=945907988]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -320.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(320, 320)
+mouse_filter = 2
+
+[node name="JoypadButton0" type="TouchScreenButton" parent="BottomRight" unique_id=552765389]
+position = Vector2(192, 128)
+texture_normal = ExtResource("28_8bsuf")
+texture_pressed = ExtResource("29_3mm0c")
+shape = SubResource("CircleShape2D_wwnia")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomRight/JoypadButton0" unique_id=926264414]
+custom_maximum_size = Vector2(56, 56)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_top = -48.0
+offset_right = 28.0
+offset_bottom = 8.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="JoypadButton1" type="TouchScreenButton" parent="BottomRight" unique_id=872941844]
+position = Vector2(256, 64)
+texture_normal = ExtResource("30_4pbas")
+texture_pressed = ExtResource("31_ymx8d")
+shape = SubResource("CircleShape2D_qrmb0")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomRight/JoypadButton1" unique_id=2121727848]
+custom_maximum_size = Vector2(56, 56)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_top = -48.0
+offset_right = 28.0
+offset_bottom = 8.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="JoypadButton2" type="TouchScreenButton" parent="BottomRight" unique_id=1212512332]
+position = Vector2(128, 64)
+texture_normal = ExtResource("32_8vtad")
+texture_pressed = ExtResource("33_hblaw")
+shape = SubResource("CircleShape2D_wwnia")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomRight/JoypadButton2" unique_id=924171933]
+custom_maximum_size = Vector2(56, 56)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -25.0
+offset_top = -42.0
+offset_right = 25.0
+offset_bottom = 8.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="JoypadButton3" type="TouchScreenButton" parent="BottomRight" unique_id=798617834]
+position = Vector2(192, 0)
+texture_normal = ExtResource("34_o0hr1")
+texture_pressed = ExtResource("35_b010b")
+shape = SubResource("CircleShape2D_xf6l6")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomRight/JoypadButton3" unique_id=1496174418]
+custom_maximum_size = Vector2(56, 56)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_top = -48.0
+offset_right = 28.0
+offset_bottom = 8.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="JoypadButton8" type="TouchScreenButton" parent="BottomRight" unique_id=1690559978]
+position = Vector2(256, 256)
+texture_normal = ExtResource("76_a0h6d")
+texture_pressed = ExtResource("77_iikrr")
+shape = SubResource("CircleShape2D_rs4nb")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomRight/JoypadButton8" unique_id=1914557801]
+custom_maximum_size = Vector2(56, 56)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_top = -48.0
+offset_right = 28.0
+offset_bottom = 8.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="RightStickBase" type="TextureRect" parent="BottomRight" unique_id=488676245]
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 160.0
+offset_right = 96.0
+offset_bottom = 224.0
+scale = Vector2(2, 2)
+texture = ExtResource("59_mdrx2")
+
+[node name="RightJoystick" type="VirtualJoystick" parent="BottomRight" unique_id=310679774]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 185.0
+offset_right = 137.0
+offset_bottom = 265.0
+theme_override_styles/normal_tip = SubResource("StyleBoxFlat_xf6l6")
+theme_override_styles/pressed_tip = SubResource("StyleBoxFlat_rs4nb")
+
+[node name="Label" type="Label" parent="BottomRight/RightJoystick" unique_id=469915080]
+custom_maximum_size = Vector2(96, 49)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = 13.0
+offset_right = 48.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="KeyUp" type="TouchScreenButton" parent="BottomRight" unique_id=194875519]
+visible = false
+position = Vector2(64, 168)
+texture_normal = ExtResource("78_ijvwe")
+texture_pressed = ExtResource("79_7odnn")
+shape = SubResource("RectangleShape2D_sp4yc")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomRight/KeyUp" unique_id=1644234347]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -105.0
+offset_right = 48.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="KeyLeft" type="TouchScreenButton" parent="BottomRight" unique_id=1057431227]
+visible = false
+position = Vector2(16, 216)
+texture_normal = ExtResource("80_w56jl")
+texture_pressed = ExtResource("81_k80tt")
+shape = SubResource("RectangleShape2D_sp4yc")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomRight/KeyLeft" unique_id=156485861]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -24.5
+offset_right = 5.0
+offset_bottom = 24.5
+grow_vertical = 2
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="KeyDown" type="TouchScreenButton" parent="BottomRight" unique_id=10944827]
+visible = false
+position = Vector2(64, 216)
+texture_normal = ExtResource("82_08dr4")
+texture_pressed = ExtResource("83_ay47k")
+shape = SubResource("RectangleShape2D_sp4yc")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomRight/KeyDown" unique_id=842180098]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -8.0
+offset_right = 48.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+
+[node name="KeyRight" type="TouchScreenButton" parent="BottomRight" unique_id=1891117815]
+visible = false
+position = Vector2(112, 216)
+texture_normal = ExtResource("84_o5u1y")
+texture_pressed = ExtResource("85_osf25")
+shape = SubResource("RectangleShape2D_sp4yc")
+passby_press = true
+
+[node name="Label" type="Label" parent="BottomRight/KeyRight" unique_id=1670398670]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -24.5
+offset_right = 91.0
+offset_bottom = 24.5
+grow_horizontal = 0
+grow_vertical = 2
+vertical_alignment = 1
+
+[node name="TopLeft" type="Control" parent="." unique_id=1772685832]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 128.0
+mouse_filter = 2
+
+[node name="JoypadButton9" type="TouchScreenButton" parent="TopLeft" unique_id=70522918]
+texture_normal = ExtResource("86_6rw3k")
+texture_pressed = ExtResource("87_h8pou")
+shape = SubResource("CircleShape2D_rs4nb")
+passby_press = true
+
+[node name="Label" type="Label" parent="TopLeft/JoypadButton9" unique_id=1394231043]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -24.5
+offset_right = 91.0
+offset_bottom = 24.5
+grow_horizontal = 0
+grow_vertical = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="JoypadAxis4Plus" type="TouchScreenButton" parent="TopLeft" unique_id=1424345727]
+position = Vector2(0, 64)
+texture_normal = ExtResource("88_bt0ik")
+texture_pressed = ExtResource("89_qjs60")
+shape = SubResource("CircleShape2D_rs4nb")
+passby_press = true
+
+[node name="Label" type="Label" parent="TopLeft/JoypadAxis4Plus" unique_id=88848650]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -24.5
+offset_right = 91.0
+offset_bottom = 24.5
+grow_horizontal = 0
+grow_vertical = 2
+vertical_alignment = 1
+
+[node name="TopCenter" type="Control" parent="." unique_id=2024208215]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_right = 96.0
+offset_bottom = 64.0
+grow_horizontal = 2
+pivot_offset = Vector2(96, 0)
+mouse_filter = 2
+
+[node name="JoypadButton4" type="TouchScreenButton" parent="TopCenter" unique_id=1885477471]
+texture_normal = ExtResource("90_y4q6c")
+texture_pressed = ExtResource("91_d88iv")
+shape = SubResource("CircleShape2D_rs4nb")
+passby_press = true
+
+[node name="Label" type="Label" parent="TopCenter/JoypadButton4" unique_id=576494979]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -24.5
+offset_right = 5.0
+offset_bottom = 24.5
+grow_vertical = 2
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="JoypadButton15" type="TouchScreenButton" parent="TopCenter" unique_id=722696144]
+position = Vector2(64, 0)
+texture_normal = ExtResource("92_wqt5i")
+texture_pressed = ExtResource("93_d78lw")
+shape = SubResource("CircleShape2D_rs4nb")
+passby_press = true
+
+[node name="Label" type="Label" parent="TopCenter/JoypadButton15" unique_id=1273655075]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -8.0
+offset_right = 48.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Screenshot"
+horizontal_alignment = 1
+
+[node name="JoypadButton6" type="TouchScreenButton" parent="TopCenter" unique_id=231754768]
+position = Vector2(128, 0)
+texture_normal = ExtResource("94_24ci8")
+texture_pressed = ExtResource("95_ms6j8")
+shape = SubResource("CircleShape2D_q7kt0")
+passby_press = true
+
+[node name="Label" type="Label" parent="TopCenter/JoypadButton6" unique_id=1741042731]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -24.5
+offset_right = 91.0
+offset_bottom = 24.5
+grow_horizontal = 0
+grow_vertical = 2
+vertical_alignment = 1
+
+[node name="TopRight" type="Control" parent="." unique_id=1075942319]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_bottom = 128.0
+grow_horizontal = 0
+pivot_offset = Vector2(64, 0)
+mouse_filter = 2
+
+[node name="JoypadButton10" type="TouchScreenButton" parent="TopRight" unique_id=1763078092]
+texture_normal = ExtResource("96_b4cxv")
+texture_pressed = ExtResource("97_7jfjc")
+shape = SubResource("CircleShape2D_rs4nb")
+passby_press = true
+
+[node name="Label" type="Label" parent="TopRight/JoypadButton10" unique_id=481911405]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -24.5
+offset_right = 6.0
+offset_bottom = 24.5
+grow_vertical = 2
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="JoypadAxis5Plus" type="TouchScreenButton" parent="TopRight" unique_id=1548286525]
+position = Vector2(0, 64)
+texture_normal = ExtResource("98_qc2ra")
+texture_pressed = ExtResource("99_yvgal")
+shape = SubResource("CircleShape2D_rs4nb")
+passby_press = true
+
+[node name="Label" type="Label" parent="TopRight/JoypadAxis5Plus" unique_id=806977869]
+custom_maximum_size = Vector2(96, 49)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -24.5
+offset_right = 5.0
+offset_bottom = 24.5
+grow_vertical = 2
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3

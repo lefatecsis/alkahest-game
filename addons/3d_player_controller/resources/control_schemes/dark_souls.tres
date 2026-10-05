@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ControlScheme" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/control_scheme.gd" id="1_control_scheme"]
+
+[resource]
+script = ExtResource("1_control_scheme")
+scheme_name = "Dark Souls"
+action_button_0 = &"action"
+action_button_1 = &"sprint"
+action_button_2 = &"ability"
+action_button_3 = &"last_weapon"
+extra_slots = {
+"axis_5_plus": &"attack",
+"button_10": &"throw",
+"button_8": &"focus",
+"button_9": &"scope"
+}
+slot_labels = {
+"axis_5_plus": "Strong",
+"button_0": "Interact",
+"button_1": "Backstep",
+"button_10": "Attack",
+"button_2": "Item",
+"button_3": "Stance",
+"button_8": "Lock-On",
+"button_9": "Guard"
+}
+rolls = true
+locks_on = true

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ControlScheme" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/control_scheme.gd" id="1_control_scheme"]
+
+[resource]
+script = ExtResource("1_control_scheme")
+scheme_name = "Half-Life"
+action_button_0 = &"jump"
+action_button_1 = &"reload"
+action_button_2 = &"action"
+action_button_3 = &"flashlight"
+extra_slots = {
+"axis_5_plus": &"shoot",
+"button_7": &"crouch",
+"button_9": &"sprint"
+}
+slot_labels = {
+"axis_5_plus": "Attack",
+"button_0": "Jump",
+"button_1": "Reload",
+"button_2": "Use",
+"button_3": "Flashlight",
+"button_7": "Duck",
+"button_9": "Sprint"
+}
+locks_on = false

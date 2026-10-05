@@ -1,0 +1,249 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/inventory/scripts/inventory_screen.gd" id="1_screen"]
+[ext_resource type="Texture2D" path="res://addons/3d_player_controller/assets/game_icons/gladius.svg" id="2_equipment"]
+[ext_resource type="Texture2D" path="res://addons/3d_player_controller/inventory/assets/icons/materials.svg" id="3_materials"]
+[ext_resource type="Texture2D" path="res://addons/3d_player_controller/inventory/assets/icons/food.svg" id="4_food"]
+[ext_resource type="Texture2D" path="res://addons/3d_player_controller/inventory/assets/icons/key.svg" id="5_key"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font_size = 20
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tab"]
+size = Vector2(120, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_action"]
+size = Vector2(72, 30)
+
+[node name="InventoryScreen" type="CanvasLayer"]
+script = ExtResource("1_screen")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -240.0
+offset_right = 360.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = -12.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Inventory"
+label_settings = SubResource("LabelSettings_title")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Tabs" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="EquipmentTab" type="Button" parent="Panel/VBoxContainer/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+toggle_mode = true
+text = "Equipment"
+icon = ExtResource("2_equipment")
+expand_icon = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Tabs/EquipmentTab"]
+position = Vector2(60, 15)
+shape = SubResource("RectangleShape2D_tab")
+
+[node name="MaterialsTab" type="Button" parent="Panel/VBoxContainer/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+toggle_mode = true
+text = "Materials"
+icon = ExtResource("3_materials")
+expand_icon = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Tabs/MaterialsTab"]
+position = Vector2(60, 15)
+shape = SubResource("RectangleShape2D_tab")
+
+[node name="FoodTab" type="Button" parent="Panel/VBoxContainer/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+toggle_mode = true
+text = "Food"
+icon = ExtResource("4_food")
+expand_icon = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Tabs/FoodTab"]
+position = Vector2(60, 15)
+shape = SubResource("RectangleShape2D_tab")
+
+[node name="KeyItemsTab" type="Button" parent="Panel/VBoxContainer/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+toggle_mode = true
+text = "Key Items"
+icon = ExtResource("5_key")
+expand_icon = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Tabs/KeyItemsTab"]
+position = Vector2(60, 15)
+shape = SubResource("RectangleShape2D_tab")
+
+[node name="Body" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="GridScroll" type="ScrollContainer" parent="Panel/VBoxContainer/Body"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+follow_focus = true
+
+[node name="Grid" type="GridContainer" parent="Panel/VBoxContainer/Body/GridScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 5
+
+[node name="Details" type="VBoxContainer" parent="Panel/VBoxContainer/Body"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="DetailModel" type="SubViewportContainer" parent="Panel/VBoxContainer/Body/Details"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+size_flags_horizontal = 4
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Panel/VBoxContainer/Body/Details/DetailModel"]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(160, 160)
+render_target_update_mode = 4
+
+[node name="ModelPivot" type="Node3D" parent="Panel/VBoxContainer/Body/Details/DetailModel/SubViewport"]
+unique_name_in_owner = true
+
+[node name="ModelCamera" type="Camera3D" parent="Panel/VBoxContainer/Body/Details/DetailModel/SubViewport"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.866, 0.5, 0, -0.5, 0.866, 0, 1, 1.732)
+projection = 1
+size = 0.5
+
+[node name="Light" type="DirectionalLight3D" parent="Panel/VBoxContainer/Body/Details/DetailModel/SubViewport"]
+transform = Transform3D(0.86603, -0.38302, 0.32139, 0, 0.64279, 0.76604, -0.5, -0.66341, 0.55667, 0, 2, 2)
+
+[node name="DetailIcon" type="TextureRect" parent="Panel/VBoxContainer/Body/Details"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DetailName" type="Label" parent="Panel/VBoxContainer/Body/Details"]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = SubResource("LabelSettings_title")
+horizontal_alignment = 1
+
+[node name="DetailCount" type="Label" parent="Panel/VBoxContainer/Body/Details"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="DetailScroll" type="ScrollContainer" parent="Panel/VBoxContainer/Body/Details"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="DetailDescription" type="Label" parent="Panel/VBoxContainer/Body/Details/DetailScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+
+[node name="Actions" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Use" type="Button" parent="Panel/VBoxContainer/Actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(72, 30)
+layout_mode = 2
+text = "Use"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Actions/Use"]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_action")
+
+[node name="Drop" type="Button" parent="Panel/VBoxContainer/Actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(72, 30)
+layout_mode = 2
+text = "Drop"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Actions/Drop"]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_action")
+
+[node name="Back" type="Button" parent="Panel/VBoxContainer/Actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(72, 30)
+layout_mode = 2
+text = "Back"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/VBoxContainer/Actions/Back"]
+position = Vector2(36, 15)
+shape = SubResource("RectangleShape2D_action")
+
+[node name="HeldIcon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_right = 48.0
+offset_bottom = 48.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="mouse_entered" from="Panel/VBoxContainer/Actions/Use" to="Panel/VBoxContainer/Actions/Use" method="grab_focus"]
+[connection signal="pressed" from="Panel/VBoxContainer/Actions/Use" to="." method="_on_use_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Actions/Use/TouchScreenButton" to="." method="_on_use_touch_screen_button_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/Actions/Drop" to="Panel/VBoxContainer/Actions/Drop" method="grab_focus"]
+[connection signal="pressed" from="Panel/VBoxContainer/Actions/Drop" to="." method="_on_drop_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Actions/Drop/TouchScreenButton" to="." method="_on_drop_touch_screen_button_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/Actions/Back" to="Panel/VBoxContainer/Actions/Back" method="grab_focus"]
+[connection signal="pressed" from="Panel/VBoxContainer/Actions/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Actions/Back/TouchScreenButton" to="." method="_on_back_touch_screen_button_pressed"]
+[connection signal="resized" from="Panel/VBoxContainer/Body/GridScroll" to="." method="_update_touch_visibility"]
+[connection signal="item_rect_changed" from="Panel/VBoxContainer/Body/GridScroll/Grid" to="." method="_update_touch_visibility"]
+[connection signal="sort_children" from="Panel/VBoxContainer/Body/GridScroll/Grid" to="." method="_update_touch_visibility"]

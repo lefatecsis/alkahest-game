@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="ControlScheme" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/control_scheme.gd" id="1_control_scheme"]
+
+[resource]
+script = ExtResource("1_control_scheme")
+scheme_name = "TotK"
+action_button_0 = &"sprint"
+action_button_1 = &"action"
+action_button_2 = &"attack"
+action_button_3 = &"jump"
+extra_slots = {
+"axis_4_plus": &"focus",
+"axis_5_plus": &"shoot",
+"button_10": &"throw",
+"button_11": &"seeker",
+"button_12": &"whistle",
+"button_13": &"last_weapon",
+"button_14": &"next_weapon",
+"button_7": &"crouch",
+"button_8": &"scope",
+"button_9": &"ability"
+}
+slot_labels = {
+"axis_4_plus": "Focus",
+"axis_5_plus": "Bow",
+"button_0": "Dash",
+"button_1": "Action",
+"button_10": "Throw",
+"button_11": "Seeker",
+"button_12": "Whistle",
+"button_13": "Arrow",
+"button_14": "Bow",
+"button_2": "Attack",
+"button_3": "Jump",
+"button_7": "Stealth",
+"button_8": "Telescope",
+"button_9": "Ability"
+}
+locks_on = true

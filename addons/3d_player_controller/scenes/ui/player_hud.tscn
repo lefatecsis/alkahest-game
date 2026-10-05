@@ -1,0 +1,220 @@
+[gd_scene format=3 uid="uid://c25vl8otl1rj5"]
+
+[ext_resource type="Script" path="res://addons/3d_player_controller/scripts/player_hud.gd" id="1_hud"]
+[ext_resource type="PackedScene" uid="uid://5n75g14s56d" path="res://addons/3d_player_controller/scenes/ui/player_controls.tscn" id="210_hshj8"]
+[ext_resource type="PackedScene" uid="uid://cji2rftmdo0fe" path="res://addons/3d_player_controller/scenes/ui/boss_bar.tscn" id="211_aioe1"]
+[ext_resource type="PackedScene" uid="uid://brdt41c6lj6hk" path="res://addons/3d_player_controller/scenes/ui/ammo_readout.tscn" id="212_mhr4k"]
+[ext_resource type="PackedScene" path="res://addons/3d_player_controller/scenes/ui/cast_bar.tscn" id="213_hm2y0"]
+[ext_resource type="PackedScene" path="res://addons/3d_player_controller/scenes/ui/throw_charge_bar.tscn" id="213_throw"]
+[ext_resource type="PackedScene" uid="uid://d0mxfe0dnkn0n" path="res://addons/3d_player_controller/scenes/ui/chat.tscn" id="214_2wrkp"]
+[ext_resource type="PackedScene" uid="uid://cwb6b4lbm2i0d" path="res://addons/3d_player_controller/scenes/ui/debug.tscn" id="215_xpqqc"]
+[ext_resource type="PackedScene" uid="uid://d3807jlpj5vsl" path="res://addons/3d_player_controller/inventory/scenes/inventory.tscn" id="216_aptty"]
+[ext_resource type="PackedScene" uid="uid://dm3qt3t7aq42w" path="res://addons/3d_player_controller/scenes/ui/abilities.tscn" id="217_xwswm"]
+[ext_resource type="Script" uid="uid://klxo6bc3ftnp" path="res://addons/3d_player_controller/scripts/ability.gd" id="218_c4oi1"]
+[ext_resource type="Resource" uid="uid://ywtv6gwnislu" path="res://addons/3d_player_controller/resources/abilities/stealth.tres" id="219_lgcvn"]
+[ext_resource type="Resource" uid="uid://cfpp5cv2gcskg" path="res://addons/3d_player_controller/resources/abilities/heal.tres" id="220_p3m8d"]
+[ext_resource type="PackedScene" path="res://addons/3d_player_controller/scenes/ui/seeker_wheel.tscn" id="221_8xbw4"]
+[ext_resource type="PackedScene" uid="uid://dgslo5b1yxrd0" path="res://addons/3d_player_controller/scenes/ui/pause.tscn" id="222_n6coi"]
+[ext_resource type="PackedScene" uid="uid://2crtfw6co0ss" path="res://addons/3d_player_controller/scenes/ui/settings.tscn" id="223_70l8d"]
+[ext_resource type="PackedScene" uid="uid://caww8bymbfsli" path="res://addons/3d_player_controller/scenes/ui/audio_settings.tscn" id="224_itfik"]
+[ext_resource type="PackedScene" uid="uid://0f7ibqfdtbhv" path="res://addons/3d_player_controller/scenes/ui/controls_settings.tscn" id="225_ehxtl"]
+[ext_resource type="PackedScene" uid="uid://bsmatt41d3g3p" path="res://addons/3d_player_controller/scenes/ui/video_settings.tscn" id="226_dcnid"]
+[ext_resource type="PackedScene" uid="uid://c7k68q6a3mvdg" path="res://addons/3d_player_controller/scenes/ui/lobby_manager.tscn" id="227_7355m"]
+[ext_resource type="Texture2D" uid="uid://dba2rvntnnfdh" path="res://addons/3d_player_controller/assets/kenney_nl/2D assets/Crosshair Pack/Vector/crosshairs_vector_white.svg" id="228_5acoi"]
+[ext_resource type="PackedScene" uid="uid://c7health000001" path="res://addons/3d_player_controller/scenes/ui/health.tscn" id="229_xc1b5"]
+[ext_resource type="PackedScene" uid="uid://c7deathscreen1" path="res://addons/3d_player_controller/scenes/ui/death_screen.tscn" id="231_eaeif"]
+[ext_resource type="PackedScene" uid="uid://c7questtracker" path="res://addons/3d_player_controller/scenes/ui/quest_tracker.tscn" id="234_231h3"]
+[ext_resource type="Texture2D" uid="uid://ckmfjtaa1iw2p" path="res://addons/controls/assets/kenney_nl/Icons/Input Prompts/PlayStation Series/Vector/playstation_button_circle_filled.svg" id="235_8qiiu"]
+[ext_resource type="Script" uid="uid://ck08322tms20v" path="res://addons/3d_player_controller/scripts/stamina.gd" id="236_12agc"]
+[ext_resource type="Shader" uid="uid://dqf0e65tkjhcf" path="res://addons/3d_player_controller/assets/shaders/underwater_overlay.gdshader" id="261_dd4mk"]
+[ext_resource type="PackedScene" uid="uid://dlx4dimavq18t" path="res://addons/3d_player_controller/scenes/ui/target_frame.tscn" id="target_frame"]
+[ext_resource type="Shader" path="res://addons/3d_player_controller/assets/shaders/spyglass_overlay.gdshader" id="spyglass_overlay_shader"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk680"]
+atlas = ExtResource("228_5acoi")
+region = Rect2(4, 75, 52, 52)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_spyglass"]
+shader = ExtResource("spyglass_overlay_shader")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_underwater"]
+shader = ExtResource("261_dd4mk")
+shader_parameter/tint = Color(0.07, 0.3, 0.45, 0.38)
+shader_parameter/wave_strength = 0.0045
+shader_parameter/wave_speed = 1.6
+shader_parameter/vignette_strength = 0.35
+
+[node name="Hud" type="Node"]
+editor_description = "Everything the Player draws on the screen: the on-screen controls, the readouts and bars, the chat and debug panels, the inventory, the abilities, and every menu and screen. Each child's player export points two levels up, at the Player this hangs under."
+script = ExtResource("1_hud")
+
+[node name="Controls" parent="." unique_id=1181235604 instance=ExtResource("210_hshj8")]
+editor_description = "The on-screen input hints and the button mapping, from the controls addon. Player.controls is this node, and a world prompt names its bottom-action button."
+
+[node name="BossBar" parent="." unique_id=544394449 instance=ExtResource("211_aioe1")]
+editor_description = "The name and health of the boss this player is fighting, across the top of the screen. Boss drives it. It is its own scene rather than part of the Controls HUD because a boss's health is a readout of an NPC, not a hint about what a button does; remove it and nothing breaks."
+visible = false
+
+[node name="AmmoReadout" parent="." unique_id=1105301214 instance=ExtResource("212_mhr4k")]
+editor_description = "The equipped firearm's magazine and reserve, under the crosshair. Firearm drives it, so the count ships with the guns; remove it and nothing breaks."
+visible = false
+
+[node name="CastBar" parent="." unique_id=341772415 instance=ExtResource("213_hm2y0")]
+editor_description = "The ability being cast and how far through it is, under the crosshair. Abilities drives it; remove it and nothing breaks."
+
+[node name="ThrowChargeBar" parent="." unique_id=453029934 instance=ExtResource("213_throw")]
+editor_description = "How far the held object's throw has charged, under the crosshair. HeldObject drives it and hides it; remove it and nothing breaks."
+visible = false
+
+[node name="Chat" parent="." unique_id=1421766685 instance=ExtResource("214_2wrkp")]
+editor_description = "The text chat window. Copes with no Steamworks autoload, so a project without Steam and a web export still run."
+visible = false
+
+[node name="Debug" parent="." unique_id=2032410064 instance=ExtResource("215_xpqqc")]
+editor_description = "The debug overlay: state, speed, position and the rest, for a build that wants to see them."
+visible = false
+
+[node name="Inventory" parent="." unique_id=509190037 instance=ExtResource("216_aptty")]
+editor_description = "The bag and what is worn. Owns items, equipment, the crafting side and the pause menu's pages."
+
+[node name="Abilities" parent="." unique_id=1423797243 instance=ExtResource("217_xwswm")]
+editor_description = "The spell and skill set, and the cooldowns behind it."
+abilities = Array[ExtResource("218_c4oi1")]([ExtResource("219_lgcvn"), ExtResource("220_p3m8d")])
+
+[node name="SeekerWheel" parent="." unique_id=1372493209 instance=ExtResource("221_8xbw4")]
+editor_description = "The second radial menu on the Seeker button: ammunition kinds while aiming, throwables otherwise."
+
+[node name="Pause" parent="." unique_id=498429169 instance=ExtResource("222_n6coi")]
+editor_description = "The pause menu and the layer every other menu sits under."
+visible = false
+inventory_screen_scene = "res://addons/3d_player_controller/inventory/scenes/inventory_screen.tscn"
+spells_screen_scene = "res://addons/3d_player_controller/inventory/scenes/spells_screen.tscn"
+
+[node name="Settings" parent="." unique_id=955686872 instance=ExtResource("223_70l8d")]
+editor_description = "The settings menu the pause menu opens, and the way through to Audio, Controls and Video."
+visible = false
+
+[node name="AudioSettings" parent="." unique_id=1733087110 instance=ExtResource("224_itfik")]
+editor_description = "The volume sliders, saved to PlayerSettingsResource on this machine."
+visible = false
+
+[node name="ControlsSettings" parent="." unique_id=1813716657 instance=ExtResource("225_ehxtl")]
+editor_description = "The on-screen controls mode and the pad layout, saved to PlayerSettingsResource on this machine."
+visible = false
+
+[node name="VideoSettings" parent="." unique_id=1733087111 instance=ExtResource("226_dcnid")]
+editor_description = "VSync, UI scale, toon shading and the anti-aliasing options, applied through PlayerSettingsResource.apply_video_settings."
+visible = false
+
+[node name="LobbyManager" parent="." unique_id=1733087115 instance=ExtResource("227_7355m")]
+editor_description = "The Steam lobby: creating one, joining one, and keeping the member list."
+visible = false
+
+[node name="Crosshair" type="TextureRect" parent="." unique_id=1819190414]
+editor_description = "The aiming reticle, shown while a firearm or bow is up and hidden while the hands are blocked."
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -26.0
+offset_right = 26.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(26, 26)
+texture = SubResource("AtlasTexture_fk680")
+
+[node name="Health" parent="." unique_id=1045609922 instance=ExtResource("229_xc1b5")]
+editor_description = "Hit points, damage and death. Its died signal starts the RespawnTimer through the death screen."
+max_energy = 100.0
+
+[node name="DeathScreen" parent="." unique_id=31608180 instance=ExtResource("231_eaeif")]
+editor_description = "The screen shown on death, counting the RespawnTimer down. Wired to Health.died and Player.respawned."
+visible = false
+
+[node name="QuestTracker" parent="." unique_id=1940954794 instance=ExtResource("234_231h3")]
+editor_description = "The objectives list in the corner, following the QuestLog."
+visible = false
+
+[node name="Stamina" type="TextureProgressBar" parent="." unique_id=1209274681]
+editor_description = "The stamina bar and the pool behind it, spent by sprinting, climbing and gliding."
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+step = 0.01
+value = 100.0
+rounded = true
+fill_mode = 4
+texture_progress = ExtResource("235_8qiiu")
+script = ExtResource("236_12agc")
+
+[node name="Timer" type="Timer" parent="Stamina" unique_id=204047444]
+one_shot = true
+
+[node name="TargetFrame" parent="." instance=ExtResource("target_frame")]
+editor_description = "The Player's Target: its name, its health tinted by disposition, and who it is hunting. Shown while the Player has a Target (Focus.target_changed), hidden otherwise."
+visible = false
+
+[node name="UnderwaterOverlay" type="CanvasLayer" parent="." unique_id=556784208]
+editor_description = "The full-screen tint while the head is under water; the Swimming state shows and hides it."
+layer = -1
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UnderwaterOverlay" unique_id=1815454061]
+material = SubResource("ShaderMaterial_underwater")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SpyglassOverlay" type="CanvasLayer" parent="."]
+editor_description = "The porthole while the Player looks through the Spyglass: the view in a round lens with a brass ring, black beyond it, and the magnification under it. Under the rest of the HUD, so the buttons still show. The Spyglass shows and hides it."
+layer = -1
+visible = false
+
+[node name="Lens" type="ColorRect" parent="SpyglassOverlay"]
+material = SubResource("ShaderMaterial_spyglass")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Zoom" type="Label" parent="SpyglassOverlay"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -64.0
+offset_right = 60.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.93, 0.84, 0.62, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 24
+text = "4.0x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="equipment_changed" from="Inventory" to="Abilities" method="_on_equipment_changed"]
+[connection signal="died" from="Health" to="DeathScreen" method="_on_health_died"]
+[connection signal="timeout" from="Stamina/Timer" to="Stamina" method="hide"]
