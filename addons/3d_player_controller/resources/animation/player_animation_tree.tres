@@ -1,32 +1,5 @@
 [gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://c8uh3alyfnbea"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dive_standing"]
-animation = &"Standing Dive Forward/mixamo_com"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dive_sprinting"]
-animation = &"Sprinting Dive Forward/mixamo_com"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dive_falling"]
-animation = &"Falling To Dive Forward/mixamo_com"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dive_rifle_standing"]
-animation = &"Rife Standing Dive Forward/mixamo_com"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dive_rifle_running"]
-animation = &"Rifle Running Dive Forward/mixamo_com"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dive_bow"]
-animation = &"Bow Standing Dive Forward/mixamo_com"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dive_in"]
-xfade_time = 0.1
-advance_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dive_out"]
-xfade_time = 0.2
-switch_mode = 2
-advance_mode = 2
-
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_jmy3t"]
 filter_enabled = true
 filters = ["%GeneralSkeleton:Chest", "%GeneralSkeleton:Head", "%GeneralSkeleton:LeftHand", "%GeneralSkeleton:LeftIndexDistal", "%GeneralSkeleton:LeftIndexIntermediate", "%GeneralSkeleton:LeftIndexProximal", "%GeneralSkeleton:LeftLittleDistal", "%GeneralSkeleton:LeftLittleIntermediate", "%GeneralSkeleton:LeftLittleProximal", "%GeneralSkeleton:LeftLowerArm", "%GeneralSkeleton:LeftMiddleDistal", "%GeneralSkeleton:LeftMiddleIntermediate", "%GeneralSkeleton:LeftMiddleProximal", "%GeneralSkeleton:LeftRingDistal", "%GeneralSkeleton:LeftRingIntermediate", "%GeneralSkeleton:LeftRingProximal", "%GeneralSkeleton:LeftShoulder", "%GeneralSkeleton:LeftThumbDistal", "%GeneralSkeleton:LeftThumbMetacarpal", "%GeneralSkeleton:LeftThumbProximal", "%GeneralSkeleton:LeftUpperArm", "%GeneralSkeleton:Neck", "%GeneralSkeleton:RightHand", "%GeneralSkeleton:RightIndexDistal", "%GeneralSkeleton:RightIndexIntermediate", "%GeneralSkeleton:RightIndexProximal", "%GeneralSkeleton:RightLittleDistal", "%GeneralSkeleton:RightLittleIntermediate", "%GeneralSkeleton:RightLittleProximal", "%GeneralSkeleton:RightLowerArm", "%GeneralSkeleton:RightMiddleDistal", "%GeneralSkeleton:RightMiddleIntermediate", "%GeneralSkeleton:RightMiddleProximal", "%GeneralSkeleton:RightRingDistal", "%GeneralSkeleton:RightRingIntermediate", "%GeneralSkeleton:RightRingProximal", "%GeneralSkeleton:RightShoulder", "%GeneralSkeleton:RightThumbDistal", "%GeneralSkeleton:RightThumbMetacarpal", "%GeneralSkeleton:RightThumbProximal", "%GeneralSkeleton:RightUpperArm", "%GeneralSkeleton:Spine", "%GeneralSkeleton:UpperChest", "%GeneralSkeleton:mixamorig_LeftHandThumb4", "%GeneralSkeleton:mixamorig_RightHandThumb4"]
@@ -71,14 +44,14 @@ animation = &"Male Reaction Hit On The Right Side/mixamo_com"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5hbgk"]
 animation = &"Ready To Cast Spell Standing Idle/mixamo_com"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_shield_block"]
-animation = &"Sword And Shield Block Idle/mixamo_com"
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mihb1"]
 animation = &"Rifle Aiming Standing Idle/mixamo_com"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xsdw7"]
 animation = &"Rifle Firing Standing/mixamo_com"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_shield_block"]
+animation = &"Sword And Shield Block Idle/mixamo_com"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_07say"]
 animation = &"Throw/mixamo_com"
@@ -213,12 +186,12 @@ states/ReactionHitOnRightSide/node = SubResource("AnimationNodeAnimation_1gjxa")
 states/ReactionHitOnRightSide/position = Vector2(741.14197, 373.675)
 states/ReadyToCastSpell/node = SubResource("AnimationNodeAnimation_5hbgk")
 states/ReadyToCastSpell/position = Vector2(132.17847, 16.5625)
-states/ShieldBlock/node = SubResource("AnimationNodeAnimation_shield_block")
-states/ShieldBlock/position = Vector2(306.67896, 373.675)
 states/RifleAimingStandingIdle/node = SubResource("AnimationNodeAnimation_mihb1")
 states/RifleAimingStandingIdle/position = Vector2(741.14813, -27.4375)
 states/RifleFiringStanding/node = SubResource("AnimationNodeAnimation_xsdw7")
 states/RifleFiringStanding/position = Vector2(462.66046, -27.4375)
+states/ShieldBlock/node = SubResource("AnimationNodeAnimation_shield_block")
+states/ShieldBlock/position = Vector2(306.67896, 373.675)
 states/Start/position = Vector2(132.17847, 100)
 states/Throw/node = SubResource("AnimationNodeAnimation_07say")
 states/Throw/position = Vector2(288.16614, -29.259995)
@@ -261,7 +234,9 @@ blend_point_3/name = &"Bow Standing Aim Walk Left_mixamo_com"
 blend_point_4/node = SubResource("AnimationNodeAnimation_si0et")
 blend_point_4/pos = Vector2(1, 0)
 blend_point_4/name = &"Bow Standing Aim Walk Right_mixamo_com"
-triangles = PackedInt32Array(0, 2, 3, 0, 1, 3, 0, 2, 4, 0, 1, 4)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dive_bow"]
+animation = &"Bow Standing Dive Forward/mixamo_com"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i2307"]
 animation = &"Bow Draw/mixamo_com"
@@ -345,7 +320,6 @@ blend_point_8/name = &"Bow Standing Walk Right_mixamo_com"
 blend_point_9/node = SubResource("AnimationNodeAnimation_gfpdn")
 blend_point_9/pos = Vector2(-0.5, 0)
 blend_point_9/name = &"Bow Standing Walk Left_mixamo_com"
-triangles = PackedInt32Array(2, 4, 5, 3, 4, 5, 1, 2, 7, 2, 6, 7, 1, 3, 7, 3, 6, 7, 2, 6, 8, 0, 6, 8, 2, 5, 8, 0, 5, 8, 3, 6, 9, 0, 6, 9, 3, 5, 9, 0, 5, 9)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x0r6x"]
 animation = &"Bow Standing Melee Punch/mixamo_com"
@@ -411,13 +385,21 @@ advance_expression = "is_attacking"
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dive_in"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dive_out"]
+xfade_time = 0.2
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_bowgroup"]
 states/ArcheryLocomotion/node = SubResource("AnimationNodeBlendSpace2D_7oe5o")
 states/ArcheryLocomotion/position = Vector2(700, 100)
-states/BowDraw/node = SubResource("AnimationNodeAnimation_i2307")
-states/BowDraw/position = Vector2(200, 100)
 states/BowDive/node = SubResource("AnimationNodeAnimation_dive_bow")
 states/BowDive/position = Vector2(300, 300)
+states/BowDraw/node = SubResource("AnimationNodeAnimation_i2307")
+states/BowDraw/position = Vector2(200, 100)
 states/BowDrawArrow/node = SubResource("AnimationNodeAnimation_7oe5o")
 states/BowDrawArrow/position = Vector2(700, 250)
 states/BowFireArrow/node = SubResource("AnimationNodeAnimation_u0uda")
@@ -518,7 +500,6 @@ blend_point_11/name = &"Long Right Side Step"
 blend_point_12/node = SubResource("AnimationNodeAnimation_tglpw")
 blend_point_12/pos = Vector2(-1.1, 0)
 blend_point_12/name = &"Long Left Side Step"
-triangles = PackedInt32Array(0, 2, 3, 0, 1, 3, 0, 2, 4, 0, 1, 4, 1, 4, 5, 2, 4, 5, 1, 3, 6, 2, 3, 6, 2, 6, 7, 2, 5, 7, 1, 6, 8, 1, 5, 8, 5, 8, 9, 6, 8, 9, 5, 7, 10, 6, 7, 10, 5, 10, 11, 5, 9, 11, 6, 10, 12, 6, 9, 12)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dylvg"]
 animation = &"Boxing Short Head Jab/mixamo_com"
@@ -635,7 +616,6 @@ blend_point_3/name = &"Climbing Up Wall_mixamo_com"
 blend_point_4/node = SubResource("AnimationNodeAnimation_0hp1n")
 blend_point_4/pos = Vector2(0, -1)
 blend_point_4/name = &"Climbing Down Wall_mixamo_com"
-triangles = PackedInt32Array(0, 2, 3, 0, 1, 3, 0, 2, 4, 0, 1, 4)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b226b"]
 animation = &"Crouching Idle/mixamo_com"
@@ -669,7 +649,6 @@ blend_point_3/name = &"Crouched Sneaking Right_mixamo_com"
 blend_point_4/node = SubResource("AnimationNodeAnimation_xyp3y")
 blend_point_4/pos = Vector2(-1, 0)
 blend_point_4/name = &"Crouched Sneaking Left_mixamo_com"
-triangles = PackedInt32Array(0, 2, 3, 0, 1, 3, 0, 2, 4, 0, 1, 4)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_errws"]
 animation = &"Driving/mixamo_com"
@@ -682,6 +661,9 @@ animation = &"Exiting Car/mixamo_com"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_07327"]
 animation = &"Falling Idle/mixamo_com"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dive_falling"]
+animation = &"Falling To Dive Forward/mixamo_com"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3iq4p"]
 animation = &"Fishing Idle/mixamo_com"
@@ -811,7 +793,6 @@ blend_point_7/name = &"Great Sword Strafe Left Run_mixamo_com"
 blend_point_8/node = SubResource("AnimationNodeAnimation_1520m")
 blend_point_8/pos = Vector2(-0.4, 0)
 blend_point_8/name = &"Great Sword Strafe Walk Left_mixamo_com"
-triangles = PackedInt32Array(3, 4, 5, 1, 2, 5, 0, 2, 6, 2, 5, 6, 0, 4, 6, 4, 5, 6, 3, 4, 7, 1, 2, 7, 0, 2, 8, 2, 7, 8, 0, 4, 8, 4, 7, 8)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0ktn1"]
 animation = &"Great Sword Low Slash/mixamo_com"
@@ -1014,7 +995,6 @@ blend_point_5/name = &"Pistol Aimed Run Backward_mixamo_com"
 blend_point_6/node = SubResource("AnimationNodeAnimation_58cou")
 blend_point_6/pos = Vector2(0, 0.5)
 blend_point_6/name = &"Pistol Aimed Walk_mixamo_com"
-triangles = PackedInt32Array(0, 2, 3, 0, 1, 3, 1, 3, 5, 2, 3, 5, 0, 1, 6, 1, 4, 6, 0, 2, 6, 2, 4, 6)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_108j8"]
 animation = &"Pistol Whip/mixamo_com"
@@ -1143,10 +1123,15 @@ blend_point_5/name = &"Rifle Aiming Run Backward_mixamo_com"
 blend_point_6/node = SubResource("AnimationNodeAnimation_jlii4")
 blend_point_6/pos = Vector2(0, 1)
 blend_point_6/name = &"Rifle Aiming Run Forward_mixamo_com"
-triangles = PackedInt32Array(0, 2, 3, 0, 1, 3, 0, 2, 4, 0, 1, 4, 1, 3, 5, 2, 3, 5, 1, 4, 6, 2, 4, 6)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yo4rg"]
 animation = &"Rifle Punch/mixamo_com"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dive_rifle_running"]
+animation = &"Rifle Running Dive Forward/mixamo_com"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dive_rifle_standing"]
+animation = &"Rife Standing Dive Forward/mixamo_com"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rifle_draw_in"]
 advance_mode = 2
@@ -1210,12 +1195,12 @@ states/RifleJumpUp/node = SubResource("AnimationNodeAnimation_6670k")
 states/RifleJumpUp/position = Vector2(350, -50)
 states/RifleLocomotion/node = SubResource("AnimationNodeBlendSpace2D_goiqs")
 states/RifleLocomotion/position = Vector2(450, 100)
+states/RiflePunch/node = SubResource("AnimationNodeAnimation_yo4rg")
+states/RiflePunch/position = Vector2(450, 250)
 states/RifleRunningDive/node = SubResource("AnimationNodeAnimation_dive_rifle_running")
 states/RifleRunningDive/position = Vector2(600, 300)
 states/RifleStandingDive/node = SubResource("AnimationNodeAnimation_dive_rifle_standing")
 states/RifleStandingDive/position = Vector2(300, 300)
-states/RiflePunch/node = SubResource("AnimationNodeAnimation_yo4rg")
-states/RiflePunch/position = Vector2(450, 250)
 states/Start/position = Vector2(0, 100)
 transitions = ["Start", "RifleDraw", SubResource("AnimationNodeStateMachineTransition_rifle_draw_in"), "Start", "RifleLocomotion", SubResource("AnimationNodeStateMachineTransition_rifle_skip_in"), "RifleDraw", "RifleLocomotion", SubResource("AnimationNodeStateMachineTransition_krtyc"), "RifleLocomotion", "RifleJumpUp", SubResource("AnimationNodeStateMachineTransition_8sny1"), "RifleJumpUp", "RifleFalling", SubResource("AnimationNodeStateMachineTransition_k7rbq"), "RifleFalling", "RifleLocomotion", SubResource("AnimationNodeStateMachineTransition_2rpu5"), "RifleLocomotion", "RifleJumpForward", SubResource("AnimationNodeStateMachineTransition_jmy3t"), "RifleJumpForward", "RifleLocomotion", SubResource("AnimationNodeStateMachineTransition_k2txm"), "RifleLocomotion", "RiflePunch", SubResource("AnimationNodeStateMachineTransition_miiyk"), "RiflePunch", "RifleLocomotion", SubResource("AnimationNodeStateMachineTransition_80vgy"), "RifleLocomotion", "RifleFalling", SubResource("AnimationNodeStateMachineTransition_grounded_fall_in"), "RifleLocomotion", "RifleStandingDive", SubResource("AnimationNodeStateMachineTransition_dive_in"), "RifleStandingDive", "RifleLocomotion", SubResource("AnimationNodeStateMachineTransition_dive_out"), "RifleLocomotion", "RifleRunningDive", SubResource("AnimationNodeStateMachineTransition_dive_in"), "RifleRunningDive", "RifleLocomotion", SubResource("AnimationNodeStateMachineTransition_dive_out")]
 
@@ -1304,7 +1289,6 @@ blend_point_7/name = &"Sword And Shield Right Run Strafe_mixamo_com"
 blend_point_8/node = SubResource("AnimationNodeAnimation_3fpkw")
 blend_point_8/pos = Vector2(-0.5, 0)
 blend_point_8/name = &"Sword And Shield Right Strafe Walk_mixamo_com"
-triangles = PackedInt32Array(3, 4, 5, 1, 2, 5, 0, 2, 6, 2, 5, 6, 0, 4, 6, 4, 5, 6, 3, 4, 7, 1, 2, 7, 0, 2, 8, 2, 7, 8, 0, 4, 8, 4, 7, 8)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dtq52"]
 animation = &"Sword And Shield Power Slash/mixamo_com"
@@ -1496,6 +1480,12 @@ animation = &"Standing 1H Spell Cast Sweeping Upwards/mixamo_com"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_spell_cast_upwards"]
 animation = &"Standing 1H Spell Cast Upwards/mixamo_com"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dive_sprinting"]
+animation = &"Sprinting Dive Forward/mixamo_com"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dive_standing"]
+animation = &"Standing Dive Forward/mixamo_com"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nfheb"]
 animation = &"Idle/mixamo_com"
 
@@ -1558,7 +1548,6 @@ blend_point_8/name = &"Running_mixamo_com"
 blend_point_9/node = SubResource("AnimationNodeAnimation_5cw3m")
 blend_point_9/pos = Vector2(0, 1.5)
 blend_point_9/name = &"Sprint_mixamo_com"
-triangles = PackedInt32Array(0, 2, 3, 0, 1, 3, 0, 2, 4, 0, 1, 4, 1, 3, 5, 2, 3, 5, 1, 4, 6, 2, 4, 6, 2, 6, 7, 2, 5, 7, 1, 6, 8, 1, 5, 8, 5, 8, 9, 6, 8, 9)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c5lmm"]
 animation = &"Swimming At Edge/mixamo_com"
@@ -2103,10 +2092,6 @@ states/FlyingLocomotion/node = SubResource("AnimationNodeBlendSpace1D_3iq4p")
 states/FlyingLocomotion/position = Vector2(40.08496, 1.1304321)
 states/FowardFlip/node = SubResource("AnimationNodeAnimation_krtyc")
 states/FowardFlip/position = Vector2(194.33752, 294.6247)
-states/SprintingDive/node = SubResource("AnimationNodeAnimation_dive_sprinting")
-states/SprintingDive/position = Vector2(420, 340)
-states/StandingDive/node = SubResource("AnimationNodeAnimation_dive_standing")
-states/StandingDive/position = Vector2(300, 340)
 states/FreeHangingClimbingOn/node = SubResource("AnimationNodeAnimation_osk5u")
 states/FreeHangingClimbingOn/position = Vector2(4.016531, -250.06238)
 states/FreeHangingLocomotion/node = SubResource("AnimationNodeBlendSpace1D_1pf77")
@@ -2157,6 +2142,10 @@ states/SpellCastSweepingUpwards/node = SubResource("AnimationNodeAnimation_spell
 states/SpellCastSweepingUpwards/position = Vector2(1300, 640)
 states/SpellCastUpwards/node = SubResource("AnimationNodeAnimation_spell_cast_upwards")
 states/SpellCastUpwards/position = Vector2(1300, 720)
+states/SprintingDive/node = SubResource("AnimationNodeAnimation_dive_sprinting")
+states/SprintingDive/position = Vector2(420, 340)
+states/StandingDive/node = SubResource("AnimationNodeAnimation_dive_standing")
+states/StandingDive/position = Vector2(300, 340)
 states/StandingLocomotion/node = SubResource("AnimationNodeBlendSpace2D_ha6ty")
 states/StandingLocomotion/position = Vector2(481.94794, 100.492966)
 states/Start/position = Vector2(4.0165253, 160.02467)

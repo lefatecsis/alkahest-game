@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c6d8xq67ky4b6"]
+
+[ext_resource type="PackedScene" uid="uid://blf87ugcmxfqy" path="res://assets/creatures/rabbit/rabbit.tscn" id="1_ds0au"]
+
+[node name="PlayerRabbit" type="CharacterBody3D" unique_id=1189931261]
+
+[node name="Rabbit" parent="." unique_id=1394075451 instance=ExtResource("1_ds0au")]

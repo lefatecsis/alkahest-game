@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://blf87ugcmxfqy"]
+
+[ext_resource type="PackedScene" uid="uid://c0l2dogafg4g2" path="res://assets/creatures/rabbit/Rabbit.fbx" id="1_msxim"]
+[ext_resource type="Texture2D" uid="uid://ccreqcifgvbu1" path="res://assets/creatures/rabbit/textures/Rabbit_Albedo.png" id="2_bmu3n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_msa3e"]
+albedo_texture = ExtResource("2_bmu3n")
+
+[node name="Rabbit" unique_id=1394075451 instance=ExtResource("1_msxim")]
+
+[node name="RabbitModel" parent="Root/Skeleton3D" parent_id_path=PackedInt32Array(1059593387) index="0" unique_id=1941235916]
+surface_material_override/0 = SubResource("StandardMaterial3D_msa3e")
